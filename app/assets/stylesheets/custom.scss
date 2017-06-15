@@ -1,23 +1,111 @@
-html, body.contents{
+// GLOBAL SETTINGS
+// ===============
+html, body.contents, .full-height{
   height: 100vh;
+}
+
+// text highlight is yellow
+::selection {
+    background: #fff2a8; /* WebKit/Blink Browsers */
+  }
+::-moz-selection {
+  background: #fff2a8; /* Gecko Browsers */
+}
+
+// prevent selecting images
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+// CUSTOM GENERIC CLASSES
+// ======================
+
+// used to keep the row columns in a grid layout on mobile
+.fixed-row{
+  @include flex;
+  @include flex-items-row;
+  @include flex-items-wrap;
+
+  @include breakpoint(sm) {
+    @include flex-items-row;
+    @include flex-items-nowrap;
+  }
+}
+
+// when added to a .row places content at the bottom
+.bottom{
+  height: 100%;
+  @include flex-items-bottom;
 }
 
 .border{
   border: 1px solid red;
 }
 
+// HEADER
+// ======
+
+.nav-bar{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 40000;
+  height: 80px;
+  // border-bottom: 1px solid #bbb;
+}
+
+.logo-container{
+  text-align: right;
+  img{
+    width: 150px;
+    height: 30px;
+  }
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+  .conteu-logo{
+    margin-top: 19px;
+    // margin-bottom: 15px;
+  }
+}
+.hamburger-container{
+  height: 100%;
+  .hamburger-icon a{
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+// CONTENTS PAGE
+// =============
+
 #container{
+  @include grid-row;
+  padding-top: 80px;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-color: #ece9e7;
+  @media (max-width: 768px){
+    min-height: auto;
+  }
+}
+
+#side-bar{
+  @include flex-item-width(350px);
+}
+
+#main-area{
+  @include flex-item-auto;
 }
 
 .contents-block{
-  width: 200px;
-  position: absolute;
-  bottom: 50px;
-  left: 100px;
-
+  width: 250px;
+  margin-bottom: 50px;
   h6{
     font-family: 'Georgia';
     font-weight: 300;
@@ -25,11 +113,21 @@ html, body.contents{
   }
   p{
     font-family: 'Courier';
-    font-size: 0.6em;
+    font-size: 0.7em;
+  }
+  a{
+    color: #000;
+    text-decoration: none;
   }
 }
 
+.panel{
+  height: 100%;
+}
 
+
+// PANEL LAYOUTS
+// =============
 .text-block{
   h6{
     font-family: 'Georgia';
@@ -40,30 +138,18 @@ html, body.contents{
     font-family: 'Georgia';
     font-size: 0.8em;
   }
+  padding: 20px;
 }
 
+// panel 1
 .text-1{
-  width: 200px;
-  position: absolute;
-  top: 100px;
-  left: 450px;
+  max-width: 300px;
 }
 
 .editorial-image-1{
-  // img{
-  position: absolute;
-  top: 0px;
-  left: 700px;
-  width: 300px;
-  // }
-  // width: 300px;
-  // height: 700px;
+  width: 340px;
+  max-width: 100%;
+  // height: auto;
 }
 
 
-
-// .sm-row{
-//   @media (max-width: 768px){
-//     @include flex-items-row;
-//   }
-// }
