@@ -1,24 +1,26 @@
-# README
+# Conteu
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Todo
 
-Things you may want to cover:
+* Display Contents Page
+  * Add issue model
+  * Add stories to each issue
+  * Create mobile contents dropdown
+  * Create sticky header for mobile
 
-* Ruby version
+* Homepage
+* Store Page
+* Store Items Page
+* Story Page
+* Issue Page
+* All Issue Pages
+* Subsidary Pages
 
-* System dependencies
+* Import past issues
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* GLOBAL
+  * Buy font
+  * Retina Logo
+  * Google Meta data
+* Create Side Navigation
