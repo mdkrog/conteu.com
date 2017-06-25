@@ -1,0 +1,61 @@
+// CONTENTS PAGE
+// =============
+.bg1{
+  background-color: #ddd;
+}
+
+.bg2{
+  background-color: #eee;
+}
+
+#sidebar{
+  margin-top: auto;
+}
+
+.contents-block{
+  position: relative;
+  margin-bottom: 50px;
+  padding: 0 15px;
+  h6{
+    font-family: 'Georgia';
+    font-weight: 300;
+    font-size: 1em;
+  }
+  p{
+    font-family: 'Courier';
+    font-size: 0.7em;
+  }
+  a{
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.contents-panel{
+  margin: 0 !important;
+}
+
+.contents-image{
+  @include from($tablet){
+    max-height: 100%;
+    float: right;
+  }
+}
+
+.is-vertical-aligned{
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+}
+
+.story-text{
+  padding: 15px;
+  h6{
+    // font-family: 'Georgia';
+    // font-weight: 300;
+    font-size: 1em;
+  }
+  p{
+    // font-family: 'Georgia';
+    font-size: 0.8em;
+  }
+}

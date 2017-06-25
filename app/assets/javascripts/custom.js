@@ -10,8 +10,8 @@ $(function() {
   $('.toggle-panel').on('click', function(e) {
     var panel_name = $(this).data('panel');
     console.log(panel_name);
-    $('.panel').addClass('hide');
-    $('.'+panel_name).removeClass('hide');
+    $('.contents-panel').addClass('is-hidden');
+    $('.'+panel_name).removeClass('is-hidden');
     // $('.panel').fadeOut(function(){
     // });
     return false;

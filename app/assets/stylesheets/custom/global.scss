@@ -1,0 +1,40 @@
+// GLOBAL SETTINGS
+// ===============
+
+// text highlight is yellow
+::selection {
+    background: #fff2a8; /* WebKit/Blink Browsers */
+  }
+::-moz-selection {
+  background: #fff2a8; /* Gecko Browsers */
+}
+
+// prevent right-clicking images
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+// CUSTOM GENERIC CLASSES
+// ======================
+
+.border{
+  border: 1px solid red;
+}
+.fill-page-height{
+  @include from($tablet){
+    height: calc(100vh - #{$nav-height});
+    min-height: calc(100vh - #{$nav-height});
+    margin-bottom: 0!important;
+  }
+}
+
+// NAVIGATION
+// ==========
+
+.hamburger{
+  @include hamburger($nav-height);
+}

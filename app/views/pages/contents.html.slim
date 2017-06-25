@@ -1,18 +1,46 @@
-.header
-  .home-menu.pure-menu.pure-menu-horizontal.pure-menu-fixed
-    a.pure-menu-heading href=""  Your Site
-    ul.pure-menu-list
-      li.pure-menu-item.pure-menu-selected
-        a.pure-menu-link href="#"  Home
-      li.pure-menu-item
-        a.pure-menu-link href="#"  Tour
-      li.pure-menu-item
-        a.pure-menu-link href="#"  Sign Up
+header.nav
+  span.hamburger
+    span
+    span
+    span
+  .nav-right
+    a.nav-item
+      = image_tag("logo_dark_retina.png", alt: "Conteu Logo")
 
-.pure-g
-  .pure-u-1.pure-u-md-1-3.l-box.border
-    p contents
-  .pure-u-1.pure-u-md-1-3.l-box.border
-    p contents
-  .pure-u-1.pure-u-md-1-3.l-box.border
-    p contents
+.columns.fill-page-height.is-gapless.bg1
+  #sidebar.column.is-narrow.is-hidden-mobile
+    .contents-block
+      h6 Contents
+      br
+      p
+        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-1'}
+          | Editorial&nbsp;.................... I
+        br
+        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-2'}
+          | Into the wild and all that&nbsp;... II
+        br
+        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-3'}
+          | Tables turn&nbsp;.................. III
+        br
+        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-4'}
+          | Following on from before&nbsp;..... IV
+        br
+        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-5'}
+          | Featured Product&nbsp;............. V
+  .column.bg2
+    .columns.is-gapless.contents-panel.panel-1.is-hidden
+      .column.is-7.is-vertical-aligned
+        .story-text
+          h6 Matthew
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .column.is-5.fill-page-height
+        = image_tag 'https://www.agence-belle-epoque.fr/back/home-middle.jpg', class: 'contents-image'
+
+    .columns.is-gapless.contents-panel.panel-2.is-hidden
+      .column.is-half.is-vertical-aligned
+        .story-text
+          h6 Topic 2
+          p Something to say
+      .column.is-half.fill-page-height
+        = image_tag 'https://www.agence-belle-epoque.fr/back/home-middle.jpg', class: 'contents-image'
+
