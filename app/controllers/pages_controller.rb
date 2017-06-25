@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   def example
     render layout: 'contents_layout'
   end
+
+  def contents
+    render layout: 'contents_layout'
+  end
 end
