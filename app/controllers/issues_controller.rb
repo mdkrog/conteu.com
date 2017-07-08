@@ -1,13 +1,16 @@
 class IssuesController < ApplicationController
-  # before_action :require_login, except: [:show, :index]
-  # before_action :set_issue, only: [:show, :edit, :update, :destroy, :preview]
+  before_action :require_login, except: [:show]
+  # before_action :set_issue, only: [:show, :edit, :update, :destroy]
 
   def show
     @issue = Issue.includes(:stories).find(params[:id])
-    # if !@issue.published? && !signed_in?
-    #   redirect_to issues_path
-    # end
-    render layout: 'contents'
+
+    # only allow signed in users to see non-published issues
+    if !@issue.published? && !signed_in?
+      redirect_to root_path
+    else
+      render layout: 'contents'
+    end
   end
 
 

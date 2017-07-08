@@ -1,12 +1,2 @@
-.row
-  .col.col-4.border
-      nav
-        ul
-          li Conteu Logo
-          li Issues
-          li Events
-          li Store
-          li About
-
-  .col.col-8.border
-    | 2
+- if signed_in?
+  == render 'layouts/admin_nav'

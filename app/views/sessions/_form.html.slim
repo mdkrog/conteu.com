@@ -1,0 +1,16 @@
+.sign-in-form
+  = simple_form_for(:session, url: session_path) do |f|
+    .title Sign In
+    .field
+      p.control.has-icons-left
+        = f.input_field :email, as: :email, required: false, class: 'input', placeholder: 'Email'
+        span.icon.is-small.is-left
+          i.fa.fa-envelope
+    .field
+      p.control.has-icons-left
+        = f.input_field :password, as: :password, required: false, class: 'input', placeholder: 'Password'
+        span.icon.is-small.is-left
+          i.fa.fa-lock
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Sign In', class: 'button is-primary is-right'

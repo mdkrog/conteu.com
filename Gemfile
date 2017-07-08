@@ -12,6 +12,11 @@ gem 'turbolinks', '~> 5'
 
 gem 'slim-rails'
 
+gem 'simple_form'
+gem 'clearance'
+gem 'font-awesome-rails'
+# gem 'carrierwave'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
