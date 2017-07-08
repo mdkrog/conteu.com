@@ -15,7 +15,11 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'clearance'
 gem 'font-awesome-rails'
-# gem 'carrierwave'
+gem 'friendly_id', '~> 5.1.0'
+gem 'figaro'
+gem 'carrierwave'
+gem 'fog'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

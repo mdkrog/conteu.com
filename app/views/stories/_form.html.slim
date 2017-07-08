@@ -1,0 +1,19 @@
+.standard-form
+  = simple_form_for(@story, html: {multipart: true}) do |f|
+    / = f.error_notification
+    .field
+      label.label Title
+      p.control
+        = f.input :title, label: false, input_html: { class: 'input' }
+    .field
+      label.label Slug
+      p.control
+        = f.input :slug, label: false, input_html: { class: 'input' }
+    .field
+      label.label Issue
+      p.control
+        = f.input :issue_id, collection: Issue.all.order(issue_number: :asc), label: false, input_html: { class: 'input' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'

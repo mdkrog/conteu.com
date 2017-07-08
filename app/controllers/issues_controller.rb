@@ -8,8 +8,6 @@ class IssuesController < ApplicationController
     # only allow signed in users to see non-published issues
     if !@issue.published? && !signed_in?
       redirect_to root_path
-    else
-      render layout: 'contents'
     end
   end
 

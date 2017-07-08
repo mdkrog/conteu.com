@@ -39,11 +39,17 @@ img {
   @include hamburger($nav-height);
 }
 
-// SIGN IN
-// =======
+// SIGN IN FORM
+// ============
 
 .sign-in-form{
   position: relative;
   margin: 0 auto;
   max-width: 400px;
+}
+
+.standard-form{
+  // position: relative;
+  // margin: 0 auto;
+  // max-width: 500px;
 }
