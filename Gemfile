@@ -18,7 +18,7 @@ gem 'font-awesome-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'figaro'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 
 
 # Use Capistrano for deployment
