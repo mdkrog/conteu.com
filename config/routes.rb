@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  resources :issues
 
-  get '/contents' => 'pages#contents', as: 'contents'
   get '/example' => 'pages#example', as: 'example'
 end

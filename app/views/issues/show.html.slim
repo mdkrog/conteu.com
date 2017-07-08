@@ -13,6 +13,10 @@ header.nav
       h6 Contents
       br
       p
+        - @issue.stories.each do |story|
+          = link_to "#", class: 'toggle-panel', data: {panel: "panel-#{story.page_number}"}
+            = story.title
+          br
         = link_to "#", class: 'toggle-panel', data: {panel: 'panel-1'}
           | Editorial&nbsp;.................... I
         br
