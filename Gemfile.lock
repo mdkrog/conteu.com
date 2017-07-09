@@ -51,6 +51,7 @@ GEM
       bcrypt
       email_validator (~> 1.4)
       rails (>= 3.1)
+    cocoon (1.2.10)
     concurrent-ruby (1.0.5)
     email_validator (1.6.0)
       activemodel
@@ -195,6 +196,7 @@ DEPENDENCIES
   byebug
   carrierwave
   clearance
+  cocoon
   figaro
   fog-aws
   font-awesome-rails

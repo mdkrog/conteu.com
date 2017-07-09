@@ -17,15 +17,17 @@ gem 'clearance'
 gem 'font-awesome-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'figaro'
-gem 'carrierwave'
 gem 'fog-aws'
-
+gem 'carrierwave'
+gem 'cocoon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
 end
 
 group :development do

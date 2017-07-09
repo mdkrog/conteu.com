@@ -1,0 +1,14 @@
+.nested-fields.box
+  .component-top-bar
+    .heading
+      = f.object.humanized_name
+    p
+      .collapse-icon = fa_icon 'minus-square-o'
+  .component-body
+    = f.input :order, as: :hidden
+    = f.input :type, as: :hidden
+    - if f.object.type
+      = render "components/#{f.object.type.underscore}_fields", :f => f
+    = link_to_remove_association "Remove", f, class: 'button tiny alert'
+
+

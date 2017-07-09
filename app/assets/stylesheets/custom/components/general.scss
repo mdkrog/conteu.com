@@ -1,0 +1,52 @@
+// FORM FIELDS
+
+.component-fields{
+  // background-color: #ddd;
+  // margin-bottom: 20px;
+}
+
+.component-top-bar{
+  // background-color: #bbb;
+  // margin-top: 0px;
+  // margin-bottom: 10px;
+  // color: #000;
+  .collapse-icon{
+    cursor: pointer
+  }
+}
+
+.image-thumb{
+  height: 100px;
+}
+
+// START
+// .drop-cap:first-child:first-letter { float: left;
+                                     // font-size: 75px;
+                                     // line-height: 60px;
+                                     // padding-top: 8px;
+                                     // padding-right: 8px;
+                                     // padding-left: 3px;
+                                     // font-family: Georgia; }
+
+// TEXT-COMPONENTS
+.two-column-component{
+  // margin: 1.3rem auto;
+}
+
+.spacer{
+  // &.large-space{
+  //   margin: 1.3rem auto;
+  //   height: 2.2rem;
+  //   min-height: 2.2rem;
+  // }
+  // &.small-space{
+  //   margin: 0.4rem auto;
+  //   height: 0.1rem;
+  //   min-height: 0.1rem;
+  // }
+  // max-width: 700px;
+}
+
+.single-image-component{
+  // margin: 1.3rem auto;
+}

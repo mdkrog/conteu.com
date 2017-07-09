@@ -43,34 +43,24 @@ class StoriesController < ApplicationController
 
   private
   def set_story
-    # @story = Story.friendly.find(params[:id])
-    @story = Story.includes(:issue).friendly.find(params[:id])
+    @story = Story.includes(:issue, :components).friendly.find(params[:id])
   end
 
   def story_params
-    # permitted = params.require(:story).permit(:title,
-    #                               :slug,
-    #                               :blurb,
-    #                               :published,
-    #                               :featured_image,
-    #                               :optimized_html,
-    #                               :issue_id,
-    #                               :color_scheme,
-    #                               :order,
-    #                               components_attributes: [:id,
-    #                                 :order,
-    #                                 :type,
-    #                                 :settings,
-    #                                 :_destroy])
-    # permitted[:components_attributes] = params[:story][:components_attributes].permit!
-    # permitted
     permitted = params.require(:story).permit(:title,
                                               :slug,
                                               :issue_id,
                                               :author_id,
                                               :page_number,
-                                              :contents_page_layout,
+                                              :contents_layout,
                                               :contents_page_image,
-                                              :contents_page_blurb)
+                                              :contents_page_blurb,
+                                              components_attributes: [:id,
+                                                                      :order,
+                                                                      :type,
+                                                                      :settings,
+                                                                      :_destroy])
+    permitted[:components_attributes] = params[:story][:components_attributes].permit!
+    permitted
   end
 end

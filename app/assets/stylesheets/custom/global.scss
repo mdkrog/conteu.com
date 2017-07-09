@@ -39,8 +39,8 @@ img {
   @include hamburger($nav-height);
 }
 
-// SIGN IN FORM
-// ============
+// FORMS
+// =====
 
 .sign-in-form{
   position: relative;
@@ -52,4 +52,22 @@ img {
   // position: relative;
   // margin: 0 auto;
   // max-width: 500px;
+}
+
+// hide radio button and make image selectable
+.radio-button-images{
+  label > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #fff2a8;
+  }
 }

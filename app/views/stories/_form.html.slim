@@ -13,6 +13,35 @@
       label.label Issue
       p.control
         = f.input :issue_id, collection: Issue.all.order(issue_number: :asc), label: false, input_html: { class: 'input' }
+    .field
+      label.label Contents Layout
+      p.control.radio-button-images
+        = f.collection_radio_buttons(:contents_layout, Story::CONTENTS_LAYOUTS, :id, :image) do |b|
+          = b.label { b.radio_button + image_tag(b.object.image) }
+    .field
+      label.label Contents Page Blurb
+      p.control
+        = f.input :contents_page_blurb, as: :text, label: false, input_html: { class: 'textarea', rows: 10 }
+    .field
+      label.label Contents Page Image
+      p.control
+        = f.input :contents_page_image, as: :file, label: false
+        = image_tag @story.contents_page_image.to_s if @story.contents_page_image
+    br
+    br
+    br
+    .subtitle Components
+    #components
+      = f.simple_fields_for :components do |component|
+        = render 'component_fields', f: component
+      .links
+        = link_to_add_association 'Add Single Image', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = SingleImage.new }
+        = link_to_add_association 'Add Text Single Column', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = TextSingleColumn.new }
+
+        / = link_to_add_association 'Add Two Column', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = TwoColumn.new }
+        / = link_to_add_association 'Add Multi Image', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = MultiImage.new }
+        / = link_to_add_association 'Add Spacer', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = Spacer.new }
+        / = link_to_add_association 'Add Block Quote', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = BlockQuote.new }
 
     .is-pulled-right
       p.control
