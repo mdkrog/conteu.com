@@ -2,25 +2,20 @@
 
 ## Todo
 
-* Display Contents Page
-  * Add issue model
-  * Add stories to each issue
-  * Create mobile contents dropdown
-  * Create sticky header for mobile
-
 * Homepage
 * Store Page
 * Store Items Page
-* Story Page
+* Story Pages
 * Issue Page
 * All Issue Pages
 * Subsidary Pages
+* Admin Pages
 
 * Import past issues
-
 
 * GLOBAL
   * Buy font
   * Retina Logo
-  * Google Meta data
-* Create Side Navigation
+  * Google Analytics
+  * Meta data
+  * Register domain
