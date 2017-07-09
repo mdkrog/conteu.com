@@ -10,7 +10,7 @@ $(function() {
   });
 
   $('#components').on('click', '.collapse-icon', function(e){
-    $(this).parent().siblings('.component-body').toggleClass('is-hidden');
+    $(this).parent().parent().siblings('.component-body').toggleClass('is-hidden');
   });
 });
 
