@@ -21,8 +21,11 @@
   }
 }
 
-.image-thumb{
-  height: 100px;
+.component-body{
+  .image-thumb{
+    border: 1px solid $grey-light;
+    height: 100px;
+  }
 }
 
 // START

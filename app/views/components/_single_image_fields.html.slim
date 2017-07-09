@@ -2,4 +2,5 @@
   label.label Image
   p.control
     = f.input :image, as: :file, label: false
+    br
     = image_tag f.object.image.to_s, class: 'image-thumb' if f.object.image.present?
