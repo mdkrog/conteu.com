@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
 
   def show
     # only allow signed in users to see non-published issues
-    if !@story.issue.published? && !signed_in?
+    if @story.issue && (!@story.issue.published? && !signed_in?)
       redirect_to root_path
     end
   end
@@ -60,7 +60,9 @@ class StoriesController < ApplicationController
                                                                       :type,
                                                                       :settings,
                                                                       :_destroy])
-    permitted[:components_attributes] = params[:story][:components_attributes].permit!
+    unless params[:story][:components_attributes].nil?
+      permitted[:components_attributes] = params[:story][:components_attributes].permit!
+    end
     permitted
   end
 end

@@ -1,6 +1,5 @@
 .standard-form
-  = simple_form_for(@issue, html: {multipart: true}) do |f|
-    / = f.error_notification
+  = simple_form_for(@issue) do |f|
     .field
       label.label Title
       p.control
@@ -12,7 +11,7 @@
     .field
       label.label Issue Number
       p.control
-        = f.input :issue_number, label: false, input_html: { class: 'input' }
+        = f.input :issue_number, as: :integer, label: false, input_html: { class: 'input' }
     .field
       p.control
         = f.input :published, as: :boolean, input_html: { class: 'checkbox' }

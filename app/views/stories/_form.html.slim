@@ -14,6 +14,10 @@
       p.control
         = f.input :issue_id, collection: Issue.all.order(issue_number: :asc), label: false, input_html: { class: 'input' }
     .field
+      label.label Page Number
+      p.control
+        = f.input :page_number, as: :integer, label: false, input_html: { class: 'input' }
+    .field
       label.label Contents Layout
       p.control.radio-button-images
         = f.collection_radio_buttons(:contents_layout, Story::CONTENTS_LAYOUTS, :id, :image) do |b|

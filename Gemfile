@@ -26,8 +26,7 @@ gem 'cocoon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :development do
