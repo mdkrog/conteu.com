@@ -9,15 +9,19 @@ $(function() {
 
   $('.toggle-panel').on('click', function(e) {
     var panel_name = $(this).data('panel');
-    console.log(panel_name);
     $('.contents-panel').addClass('is-hidden');
     $('.'+panel_name).removeClass('is-hidden');
-    // $('.panel').fadeOut(function(){
-    // });
     return false;
   });
 });
 
+// date picker
+$(function() {
+  $("#datepicker").datepicker();
+  $( "#datepicker" ).on( "change", function() {
+    $("#datepicker").datepicker("option", "dateFormat", "yy-mm-dd");
+  });
+});
 
 $(function() {
   var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),

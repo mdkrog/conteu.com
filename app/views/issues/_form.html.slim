@@ -1,0 +1,30 @@
+.standard-form
+  = simple_form_for(@issue, html: {multipart: true}) do |f|
+    / = f.error_notification
+    .field
+      label.label Title
+      p.control
+        = f.input :title, label: false, input_html: { class: 'input' }
+    .field
+      label.label Release Date
+      p.control
+        = f.input :release_date, as: :string, label: false, input_html: { class: 'input', id: 'datepicker' }
+    .field
+      label.label Issue Number
+      p.control
+        = f.input :issue_number, label: false, input_html: { class: 'input' }
+    .field
+      p.control
+        = f.input :published, as: :boolean, input_html: { class: 'checkbox' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

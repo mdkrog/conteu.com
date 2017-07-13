@@ -71,6 +71,7 @@ $contents-tab-width: 150px;
   z-index: 1;
   left: -$contents-tab-width;
   top: calc(50% + #{$contents-tab-width/2});
+  // bottom: -50px;
   width: $contents-tab-width;
   height: 50px;
   text-align: center;

@@ -81,6 +81,36 @@ label.checkbox{
   }
 }
 
+.ui-datepicker{
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  border: 1px solid black;
+  display: none;
+  .ui-datepicker-calendar{
+    th{
+      padding-right: 15px;
+    }
+  }
+  .ui-datepicker-header{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey-light;
+    margin-bottom: 10px;
+  }
+  .ui-datepicker-title{
+    display: inline-block;
+    float: right;
+  }
+  .ui-datepicker-prev{
+    margin-right: 10px;
+  }
+}
+
+
+
+
+
+
 // NAV
 // ===
 .cbp-spmenu {

@@ -11,5 +11,5 @@ class Story < ApplicationRecord
   accepts_nested_attributes_for :components, reject_if: :all_blank, allow_destroy: true
 
   ContentsLayoutIcon = Struct.new(:id, :image)
-  CONTENTS_LAYOUTS = [ContentsLayoutIcon.new(1, "layout-1.gif"), ContentsLayoutIcon.new(2, "layout-1.gif")]
+  CONTENTS_LAYOUTS = [ContentsLayoutIcon.new(1, "layout-1.gif")]
 end
