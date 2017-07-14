@@ -5,8 +5,8 @@
 * Homepage
 * Store Page
 * Store Items Page
-* Story Pages
-* Issue Page
+√ Story Pages
+√ Issue Page
 * All Issue Pages
 * Subsidary Pages
 * Admin Pages

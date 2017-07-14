@@ -75,21 +75,21 @@ $contents-tab-width: 150px;
   width: $contents-tab-width;
   height: 50px;
   text-align: center;
-  border: 1px solid $grey-light;
-  border-top: 0;
+  // border: 1px solid $grey-light;
+  // border-top: 0;
   color: $grey-light;
   cursor: pointer;
   transform: rotate(90deg);
   transform-origin: right top 0;
-  background-color: $white;
+  // background-color: $white;
   &:hover{
-    border-color: $grey-dark;
+    // border-color: $grey-dark;
     color: $grey-dark;
   }
   &.is-active{
     // border-color: #47a3da;
     // color: #47a3da;
-    border-color: $grey-dark;
+    // border-color: $grey-dark;
     color: $grey-dark;
   }
 

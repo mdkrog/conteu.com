@@ -6,7 +6,7 @@
       tbody
         - @issues.each do |issue|
           tr
-            th Issue #{issue.issue_number}.
+            th Issue #{issue.issue_number}
             th = link_to issue.title, issue_path(issue)
             th = link_to edit_issue_path(issue) do
                 = fa_icon "pencil-square-o"
@@ -40,4 +40,4 @@
 
     .admin-options
       = link_to 'New Story ', new_story_path, class: 'button is-small'
-      = link_to 'New Issue', new_issue_path, class: 'button is-small', method: :get
+      = link_to 'New Issue', new_issue_path, class: 'button is-small'
