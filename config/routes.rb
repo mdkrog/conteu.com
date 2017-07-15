@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :issues
   resources :stories
+  resources :friend_products do
+    collection { post :sort }
+  end
 
   get '/admin' => 'pages#admin', as: 'admin'
 

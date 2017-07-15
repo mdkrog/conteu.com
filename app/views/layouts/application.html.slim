@@ -12,3 +12,5 @@ html
   body.cbp-spmenu-push
     == render 'layouts/nav'
     == yield
+    - if signed_in?
+      == render 'layouts/admin_nav'

@@ -2,42 +2,72 @@
   .column.is-offset-one-quarter.is-half
     .title Admin
 
-    table.table.is-bordered
-      tbody
-        - @issues.each do |issue|
-          tr
-            th Issue #{issue.issue_number}
-            th = link_to issue.title, issue_path(issue)
-            th = link_to edit_issue_path(issue) do
-                = fa_icon "pencil-square-o"
-            th
-              - if issue.published?
-                = fa_icon "eye"
-              - else
-                = fa_icon "eye-slash"
-            th = link_to issue, data: {:confirm => 'Delete ISSUE - Are you sure?'}, :method => :delete, class: 'trash-icon' do
-                = fa_icon "trash-o"
-          - issue.stories.order(page_number: :asc).each do |story|
-            tr
-              td = story.page_number
-              td = link_to story.title, story_path(story)
-              td = link_to edit_story_path(story) do
-                = fa_icon "pencil-square-o"
-              td
-              td = link_to story, data: {:confirm => 'Delete STORY - Are you sure?'}, :method => :delete, class: 'trash-icon' do
-                = fa_icon "trash-o"
-    table.table.is-bordered
-      tbody
-        tr
-          th colspan="5" Unassigned Stories
-          - @orphaned_stories.each do |story|
-            tr
-              td = link_to story.title, story_path(story)
-              td.has-text-centered = link_to edit_story_path(story) do
-                = fa_icon "pencil-square-o"
-              td.has-text-centered = link_to story, data: {:confirm => 'Delete STORY - Are you sure?'}, :method => :delete, class: 'trash-icon' do
-                = fa_icon "trash-o"
+    .tabs.is-centered.is-boxed
+      ul
+        li.is-active.magazine-tab
+          = link_to '#magazine', class: 'toggle-admin-tab', data: {tab: 'admin-tab-1'} do
+            span.icon.is-small
+              i.fa.fa-book
+            span Magazine
+        li.store-tab
+          = link_to '#store', class: 'toggle-admin-tab', data: {tab: 'admin-tab-2'} do
+            span.icon.is-small
+              i.fa.fa-shopping-bag
+            span Store
 
-    .admin-options
-      = link_to 'New Story ', new_story_path, class: 'button is-small'
-      = link_to 'New Issue', new_issue_path, class: 'button is-small'
+    .admin-tab.admin-tab-1
+      table.table.is-bordered
+        tbody
+          - @issues.each do |issue|
+            tr
+              th Issue #{issue.issue_number}
+              th = link_to issue.title, issue_path(issue)
+              th = link_to edit_issue_path(issue) do
+                  = fa_icon "pencil-square-o"
+              th
+                - if issue.published?
+                  = fa_icon "eye"
+                - else
+                  = fa_icon "eye-slash"
+              th = link_to issue, data: {:confirm => 'Delete ISSUE - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+            - issue.stories.order(page_number: :asc).each do |story|
+              tr
+                td = story.page_number
+                td = link_to story.title, story_path(story)
+                td = link_to edit_story_path(story) do
+                  = fa_icon "pencil-square-o"
+                td
+                td = link_to story, data: {:confirm => 'Delete STORY - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+      table.table.is-bordered
+        tbody
+          tr
+            th colspan="5" Unassigned Stories
+            - @orphaned_stories.each do |story|
+              tr
+                td = link_to story.title, story_path(story)
+                td.has-text-centered = link_to edit_story_path(story) do
+                  = fa_icon "pencil-square-o"
+                td.has-text-centered = link_to story, data: {:confirm => 'Delete STORY - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+
+      .admin-options
+        = link_to 'New Story ', new_story_path, class: 'button is-small'
+        = link_to 'New Issue', new_issue_path, class: 'button is-small'
+
+    .admin-tab.admin-tab-2.is-hidden
+
+      ul#friend-product-list data-update-url="#{sort_friend_products_path}"
+        - @friend_products.each do |friend_product|
+          li id=("friend_product_#{friend_product.id}") class=('box friend-product-list-item')
+            = friend_product.title
+
+      .is-pulled-right
+        p.control
+          / = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+
+      .admin-options
+        = link_to 'New Friend Product', new_friend_product_path, class: 'button is-small'
+        / = link_to 'New Conteu Product', new_store_item_path, class: 'button is-small'

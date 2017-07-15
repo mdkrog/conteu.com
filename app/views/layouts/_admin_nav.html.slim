@@ -1,1 +1,9 @@
-= link_to 'Sign out', sign_out_path, method: :delete
+.admin-short-cuts
+  ul.fa-ul
+    li
+      = link_to admin_path do
+        i.fa-li.fa.fa-cog
+        br
+    li
+      = link_to sign_out_path, method: :delete do
+        i.fa-li.fa.fa-sign-out

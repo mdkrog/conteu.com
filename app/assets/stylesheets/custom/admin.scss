@@ -1,7 +1,40 @@
-.admin-options .button{
-  margin-right: 10px;
+.admin-options {
+  margin-top: 20px;
+  .button{
+    margin-right: 10px;
+  }
 }
 
 .trash-icon{
   color: $danger;
+}
+
+.tabs li{
+  a{
+    color: $grey!important;
+  }
+  &.is-active{
+    color: $grey-dark!important;
+  }
+}
+
+.admin-short-cuts{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  border: 1px solid $grey;
+  a{
+    color: $grey-light!important;
+    &:hover{
+      color: $grey!important;
+    }
+  }
+  ul{
+    margin-bottom: 20px;
+  }
+}
+
+.friend-product-list-item{
+  cursor: move;
 }

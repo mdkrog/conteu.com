@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   $('#components').sortable({
     update: function(event, ui) {
       perfom_component_order_calculation();

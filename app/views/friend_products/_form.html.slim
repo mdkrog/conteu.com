@@ -1,0 +1,39 @@
+.standard-form
+  = simple_form_for(@friend_product) do |f|
+    .field
+      label.label Title
+      p.control
+        = f.input :title, label: false, input_html: { class: 'input' }
+    .field
+      label.label Description
+      p.control
+        = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 20 }
+    .field
+      label.label Image
+      p.control
+        = f.input :image, as: :file, label: false
+        br
+        = image_tag @friend_product.image.to_s if @friend_product.image
+    .field
+      label.label Price
+      p.control
+        = f.input :price, as: :string, label: false, input_html: { class: 'input' }
+    .field
+      label.label Link
+      p.control
+        = f.input :link, as: :string, label: false, input_html: { class: 'input' }
+    .field
+      p.control
+        = f.input :displayed, as: :boolean, input_html: { class: 'checkbox' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

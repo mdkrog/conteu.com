@@ -11,7 +11,6 @@ $(function() {
 
 $(document).on('turbolinks:load', function() {
 
-
   $('.toggle-panel').on('click', function(e) {
     var panel_name = $(this).data('panel');
     $('.contents-panel').addClass('is-hidden');
@@ -19,6 +18,31 @@ $(document).on('turbolinks:load', function() {
     return false;
   });
 
+  // admin toggle tabs
+  $('.toggle-admin-tab').on('click', function(e) {
+    var tab_name = $(this).data('tab');
+    $('.tabs li').removeClass('is-active');
+    $(this).parent().addClass('is-active');
+    $('.admin-tab').addClass('is-hidden');
+    $('.'+tab_name).removeClass('is-hidden');
+    // return false;
+  });
+
+  // toggle-tabs based on url
+  var hash = window.location.hash.substr(1);
+  if(hash=='store'){
+    $('.admin-tab').addClass('is-hidden');
+    $('.admin-tab-2').removeClass('is-hidden');
+    $('.magazine-tab').removeClass('is-active');
+    $('.store-tab').addClass('is-active');
+  }
+
+  $('#friend-product-list').sortable({
+    axis: "y",
+    update: function(event, ui) {
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
 
   // date picker
   $(function() {
@@ -29,6 +53,7 @@ $(document).on('turbolinks:load', function() {
   });
 
 
+  // slide menus
   var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
       menuRight = document.getElementById( 'cbp-spmenu-s2' ),
       contentsAngleDownIcon = document.getElementById( 'contents-angle-down-icon' ),
