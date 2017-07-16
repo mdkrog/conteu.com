@@ -10,6 +10,7 @@
 * All Issue Pages
 * Subsidary Pages
 * Admin Pages
+* Image thumbnails
 
 * Import past issues
 

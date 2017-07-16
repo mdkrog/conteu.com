@@ -20,6 +20,8 @@ gem 'figaro'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'cocoon'
+gem 'offsite_payments'
+gem 'country_select'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

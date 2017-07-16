@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+
+zar:
+  number:
+    currency:
+      format:
+        unit: 'R'
+        delimiter: ','
+        separator: '.'
+        precision: 2
+        format: '%u%n'

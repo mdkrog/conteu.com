@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @cart_items = session[:current_cart]
     # only allow signed in users to see non-published products
     if !@product.displayed? && !signed_in?
       redirect_to root_path

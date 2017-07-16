@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :issues
   resources :stories
+  resources :orders, except: [:destroy]
   resources :products do
     collection { post :sort }
   end
@@ -9,13 +10,10 @@ Rails.application.routes.draw do
     collection { post :sort }
   end
 
-  resource :cart, only: [:show, :destroy] do
+  resource :cart, only: [:destroy] do
     post "add", path: "add/:id", on: :member
     delete "remove", path: "destroy/:id", on: :member
-    # get :checkout
   end
-  # post '/add_to_cart' => 'carts#add_to_cart', as: 'add_to_cart'
-  # post '/remove_from_cart' => 'carts#remove_from_cart', as: 'remove_from_cart'
 
   get '/admin' => 'pages#admin', as: 'admin'
   get '/store' => 'pages#store', as: 'store'
@@ -23,4 +21,10 @@ Rails.application.routes.draw do
   resource :session, controller: 'clearance/sessions', only: [:create]
   get    '/sign_in'  => 'clearance/sessions#new',     as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
+
+  scope 'payment' do
+    post 'paid'    => 'payments#paid',    as: :payment_paid
+    get 'success' => 'payments#success',  as: :payment_success
+    get 'fail'    => 'payments#fail',     as: :payment_fail
+  end
 end

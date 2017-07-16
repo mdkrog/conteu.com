@@ -1,0 +1,67 @@
+table.table.table-hover
+  thead
+    tr
+      th Quantity
+      th Product
+      th Price
+
+  - @cart.items.each do |item|
+    tr
+      td=item.quantity
+      td
+        / = image_tag item.product.image
+        = link_to item.product.title, item.product
+      td.text-right = number_to_currency(item.total_price, locale: :zar)
+  tfoot
+    tr
+      td.text-right(colspan=3)
+        strong
+          = "Total: "
+          = number_to_currency(@cart.total_price, locale: :zar)
+
+.standard-form
+  = simple_form_for(@order) do |f|
+    .field
+      label.label Name
+      p.control
+        = f.input :name, label: false, input_html: { class: 'input' }
+    .field
+      label.label Email
+      p.control
+        = f.input :email, label: false, input_html: { class: 'input' }
+    .field
+      label.label Phone
+      p.control
+        = f.input :phone, label: false, input_html: { class: 'input' }
+    .field
+      label.label Address
+      p.control
+        = f.input :address, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label City
+      p.control
+        = f.input :city, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label Country
+      p.control
+        = f.input :country, as: :country, label: false, input_html: { class: 'input' }
+        / =u.country_select :country, { priority_countries: [ "GB", "US", "DE", "ES", "PT" ] }, { class: "form-control" }
+
+    .field
+      label.label Postal Code
+      p.control
+        = f.input :postal_code, label: false, input_html: { class: 'input' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

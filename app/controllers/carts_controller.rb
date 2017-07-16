@@ -1,9 +1,6 @@
 class CartsController < ApplicationController
   before_action :initialize_cart
 
-  def show
-  end
-
   def add
     @cart.add_item(params[:id])
     session["cart"] = @cart.serialize
