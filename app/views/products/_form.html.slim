@@ -1,0 +1,57 @@
+.standard-form
+  = simple_form_for(@product) do |f|
+    .field
+      label.label Title
+      p.control
+        = f.input :title, label: false, input_html: { class: 'input' }
+    .field
+      label.label Description
+      p.control
+        = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 20 }
+    .field
+      label.label Image
+      p.control
+        = f.input :image, as: :file, label: false
+        br
+        = image_tag @product.image.to_s if @product.image
+    .field
+      label.label Price
+      p.control
+        = f.input :price, as: :integer, label: false, input_html: { class: 'input' }
+    .field
+      label.label Quantity
+      p.control
+        = f.input :price, as: :integer, label: false, input_html: { class: 'input' }
+
+    .field
+      p.control
+        = f.input :displayed, as: :boolean, input_html: { class: 'checkbox' }
+    .field
+      p.control
+        = f.input :featured, as: :boolean, input_html: { class: 'checkbox' }
+    .field
+      p.control
+        = f.input :native_store, as: :boolean, label: 'Sold on Conteu Store', input_html: { class: 'checkbox' }
+    br
+    .sub-title PARTNER DETAILS
+    br
+    .field
+      label.label Partner Name
+      p.control
+        = f.input :partner_name, as: :string, label: false, input_html: { class: 'input' }
+    .field
+      label.label Partner Product Link
+      p.control
+        = f.input :partner_link, as: :string, label: false, input_html: { class: 'input' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

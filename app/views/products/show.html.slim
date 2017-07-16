@@ -1,0 +1,27 @@
+.columns.store
+  .column.is-6.border
+    .mytitle
+      .sub-title = @product.title
+
+    .myimage = image_tag @product.image.to_s if @product.image
+  .column.is-6
+    .price = @product.price
+    = session[:cart]
+    br
+    = link_to 'Empty Cart', cart_path(@cart), method: :delete, confirm: 'are you sure?', class: 'button is-small', remote: true
+    br
+    = link_to 'Add to Cart', add_cart_path(@product.id), method: :post, class: 'button is-small', remote: true
+    br
+    = link_to 'Remove from Cart', remove_cart_path(@product.id), method: :delete, class: 'button is-small', remote: true
+
+    .description = @product.description
+    / = link_to 'Add to Cart', '#', class: 'button is-small add-to-cart', data: {product: @product.id, add_url: "#{add_to_cart_path}"}
+
+
+/ section.hero.is-success.is-fullheight
+/   .hero-body
+/     .container.border
+/       h1.title
+/         | Full Height title
+/       h2.subtitle
+/         | Full Height subtitle

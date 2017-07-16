@@ -1,5 +1,8 @@
-.columns
-  .column.is-offset-one-quarter.is-half
+br
+br
+
+.columns.admin-page
+  .column.is-offset-one-quarter.is-half.is-offset-1-mobile.is-10-mobile
     .title Admin
 
     .tabs.is-centered.is-boxed
@@ -57,17 +60,33 @@
         = link_to 'New Issue', new_issue_path, class: 'button is-small'
 
     .admin-tab.admin-tab-2.is-hidden
-
+      .sub-title CONTEU PRODUCTS
+      br
+      ul#product-list data-update-url="#{sort_products_path}"
+        - @products.each do |product|
+          li id=("product_#{product.id}") class=('product-list-item')
+            = link_to product.title, edit_product_path(product)
+            = link_to product, data: {:confirm => 'Delete FRIEND PRODUCT - Are you sure?'}, :method => :delete, class: 'trash-icon is-pulled-right' do
+              = fa_icon "trash-o"
+            = link_to edit_product_path(product), class: 'is-pulled-right edit-link' do
+              = fa_icon "pencil-square-o"
+            - if product.displayed?
+              .tag.is-grey.is-pulled-right displaying
+      br
+      .sub-title FRIENDS OF CONTEU
+      br
       ul#friend-product-list data-update-url="#{sort_friend_products_path}"
         - @friend_products.each do |friend_product|
-          li id=("friend_product_#{friend_product.id}") class=('box friend-product-list-item')
-            = friend_product.title
-
-      .is-pulled-right
-        p.control
-          / = f.button :submit, 'Save', class: 'button is-primary is-right'
+          li id=("friend_product_#{friend_product.id}") class=('friend-product-list-item')
+            = link_to friend_product.title, edit_friend_product_path(friend_product)
+            = link_to friend_product, data: {:confirm => 'Delete FRIEND PRODUCT - Are you sure?'}, :method => :delete, class: 'trash-icon is-pulled-right' do
+              = fa_icon "trash-o"
+            = link_to edit_friend_product_path(friend_product), class: 'is-pulled-right edit-link' do
+              = fa_icon "pencil-square-o"
+            - if friend_product.displayed?
+              .tag.is-grey.is-pulled-right displaying
 
 
       .admin-options
+        = link_to 'New Conteu Product', new_product_path, class: 'button is-small'
         = link_to 'New Friend Product', new_friend_product_path, class: 'button is-small'
-        / = link_to 'New Conteu Product', new_store_item_path, class: 'button is-small'

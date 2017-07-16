@@ -18,7 +18,7 @@ class FriendProductsController < ApplicationController
   def create
     @friend_product = FriendProduct.new(friend_product_params)
     if @friend_product.save
-      redirect_to @friend_product, notice: 'Friend Product was successfully created.'
+      redirect_to admin_path, notice: 'Friend Product was successfully created.'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class FriendProductsController < ApplicationController
 
   def update
     if @friend_product.update(friend_product_params)
-      redirect_to @friend_product, notice: 'Friend Product was successfully updated.'
+      redirect_to admin_path, notice: 'Friend Product was successfully updated.'
     else
       render :edit
     end

@@ -1,18 +1,29 @@
 header.nav
-  span#showLeftPush.hamburger
-    span
-    span
-    span
+  .nav-left
+    span#showLeftPush.hamburger.is-hidden-desktop
+      span
+      span
+      span
+  .nav-center.is-hidden-mobile.nav-menu
+    = link_to 'MAGAZINE', store_path, class: 'nav-item'
+    = link_to 'VIEW POINT', store_path, class: 'nav-item'
+    = link_to 'STORE', store_path, class: 'nav-item'
+    / .nav-item
+    /   = link_to 'STORE', store_path
+    /   / = link_to '(1)', store_path, class: 'cart-icon'
+    /   = link_to store_path, class: 'icon myicon' do
+    /     i.fa.fa-shopping-basket
   .nav-right
     a.nav-item
       = image_tag("logo_dark_retina.png", alt: "Conteu Logo")
 
 
-nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left
-  h3 Menu
-  a href="#"  Celery seakale
-  a href="#"  Dulse daikon
-  a href="#"  Zucchini garlic
-  a href="#"  Catsear azuki bean
-  a href="#"  Dandelion bunya
-  a href="#"  Rutabaga
+nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left.is-mobile
+/   h3 Menu
+/   a href="#"  Celery seakale
+/   a href="#"  Dulse daikon
+/   a href="#"  Zucchini garlic
+/   a href="#"  Catsear azuki bean
+/   a href="#"  Dandelion bunya
+/   a href="#"  Rutabaga
+

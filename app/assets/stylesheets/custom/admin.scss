@@ -1,20 +1,36 @@
-.admin-options {
-  margin-top: 20px;
-  .button{
-    margin-right: 10px;
+.admin-page{
+  .admin-options {
+    margin-top: 20px;
+    .button{
+      margin-right: 10px;
+    }
   }
-}
 
-.trash-icon{
-  color: $danger;
-}
-
-.tabs li{
-  a{
-    color: $grey!important;
+  .trash-icon{
+    color: $danger;
   }
-  &.is-active{
-    color: $grey-dark!important;
+
+  i.fa{
+    vertical-align: initial;
+  }
+
+  .tabs li{
+    a{
+      color: $grey!important;
+    }
+    &.is-active{
+      color: $grey-dark!important;
+    }
+  }
+
+  .friend-product-list-item, .product-list-item{
+    cursor: move;
+    padding: 10px;
+    margin: 3px 0;
+    border: 1px solid $grey-lighter;
+    .tag, .edit-link{
+      margin-right: 10px;
+    }
   }
 }
 
@@ -33,8 +49,4 @@
   ul{
     margin-bottom: 20px;
   }
-}
-
-.friend-product-list-item{
-  cursor: move;
 }

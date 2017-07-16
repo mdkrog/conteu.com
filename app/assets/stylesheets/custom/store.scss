@@ -1,0 +1,23 @@
+.store{
+  .image-container{
+    position: relative;
+  }
+  .product-price{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: $black;
+  }
+
+  .mytitle{
+    float: left;
+    margin: auto;
+  }
+  .myimage{
+    // margin-right: -200px;
+    img{
+      width: 80%;
+      float: right;
+    }
+  }
+}

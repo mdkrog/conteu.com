@@ -1,6 +1,5 @@
 // GLOBAL SETTINGS
 // ===============
-
 // text highlight is yellow
 ::selection {
     background: #fff2a8; /* WebKit/Blink Browsers */
@@ -38,6 +37,17 @@ img {
 .hamburger{
   @include hamburger($nav-height);
 }
+
+.nav-menu .nav-item{
+  font-size: 0.8em;
+}
+// .myicon{
+//   margin: auto;
+//   .fa{ font-size: 0.8em!important;}
+// }
+// .cart-icon{
+//   margin-left: 5px;
+// }
 
 // FORMS
 // =====

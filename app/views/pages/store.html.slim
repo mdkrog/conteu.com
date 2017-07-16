@@ -1,0 +1,15 @@
+.columns.store
+  .column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
+    .section
+      .columns
+        - @products.each do |product|
+          .column.is-4
+            = render partial: "products/product_thumb", locals: { product: product }
+
+    .section
+      .sub-title FRIENDS OF CONTEU
+      hr
+      .columns
+        - @friend_products.each do |friend_product|
+          .column.is-3
+            = render partial: "friend_products/friend_product_thumb", locals: { friend_product: friend_product }

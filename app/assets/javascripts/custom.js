@@ -37,11 +37,26 @@ $(document).on('turbolinks:load', function() {
     $('.store-tab').addClass('is-active');
   }
 
+  $('#product-list').sortable({
+    axis: "y",
+    update: function(event, ui) {
+      console.log($(this).sortable('serialize'));
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
+
   $('#friend-product-list').sortable({
     axis: "y",
     update: function(event, ui) {
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
     }
+  });
+
+  // add to cart
+  $('.add-to-cart').on('click', function(e) {
+    console.log($(this).data('add-url'));
+    $.post($(this).data('add-url'), { product_id: $(this).data('product') } );
+    return false;
   });
 
   // date picker
