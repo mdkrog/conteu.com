@@ -11,11 +11,6 @@ class Order < ApplicationRecord
     order_items.inject(0) { |sum, item| sum + item.total_price }
   end
 
-  # STATES = [
-  #   [ "New", :new ],
-  #   [ "Dispatched", :dispatched ]
-  # ]
-
   validates_presence_of :name, :email, :address, :phone, :city, :country, :postal_code
 
   private

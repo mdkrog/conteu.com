@@ -9,9 +9,11 @@
         - service.item_name 'Conteu Store'
         - service.currency 'ZAR'
         - service.custom_str1 @order.order_number
-        - service.return_url 'http://f6551817.ngrok.io/payment/success'
-        - service.cancel_url 'http://f6551817.ngrok.io/payment/cancel'
-        - service.notify_url 'http://f6551817.ngrok.io/payment/paid'
+        - service.email_address @order.email
+        - service.return_url 'http://329231b0.ngrok.io/payments/success'
+        - service.cancel_url 'http://329231b0.ngrok.io/payments/fail'
+        - service.error_url 'http://329231b0.ngrok.io/payments/fail'
+        - service.notify_url 'http://329231b0.ngrok.io/payments/paid'
 
         - # service.notify_url url_for(:only_path => false, :action => 'notify')
         - # service.return_url url_for(:only_path => false, :action => 'done')

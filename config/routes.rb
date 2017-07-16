@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   get    '/sign_in'  => 'clearance/sessions#new',     as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
 
-  scope 'payment' do
-    post 'paid'    => 'payments#paid',    as: :payment_paid
-    get 'success' => 'payments#success',  as: :payment_success
-    get 'fail'    => 'payments#fail',     as: :payment_fail
+  scope 'payments' do
+    post 'paid'    => 'payments#paid',    as: :payments_paid
+    get 'success' => 'payments#success',  as: :payments_success
+    get 'fail'    => 'payments#fail',     as: :payments_fail
   end
 end

@@ -12,6 +12,7 @@ class Cart
     new items
   end
 
+
   def initialize items = []
     @items = items
   end
