@@ -42,14 +42,11 @@
       .create-component-buttons
         = link_to_add_association 'Add Title', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Title.new }
         = link_to_add_association 'Add Text Single Column', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = TextSingleColumn.new }
+        = link_to_add_association 'Add Pull Quote', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = PullQuote.new }
         = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }
         = link_to_add_association 'Add Multi Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = MultiImage.new }
 
-        / = link_to_add_association 'Add Two Column', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = TwoColumn.new }
-        / = link_to_add_association 'Add Multi Image', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = MultiImage.new }
-        / = link_to_add_association 'Add Spacer', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = Spacer.new }
-        / = link_to_add_association 'Add Block Quote', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = BlockQuote.new }
-
+    br
     .is-pulled-right
       p.control
         = f.button :submit, 'Save', class: 'button is-primary is-right'

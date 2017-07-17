@@ -4,7 +4,7 @@
     = f.input :image1, as: :file, label: false
     br
     = image_tag f.object.image1.to_s, class: 'image-thumb' if f.object.image1.present?
-
+  br
   label.label Image 2
   p.control
     = f.input :image2, as: :file, label: false
