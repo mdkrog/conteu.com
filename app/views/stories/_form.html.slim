@@ -40,8 +40,10 @@
         = render 'component_fields', f: component
 
       .create-component-buttons
-        = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }
+        = link_to_add_association 'Add Title', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Title.new }
         = link_to_add_association 'Add Text Single Column', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = TextSingleColumn.new }
+        = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }
+        = link_to_add_association 'Add Multi Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = MultiImage.new }
 
         / = link_to_add_association 'Add Two Column', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = TwoColumn.new }
         / = link_to_add_association 'Add Multi Image', f, :components, class: 'button small', :wrap_object => Proc.new { |component| component = MultiImage.new }

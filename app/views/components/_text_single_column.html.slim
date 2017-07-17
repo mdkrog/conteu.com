@@ -1,6 +1,8 @@
-.text-single-column
-  - if component.drop_cap == "1"
-    .drop-cap
-      = raw component.body.gsub(/\n/, '<br/>')
-  - else
-    = raw component.body.gsub(/\n/, '<br/>')
+.columns
+  .column.is-11.is-offset-1
+    .text-single-column
+      - if component.drop_cap == "1"
+        .drop-cap
+          = raw component.body.gsub(/\n/, '<br/>')
+      - else
+        = raw component.body.gsub(/\n/, '<br/>')

@@ -1,0 +1,12 @@
+.field
+  label.label Image 1
+  p.control
+    = f.input :image1, as: :file, label: false
+    br
+    = image_tag f.object.image1.to_s, class: 'image-thumb' if f.object.image1.present?
+
+  label.label Image 2
+  p.control
+    = f.input :image2, as: :file, label: false
+    br
+    = image_tag f.object.image2.to_s, class: 'image-thumb' if f.object.image2.present?
