@@ -1,0 +1,25 @@
+// @font-face {
+//   font-family: 'garamond';
+//   src:url('AGaramondPro-Regular.otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: "Garamond";
+  src: url(/assets/AGaramondPro-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Carlson";
+  src:url('ACaslonPro-Regular.otf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Carlson';
+  src:url('ACaslonPro-Bold.otf') format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

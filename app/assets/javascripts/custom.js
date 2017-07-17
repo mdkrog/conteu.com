@@ -13,8 +13,10 @@ $(document).on('turbolinks:load', function() {
 
   $('.toggle-panel').on('click', function(e) {
     var panel_name = $(this).data('panel');
-    $('.contents-panel').addClass('is-hidden');
-    $('.'+panel_name).removeClass('is-hidden');
+    $('.text-panel').removeClass('center-something');
+    $('#text-'+panel_name).addClass("center-something");
+    $('.image-panel').removeClass('contents-image-display');
+    $('#image-'+panel_name).addClass("contents-image-display");
     return false;
   });
 
@@ -40,7 +42,6 @@ $(document).on('turbolinks:load', function() {
   $('#product-list').sortable({
     axis: "y",
     update: function(event, ui) {
-      console.log($(this).sortable('serialize'));
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
     }
   });

@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def viewpoint
+  end
+
   def store
     @products = Product.where(displayed: true).order(sort_order: :asc)
     @friend_products = FriendProduct.where(displayed: true).order(sort_order: :asc)

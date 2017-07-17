@@ -12,4 +12,6 @@ class Story < ApplicationRecord
 
   ContentsLayoutIcon = Struct.new(:id, :image)
   CONTENTS_LAYOUTS = [ContentsLayoutIcon.new(1, "layout-1.gif")]
+
+  default_scope { order(page_number: :asc) }
 end

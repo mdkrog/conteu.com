@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'cocoon'
 gem 'offsite_payments'
 gem 'country_select'
+gem 'metamagic'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

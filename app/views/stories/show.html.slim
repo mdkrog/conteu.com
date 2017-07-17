@@ -1,18 +1,27 @@
-.columns
+- meta title: "#{@story.title} - #{@story.issue.title}",
+  description: "#{@story.contents_page_blurb}",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa)
+
+.columns.story-body
   .column.is-offset-2.is-8.is-offset-1-mobile.is-10-mobile
     .components
       - @story.components.each do |component|
         = render partial: "components/#{component.class.name.underscore}", locals: { component: component }
 
-nav#cbp-spmenu-s2.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-right
-  h3 Menu
-  a href="#"  Celery seakale
-  a href="#"  Dulse daikon
-  a href="#"  Zucchini garlic
-  a href="#"  Catsear azuki bean
-  a href="#"  Dandelion bunya
-  a href="#"  Rutabaga
-
+nav#cbp-spmenu-s2.cbp-spmenu.cbp-spmenu-vertical2.cbp-spmenu-right
+  .contents-nav
+    #sidebar
+      .contents-block
+        h1.has-text-centered
+          = link_to @story.issue.title, issue_path(@story.issue)
+        h6.has-text-centered READ JULY 2017
+        br
+        br
+        h5.has-text-centered Contents
+        p
+          - @story.issue.stories.each do |story|
+            = link_to story.title, story_path(story)
+            br
   #showRightPush.contents-tab
     .text contents
     span#contents-angle-down-icon.icon.is-small.is-right = fa_icon 'angle-down'

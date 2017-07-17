@@ -2,21 +2,35 @@
 
 ## Todo
 
-* Homepage
-* Store Page
-* Store Items Page
-√ Story Pages
-√ Issue Page
-* All Issue Pages
-* Subsidary Pages
-* Admin Pages
-* Image thumbnails
+* Homepage (1.5hr)
+  * Top menu
+  * Main side menu
+* STORE - Styling (3.5hrs)
+  * Store Page
+  * Store Items Page
+  * Checkout and Order confirmation
+  * Shipping logic
+  * Thumbnail images
+    - and define image sizes
+* Other Pages (2.5hrs)
+  * Footer
+* Contents (3hrs)
+  * bolding and highlight of selected
+  * swiping
+* Story Pages
+  - style components
+  - background
+  - page nav padding
+* Viewpoint coming soon (0.5hrs)
 
-* Import past issues
+* GLOBAL (2hrs)
+  √ Register domain
+  √ 404 and 500 Pages
+  √ Google Analytics
+  / Meta data
+    - Stand alone pages
+  / 301 redirect
 
-* GLOBAL
-  * Buy font
-  * Retina Logo
-  * Google Analytics
-  * Meta data
-  * Register domain
+* Later
+  * Import past issues
+  * all issues

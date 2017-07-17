@@ -1,5 +1,9 @@
 // GLOBAL SETTINGS
 // ===============
+
+$mygrey: #fbfbfb;
+$mypink: #f5f2f2;
+
 // text highlight is yellow
 ::selection {
     background: #fff2a8; /* WebKit/Blink Browsers */
@@ -33,6 +37,14 @@ img {
 
 // NAVIGATION
 // ==========
+
+.fixed-nav-container{
+  position: relative;
+  .nav{
+    background: none;
+    position: absolute; top: 0; left: 0; right: 0;
+  }
+}
 
 .hamburger{
   @include hamburger($nav-height);
@@ -118,50 +130,63 @@ label.checkbox{
 }
 
 
-
-
-
-
 // NAV
 // ===
 
 .cbp-spmenu {
-  background: #47a3da;
+  // background: #47a3da;
   position: fixed;
 }
 
 .cbp-spmenu h3 {
-  color: #afdefa;
-  font-size: 1.9em;
-  padding: 20px;
-  margin: 0;
-  font-weight: 300;
-  background: #0d77b6;
+  // color: #afdefa;
+  // font-size: 1.9em;
+  // padding: 20px;
+  // margin: 0;
+  // font-weight: 300;
+  // background: #0d77b6;
 }
 
 .cbp-spmenu a {
-  display: block;
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: 300;
+  // display: block;
+  // color: #fff;
+  // font-size: 1.1em;
+  // font-weight: 300;
 }
 
 .cbp-spmenu a:hover {
-  background: #258ecd;
+  // background: #258ecd;
 }
 
 .cbp-spmenu a:active {
-  background: #afdefa;
-  color: #47a3da;
+  // background: #afdefa;
+  // color: #47a3da;
 }
 
 /* Orientation-dependent styles for the content of the menu */
 
-.cbp-spmenu-vertical {
+.cbp-spmenu-vertical1 {
   width: 240px;
   height: 100%;
   top: 0;
   z-index: 1000;
+}
+
+.cbp-spmenu-vertical2 {
+  width: 320px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  border-left: 1px solid $grey;
+}
+.contents-nav{
+  display: flex;  height: 100%;
+  #sidebar{
+    margin: auto;
+  }
+  .contents-block{
+    padding: 5px;
+  }
 }
 
 .cbp-spmenu-vertical a {
@@ -177,7 +202,7 @@ label.checkbox{
 }
 
 .cbp-spmenu-right {
-  right: -240px;
+  right: -320px;
 }
 
 .cbp-spmenu-left.cbp-spmenu-open {
@@ -202,7 +227,7 @@ label.checkbox{
 }
 
 .cbp-spmenu-push-toleft {
-  left: -240px;
+  left: -320px;
 }
 
 /* Transitions */

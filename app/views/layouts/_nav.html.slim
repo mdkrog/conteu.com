@@ -1,29 +1,34 @@
 header.nav
   .nav-left
-    span#showLeftPush.hamburger.is-hidden-desktop
+    span#showLeftPush.hamburger
       span
       span
       span
-  .nav-center.is-hidden-mobile.nav-menu
-    = link_to 'MAGAZINE', store_path, class: 'nav-item'
-    = link_to 'VIEW POINT', store_path, class: 'nav-item'
-    = link_to 'STORE', store_path, class: 'nav-item'
+  / .nav-center.is-hidden-desktop.nav-menu
+  /   = link_to 'MAGAZINE', issue_path(Issue.latest), class: 'nav-item'
+  /   = link_to 'VIEWPOINT', viewpoint_path, class: 'nav-item'
+  /   = link_to 'STORE', store_path, class: 'nav-item'
     / .nav-item
     /   = link_to 'STORE', store_path
     /   / = link_to '(1)', store_path, class: 'cart-icon'
     /   = link_to store_path, class: 'icon myicon' do
     /     i.fa.fa-shopping-basket
   .nav-right
-    a.nav-item
-      = image_tag("logo_dark_retina.png", alt: "Conteu Logo")
+    = link_to root_path, class: 'nav-item' do
+      = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
 
 
-nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical.cbp-spmenu-left.is-mobile
-/   h3 Menu
-/   a href="#"  Celery seakale
-/   a href="#"  Dulse daikon
-/   a href="#"  Zucchini garlic
-/   a href="#"  Catsear azuki bean
-/   a href="#"  Dandelion bunya
-/   a href="#"  Rutabaga
+nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical1.cbp-spmenu-left.is-mobile
+  / h3 Menu
+  / a href="#"  Celery seakale
+  / a href="#"  Dulse daikon
+  / a href="#"  Zucchini garlic
+  / a href="#"  Catsear azuki bean
+  / a href="#"  Dandelion bunya
+  / a href="#"  Rutabaga
+  = link_to 'MAGAZINE', issue_path(Issue.latest), class: 'nav-item'
+  = link_to 'VIEWPOINT', viewpoint_path, class: 'nav-item'
+  = link_to 'STORE', store_path, class: 'nav-item'
 
+/ #fbfbfb - grey
+/ #f5f2f2 - pink

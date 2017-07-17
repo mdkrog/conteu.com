@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/admin' => 'pages#admin', as: 'admin'
   get '/store' => 'pages#store', as: 'store'
+  get '/viewpoint' => 'pages#viewpoint', as: 'viewpoint'
 
   resource :session, controller: 'clearance/sessions', only: [:create]
   get    '/sign_in'  => 'clearance/sessions#new',     as: 'sign_in'

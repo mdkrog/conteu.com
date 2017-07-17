@@ -1,41 +1,35 @@
-.columns.fill-page-height.is-gapless.bg1
-  #sidebar.column.is-narrow.is-hidden-mobile
+- meta title: "Issue #{@issue.issue_number} - #{@issue.title}",
+  description: "#{@issue.stories.first.contents_page_blurb}",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa)
+
+.columns.fill-page-height.is-gapless.is-hidden-mobile
+  #sidebar.column.is-narrow
     .contents-block
-      h6 Contents
+      h1 = @issue.title
+      h6.has-text-centered READ JULY 2017
       br
+      br
+      h5.has-text-centered Contents
       p
         - @issue.stories.each do |story|
           = link_to "#", class: 'toggle-panel', data: {panel: "panel-#{story.page_number}"}
             = story.title
           br
-        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-1'}
-          | Editorial&nbsp;.................... I
-        br
-        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-2'}
-          | Into the wild and all that&nbsp;... II
-        br
-        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-3'}
-          | Tables turn&nbsp;.................. III
-        br
-        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-4'}
-          | Following on from before&nbsp;..... IV
-        br
-        = link_to "#", class: 'toggle-panel', data: {panel: 'panel-5'}
-          | Featured Product&nbsp;............. V
-  .column.bg2
-    .columns.is-gapless.contents-panel.panel-1.is-hidden
-      .column.is-6.is-vertical-aligned
-        .story-text
-          h6 Matthew
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      .column.is-6.fill-page-height
-        = image_tag 'https://www.agence-belle-epoque.fr/back/home-middle.jpg', class: 'contents-image'
-
-    .columns.is-gapless.contents-panel.panel-2.is-hidden
-      .column.is-half.is-vertical-aligned
-        .story-text
-          h6 Topic 2
-          p Something to say
-      .column.is-half.fill-page-height
-        = image_tag 'https://www.agence-belle-epoque.fr/back/home-middle.jpg', class: 'contents-image'
-
+  .column
+    .columns.is-gapless.no-overflow
+      .column.full-height.relative
+        .myside.left-side.slide-in-top.delay
+        - @issue.stories.each do |story|
+          .story-text-original-position.text-panel id="text-panel-#{story.page_number}"
+            .story-text
+              h1.has-text-centered = story.title
+              br
+              p.has-text-justified = story.contents_page_blurb
+              br
+              p.has-text-centered
+                = link_to 'Read...', story_path(story), class: 'read-more-link'
+      .column.full-height.relative
+        .myside.right-side.slide-in-bottom.delay
+        - @issue.stories.each do |story|
+          - if story.contents_page_image
+            = image_tag story.contents_page_image.to_s, class: 'contents-image-original-position image-panel', id: "image-panel-#{story.page_number}"

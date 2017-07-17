@@ -1,16 +1,21 @@
 doctype html
 html
   head
-    title Conteu
     == csrf_meta_tags
 
     meta name="viewport" content="width=device-width, initial-scale=1"
+    = metamagic site: "Conteu", title: [:title, :site], separator: " | "
 
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     == javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body.cbp-spmenu-push
-    == render 'layouts/nav'
+    - if @fixed_nav
+      .fixed-nav-container
+        == render 'layouts/nav' unless @no_nav
+    - else
+      == render 'layouts/nav' unless @no_nav
     == yield
     - if signed_in?
       == render 'layouts/admin_nav'
+    == render 'layouts/google_analytics'

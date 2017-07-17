@@ -27,7 +27,7 @@
       p.control
         = f.input :contents_page_blurb, as: :text, label: false, input_html: { class: 'textarea', rows: 10 }
     .field
-      label.label Contents Page Image
+      label.label Contents Page Image (500px x 375px)
       p.control
         = f.input :contents_page_image, as: :file, label: false
         = image_tag @story.contents_page_image.to_s if @story.contents_page_image

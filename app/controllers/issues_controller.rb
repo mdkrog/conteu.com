@@ -3,6 +3,7 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: [:edit, :update, :destroy]
 
   def show
+    @fixed_nav = true
     @issue = Issue.includes(:stories).friendly.find(params[:id])
 
     # only allow signed in users to see non-published issues

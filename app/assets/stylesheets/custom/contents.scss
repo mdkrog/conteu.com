@@ -1,11 +1,157 @@
 // CONTENTS PAGE
 // =============
+
+.center-something{
+  top: 50%!important;
+}
+
+.contents-image-original-position{
+  max-width: 80%;
+  max-height: 500px;
+  position: absolute;
+  top: 300vh;
+  left: 0;
+  transform: translate(0, -50%);
+  -webkit-transition: top 1.4s ease;
+  -moz-transition: top 1.4s ease;
+  -o-transition: top 1.4s ease;
+  transition: top 1.4s ease;
+}
+
+.contents-image-display{
+  top: 50%;
+}
+
+.myside{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.left-side{
+  z-index: -1;
+  // background-color: $mypink;
+  background-color: #f3f0ed;
+}
+.right-side{
+  z-index: -1;
+  background-color: #ece9e7;
+  // background-color: $mygrey;
+}
+
+.story-text-original-position{
+  position: absolute;
+  top: -300vh;
+  z-index: 100;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  -webkit-transition: top 1.2s ease;
+  -moz-transition: top 1.2s ease;
+  -o-transition: top 1.2s ease;
+  transition: top 1.2s ease;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes slideInTop { from { top:-110vh; } to { top:0; } }
+@-moz-keyframes slideInTop { from { top:-110vh; } to { top:0; } }
+@keyframes slideInTop { from { top:-110vh; } to { top:0; } }
+
+@-webkit-keyframes slideInBottom { from { top:110vh; } to { top:0; } }
+@-moz-keyframes slideInBottom { from { top:110vh; } to { top:0; } }
+@keyframes slideInBottom { from { top:110vh; } to { top:0; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.slide-in-top {
+  top:-110vh;  /* make things invisible upon start */
+  -webkit-animation:slideInTop ease-out 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:slideInTop ease-out 1;
+  animation:slideInTop ease-out 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.6s;
+  -moz-animation-duration:0.6s;
+  animation-duration:0.6s;
+}
+
+.slide-in-bottom {
+  top:110vh;  /* make things invisible upon start */
+  -webkit-animation:slideInBottom ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:slideInBottom ease-in 1;
+  animation:slideInBottom ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.6s;
+  -moz-animation-duration:0.6s;
+  animation-duration:0.6s;
+}
+
+.delay {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.relative{
+  position: relative;
+}
+
+.full-height{
+  height: 100vh;
+}
+
+.nav-padding{
+  position: relative;
+  margin-top: $nav-height;
+  height: 100%;
+}
+
+
+.no-overflow{
+  position: relative;
+  overflow: hidden;
+}
+
+
 .bg1{
-  background-color: #ddd;
+  background-color: $white;
 }
 
 .bg2{
-  background-color: #eee;
+  background-color: #f3f0ed;
+  // background-color: $mygrey;
+}
+
+.bg3{
+  background-color: #ece9e7;
+  // background-color: $mypink;
 }
 
 #sidebar{
@@ -14,20 +160,37 @@
 
 .contents-block{
   position: relative;
-  margin-bottom: 50px;
-  padding: 0 15px;
-  h6{
-    font-family: 'Georgia';
+  margin-bottom: 20px;
+  padding: 0 60px;
+}
+
+.story-text{
+  position: relative;
+  padding: 15px;
+}
+
+.story-text, .contents-block{
+  h1{
+    font-family: 'Garamond', 'Times';
     font-weight: 300;
-    font-size: 1em;
+    font-size: 2em;
   }
-  p{
-    font-family: 'Courier';
+  h5{
+    font-family: 'Carlson', 'Georgia';
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey-light;
+    margin-bottom: 15px;
+  }
+  h6{
+    font-family: 'Helvetica';
+    font-weight: 300;
     font-size: 0.7em;
   }
-  a{
-    color: #000;
-    text-decoration: none;
+  p{
+    font-family: 'Carlson', 'Georgia';
+    font-size: 1em;
   }
 }
 
@@ -47,18 +210,6 @@
   margin-bottom: auto!important;
 }
 
-.story-text{
-  padding: 15px;
-  h6{
-    // font-family: 'Georgia';
-    // font-weight: 300;
-    font-size: 1em;
-  }
-  p{
-    // font-family: 'Georgia';
-    font-size: 0.8em;
-  }
-}
 
 .span-the-screen{
   position: absolute;
