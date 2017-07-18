@@ -1,6 +1,9 @@
 .product-thumbnail
   .image-container
-    = image_tag product.image.to_s if product.image
+    - if product.featured
+      = image_tag product.image.to_s if product.image
+    - else
+      = image_tag product.image.to_s if product.image
     .product-price = "R#{product.price}"
   .title-container
     = link_to product.title, product_path(product)

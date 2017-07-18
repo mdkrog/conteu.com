@@ -216,6 +216,10 @@
   width: 100%;
 }
 
+.toggle-panel.is-active{
+  font-weight: bold;
+}
+
 $contents-tab-width: 150px;
 .contents-tab{
   position: absolute;

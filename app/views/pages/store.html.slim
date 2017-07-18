@@ -1,12 +1,17 @@
 .columns.store
   .column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
-    .section
+    .section.bg2
+      .columns
+        - if @featured_product
+          .column.is-12
+            = render partial: "products/product_featured", locals: { product: @featured_product }
+
       .columns
         - @products.each do |product|
           .column.is-4
             = render partial: "products/product_thumb", locals: { product: product }
 
-    .section
+    .section.bg3
       .sub-title FRIENDS OF CONTEU
       hr
       .columns

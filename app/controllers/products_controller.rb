@@ -61,6 +61,8 @@ class ProductsController < ApplicationController
                                     :description,
                                     :price,
                                     :image,
+                                    :image_alt1,
+                                    :image_thumb,
                                     :native_store,
                                     :quantity,
                                     :partner_name,

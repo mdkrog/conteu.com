@@ -12,6 +12,8 @@ $(function() {
 $(document).on('turbolinks:load', function() {
 
   $('.toggle-panel').on('click', function(e) {
+    $('.toggle-panel').removeClass('is-active');
+    $(this).addClass('is-active');
     var panel_name = $(this).data('panel');
     $('.text-panel').removeClass('center-something');
     $('#text-'+panel_name).addClass("center-something");

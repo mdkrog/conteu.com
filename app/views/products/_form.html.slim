@@ -9,11 +9,23 @@
       p.control
         = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 20 }
     .field
-      label.label Image
+      label.label Product Image 1 (500px or less width)
       p.control
         = f.input :image, as: :file, label: false
         br
-        = image_tag @product.image.to_s if @product.image
+        = image_tag @product.image.to_s, class: 'image-thumb' if @product.image
+    .field
+      label.label Product Image Alternative (500px or less width)
+      p.control
+        = f.input :image_alt1, as: :file, label: false
+        br
+        = image_tag @product.image.to_s, class: 'image-thumb'  if @product.image_alt1
+    .field
+      label.label Image Store Front Thumbnail (330-350px square)
+      p.control
+        = f.input :image_thumb, as: :file, label: false
+        br
+        = image_tag @product.image.to_s, class: 'image-thumb' if @product.image_thumb
     .field
       label.label Price
       p.control
