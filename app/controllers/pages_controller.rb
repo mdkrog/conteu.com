@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_action :require_login, only: [:admin]
 
   def home
+    @fixed_nav = true
   end
 
   def viewpoint

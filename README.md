@@ -5,6 +5,7 @@
 * Homepage (1.5hr)
   * Top menu
   * Main side menu
+
 * STORE - Styling (3.5hrs)
   * Store Page
   * Store Items Page

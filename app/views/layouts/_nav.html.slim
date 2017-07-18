@@ -4,10 +4,10 @@ header.nav
       span
       span
       span
-  / .nav-center.is-hidden-desktop.nav-menu
-  /   = link_to 'MAGAZINE', issue_path(Issue.latest), class: 'nav-item'
-  /   = link_to 'VIEWPOINT', viewpoint_path, class: 'nav-item'
-  /   = link_to 'STORE', store_path, class: 'nav-item'
+  .nav-center.is-hidden-mobile.nav-menu
+    = link_to 'MAGAZINE', issue_path(Issue.latest), class: 'nav-item'
+    = link_to 'VIEWPOINT', viewpoint_path, class: 'nav-item'
+    = link_to 'STORE', store_path, class: 'nav-item'
     / .nav-item
     /   = link_to 'STORE', store_path
     /   / = link_to '(1)', store_path, class: 'cart-icon'
