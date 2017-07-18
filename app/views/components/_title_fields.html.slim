@@ -1,5 +1,9 @@
 .field
   label.label Title
   p.control
-    = f.input :title, as: :text, label: false, input_html: { class: 'textarea', rows: 6 }
+    = f.input :title, as: :text, label: false, input_html: { class: 'textarea', rows: 4 }
+.field
+  label.label Credits (optional)
+  p.control
+    = f.input :credits, as: :text, label: false, input_html: { class: 'textarea', rows: 4 }
 

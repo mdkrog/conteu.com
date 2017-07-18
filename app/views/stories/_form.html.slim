@@ -10,6 +10,14 @@
       p.control
         = f.input :slug, label: false, input_html: { class: 'input' }
     .field
+      label.label Words By
+      p.control
+        = f.input :words_by, label: false, input_html: { class: 'input' }
+    .field
+      label.label Images By
+      p.control
+        = f.input :images_by, label: false, input_html: { class: 'input' }
+    .field
       label.label Issue
       p.control
         = f.input :issue_id, collection: Issue.all.order(issue_number: :asc), label: false, input_html: { class: 'input' }
@@ -41,6 +49,7 @@
 
       .create-component-buttons
         = link_to_add_association 'Add Title', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Title.new }
+        = link_to_add_association 'Add Contributor', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Contributor.new }
         = link_to_add_association 'Add Text Single Column', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = TextSingleColumn.new }
         = link_to_add_association 'Add Pull Quote', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = PullQuote.new }
         = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }

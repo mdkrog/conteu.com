@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170716110921) do
+ActiveRecord::Schema.define(version: 20170718192658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,16 +99,18 @@ ActiveRecord::Schema.define(version: 20170716110921) do
   end
 
   create_table "stories", force: :cascade do |t|
-    t.string   "title",               null: false
-    t.integer  "issue_id",            null: false
+    t.string   "title",                            null: false
+    t.integer  "issue_id",                         null: false
     t.integer  "author_id"
     t.string   "slug"
     t.integer  "page_number"
     t.integer  "contents_layout"
     t.text     "contents_page_blurb"
     t.string   "contents_page_image"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "words_by",            default: ""
+    t.string   "images_by",           default: ""
   end
 
   create_table "users", force: :cascade do |t|

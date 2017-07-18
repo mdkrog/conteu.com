@@ -1,3 +1,4 @@
 .columns
   .column.is-12
-    = image_tag component.image.to_s, width: '100%'
+    .component-image class=('full-width-image' if component.full_width == "1")
+      = image_tag component.image.to_s

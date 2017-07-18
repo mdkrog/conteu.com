@@ -1,0 +1,10 @@
+.columns
+  .column.is-12
+    .contributor
+      p
+        em = link_to "#{component.name} | ", component.website, class: 'contributor-name'
+        = raw component.bio.gsub(/\n/, '<br/>') if component.bio
+        .insta
+          = link_to "https://www.instagram.com/#{component.instagram_handle}" do
+            = fa_icon 'instagram'
+            span.insta-handle.sans-serif = " @#{component.instagram_handle}"

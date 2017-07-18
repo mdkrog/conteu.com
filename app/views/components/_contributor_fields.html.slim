@@ -1,0 +1,17 @@
+.field
+  label.label Name
+  p.control
+    = f.input :name, as: :string, label: false, input_html: { class: 'input' }
+.field
+  label.label Bio
+  p.control
+    = f.input :bio, as: :text, label: false, input_html: { class: 'textarea', rows: 4 }
+.field
+  label.label Website
+  p.control
+    = f.input :website, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'http://www.conteu.com'
+.field
+  label.label instagram_handle
+  p.control
+    = f.input :instagram_handle, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'conteu_magazine'
+

@@ -1,5 +1,5 @@
 class TextSingleColumn < Component
-  store :settings, accessors: [:body, :drop_cap], coder: JSON
+  store :settings, accessors: [:body, :drop_cap, :indent], coder: JSON
 
   def type
     'TextSingleColumn'

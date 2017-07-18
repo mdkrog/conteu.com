@@ -52,6 +52,8 @@ class StoriesController < ApplicationController
                                               :issue_id,
                                               :author_id,
                                               :page_number,
+                                              :words_by,
+                                              :images_by,
                                               :contents_layout,
                                               :contents_page_image,
                                               :contents_page_blurb,

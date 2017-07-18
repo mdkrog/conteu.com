@@ -1,5 +1,5 @@
 class Title < Component
-  store :settings, accessors: [:title], coder: JSON
+  store :settings, accessors: [:title, :credits], coder: JSON
 
   def type
     'Title'

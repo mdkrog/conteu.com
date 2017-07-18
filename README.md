@@ -15,12 +15,11 @@
   * Thumbnail images
     - and define image sizes
 
-* Other Pages (2.5hrs)
-  * Footer
-
 * Contents (3hrs)
 !!!  * swiping
 
+* Other Pages (2.5hrs)
+  * Footer
   * bolding and highlight of selected
   * date
 

@@ -35,6 +35,21 @@ img {
   }
 }
 
+.standard-page{
+  background-color: $mygrey;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  // color: $black;
+  font-family: 'Carlson', 'Georgia';
+  a{
+    color: $grey-dark;
+    &:hover{
+      color: $grey;
+    }
+  }
+}
+
+
 // NAVIGATION
 // ==========
 
