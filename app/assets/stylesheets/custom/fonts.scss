@@ -7,19 +7,19 @@
 
 @font-face {
   font-family: "Garamond";
-  src: url('AGaramondPro-Regular.otf') format("truetype");
+  src: font-url('AGaramondProRegular.otf') format("truetype");
 }
 
 @font-face {
   font-family: "Carlson";
-  src:url('ACaslonPro-Regular.otf') format("truetype");
+  src:font-url('ACaslonProRegular.otf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Carlson';
-  src:url('ACaslonPro-Bold.otf') format("truetype");
+  src:font-url('ACaslonProBold.otf') format("truetype");
   font-weight: bold;
   font-style: normal;
 }
