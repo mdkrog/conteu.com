@@ -17,10 +17,12 @@
 * Contents (3hrs)
   * bolding and highlight of selected
   * swiping
+  * date
 * Story Pages
   - style components
-  - background
+  - background - color?
   - page nav padding
+  - remove contents_layout
 * Viewpoint coming soon (0.5hrs)
 
 * GLOBAL (2hrs)
