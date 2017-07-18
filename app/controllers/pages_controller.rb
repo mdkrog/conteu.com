@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @fixed_nav = true
+    @main_nav = true
   end
 
   def viewpoint

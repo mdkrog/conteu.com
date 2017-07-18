@@ -50,9 +50,15 @@ img {
   @include hamburger($nav-height);
 }
 
-.nav-menu .nav-item{
-  font-size: 0.8em;
+header.nav .nav-menu{
+  width: 40%;
+  font-family: 'Garamond', 'Times';
 }
+.nav-menu .nav-item{
+  flex-grow: 1;
+  font-size: 1em;
+}
+
 // .myicon{
 //   margin: auto;
 //   .fa{ font-size: 0.8em!important;}
@@ -170,6 +176,21 @@ label.checkbox{
   height: 100%;
   top: 0;
   z-index: 1000;
+  font-family: 'Garamond', 'Times';
+}
+
+.main-site-nav-inner{
+  display: flex;
+  height: 100%;
+  #site-nav{
+    margin: auto;
+    .nav-item{
+      font-size: 1.1em;
+    }
+  }
+  .contents-block{
+    padding: 5px;
+  }
 }
 
 .cbp-spmenu-vertical2 {
