@@ -2,8 +2,8 @@
 
 ## Todo
 
-* 301 redirect
-* conteumagazine.co.za
+√ 301 redirect
+√ conteumagazine.co.za
 * Setup email accounts
 * conteu.com
 
