@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   get '/store' => 'pages#store', as: 'store'
   get '/viewpoint' => 'pages#viewpoint', as: 'viewpoint'
 
+  get '/about' => 'pages#about', as: 'about'
+  get '/contact' => 'pages#contact', as: 'contact'
+  get '/subscribe' => 'pages#subscribe', as: 'subscribe'
+  get '/submissions' => 'pages#submissions', as: 'submissions'
+
   resource :session, controller: 'clearance/sessions', only: [:create]
   get    '/sign_in'  => 'clearance/sessions#new',     as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'

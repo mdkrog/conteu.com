@@ -1,1 +1,22 @@
+- meta title: "ViewPoint",
+  description: "Conteu is a monthly online publication that aims to ignite creativity. We’ve found that when we start to think creatively, we tend to see the world through a different lens bringing colour to our friendships, our work and our communities. By sharing original and sometimes unusual stories we hope to encourage the curious to explore their creativity.",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa)
+
+.full-height.is-marginless.is-gapless.no-overflow.relative
+  .sideslide.left-side-home.slide-in-top.delay
+    .home-image-1.slide-to-center.long-delay
+      = link_to issue_path(5) do
+        = image_tag 'home-left.jpg'
+  .sideslide.right-side-home.slide-in-bottom.delay
+    .home-image-2.slide-to-center.longer-delay
+      = link_to issue_path(5) do
+        = image_tag 'home-right.jpg'
+
+  .main-text-area.fade-in.longest-delay.has-text-centered
+        .title-huge
+          = link_to 'Tiny Spaces', issue_path(5)
+        .reading-line
+          p
+            = link_to 'READ JULY 2017', issue_path(5)
+
 

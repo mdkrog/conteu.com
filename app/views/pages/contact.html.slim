@@ -1,0 +1,24 @@
+- meta title: "Contact",
+  description: "Contact us. Wish to be a contributor? Advertise with Conteu Magazine? or want to say hi? please email us. We're friendly.",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa)
+
+.columns.standard-page
+  .column.is-offset-2.is-8.is-offset-1-mobile.is-10-mobile
+    .title.story-title Contact
+    .title-horizontal-bar
+
+    p
+      | For general queries drop us a mail at
+      strong  hello@conteu.co.za
+    p
+      | To become a storyteller you can find more information&nbsp;
+      = link_to 'here.', submissions_path, class: 'grayed'
+
+    p
+      | To partner or advertise with us you can find more information in our&nbsp;
+      = link_to 'Media Pack', 'https://s3.amazonaws.com/conteu/files/conteu_media_pack.pdf', class: 'grayed', target: '_blank'
+      br
+      br
+    = link_to 'https://s3.amazonaws.com/conteu/files/conteu_media_pack.pdf', target: '_blank'
+      .button MEDIA PACK
+

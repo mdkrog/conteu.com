@@ -16,6 +16,18 @@ class PagesController < ApplicationController
     @friend_products = FriendProduct.where(displayed: true).order(sort_order: :asc)
   end
 
+  def subscribe
+  end
+
+  def submissions
+  end
+
+  def contact
+  end
+
+  def about
+  end
+
   def admin
     @issues = Issue.all.includes(:stories).order(issue_number: :asc)
     @orphaned_stories = Story.where('issue_id NOT IN (?)', Issue.pluck("id"))

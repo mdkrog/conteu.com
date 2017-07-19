@@ -46,11 +46,16 @@ img {
   // color: $black;
   font-family: 'Carlson', 'Georgia';
   a{
-    color: $grey-light;
+    color: $grey;
     &:hover{
       color: $grey-dark;
     }
   }
+}
+
+.button{
+  font-family: 'Helvetica Neue', 'Helvetic';
+  font-size: 0.8em;
 }
 
 .mysubtite{
@@ -307,3 +312,54 @@ label.checkbox{
   }
 }
 
+
+// FOOTER
+.fixed-footer{
+  position: absolute;
+  top: 102vh;
+  left: 0;
+  right: 0;
+}
+.myfooter{
+  z-index: 7000;
+  .social{
+    text-align: right;
+    font-size: 1.2em;
+    a{
+      color: $grey-light;
+      &:hover{
+        color: $grey;
+      }
+    }
+    .fa{
+      vertical-align: baseline;
+    }
+    .instagram-icon{
+      margin-left: 20px;
+    }
+  }
+
+  .footer-link{
+    @include mobile{
+      display: block;
+      line-height: 2em;
+    }
+    display: inline-block;
+    margin-right: 20px;
+    font-family: 'Helvetica Neue', 'Helvetica';
+    font-size: 0.8em;
+    a{
+      color: $grey;
+      &:hover{
+        color: $grey-dark;
+      }
+    }
+  }
+}
+
+.divider{
+  @include mobile{
+    display: none;
+  }
+  display: inline-block;
+}

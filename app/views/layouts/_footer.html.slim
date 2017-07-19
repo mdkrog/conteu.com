@@ -1,0 +1,15 @@
+.myfooter
+  .columns.is-mobile
+    .column.is-8.is-offset-1.footer-nav
+      .footer-link = link_to 'About', about_path
+      .footer-link = link_to 'Newsletter', subscribe_path
+      .footer-link = link_to 'Contact', contact_path
+      .footer-link = link_to 'Submissions', submissions_path
+
+
+    .column.is-2
+      .social
+        span.facebook-icon = link_to "https://www.facebook.com/ConteuMagazine/", target: '_blank' do
+          = fa_icon 'facebook'
+        span.instagram-icon = link_to "https://instagram.com/conteu_magazine", target: '_blank' do
+          = fa_icon 'instagram'
