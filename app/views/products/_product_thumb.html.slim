@@ -15,13 +15,18 @@
             span.price = "#{product.price}"
       - else
         - if product.native_store
-          / can add to cart
-          = link_to product.partner_link, target: '_blank' do
-            .buy-button
-              = "ADD TO CART "
-              span.price = "R#{product.price}"
+          div class=('is-hidden' if !@cart.product_in_cart(product.id))
+            = link_to remove_cart_path(product.id), method: :delete, remote: true, class: 'remove-from-cart'
+                .buy-button
+                  span.button-text = "REMOVE FROM CART "
+                  span.price = "R#{product.price}"
+          div class=('is-hidden' if @cart.product_in_cart(product.id))
+            = link_to add_cart_path(product.id), method: :post, remote: true, class: 'add-to-cart'
+                .buy-button
+                  span.button-text = "ADD TO CART "
+                  span.price = "R#{product.price}"
+
         - else
-          / otherwise just a link
           = link_to product.partner_link, target: '_blank' do
             .buy-button
               = "AVAILBLE HERE "

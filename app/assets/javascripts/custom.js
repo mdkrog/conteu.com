@@ -9,7 +9,28 @@ $(function() {
 
 });
 
+
+
 $(document).on('turbolinks:load', function() {
+
+  $('.add-to-cart').on('click', function(e) {
+    $(this).parent().addClass('is-hidden');
+    $(this).parent().siblings().removeClass('is-hidden');
+    change_cart_counter(1);
+  });
+
+  $('.remove-from-cart').on('click', function(e) {
+    $(this).parent().addClass('is-hidden');
+    $(this).parent().siblings().removeClass('is-hidden');
+    change_cart_counter(-1);
+  });
+
+  function change_cart_counter(j) {
+    var counter = $('span.cart-count');
+    var i = parseInt(counter.text());
+    var result = i + j;
+    counter.text(''+result);
+  }
 
   $('.toggle-panel').on('click', function(e) {
     $('.toggle-panel').removeClass('is-active');
@@ -53,13 +74,6 @@ $(document).on('turbolinks:load', function() {
     update: function(event, ui) {
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
     }
-  });
-
-  // add to cart
-  $('.add-to-cart').on('click', function(e) {
-    console.log($(this).data('add-url'));
-    $.post($(this).data('add-url'), { product_id: $(this).data('product') } );
-    return false;
   });
 
   // date picker

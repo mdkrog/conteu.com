@@ -30,6 +30,15 @@ class Cart
     @items.empty?
   end
 
+  def product_in_cart(product_id)
+    item = @items.find { |item| item.product_id == product_id.to_s }
+    if item
+      true
+    else
+      false
+    end
+  end
+
   def count
     @items.length
   end

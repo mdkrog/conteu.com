@@ -143,3 +143,21 @@ p{
     font-weight: bold;
   }
 }
+.checkout_button{
+  z-index: 3000;
+  position: fixed;
+  top: $nav-height;
+  right: 0;
+  padding: 8px 15px;
+  background-color: $grey;
+  font-family: 'Helveetica Neue', 'Helvetica';
+  font-size: 0.8em;
+  color: $grey-lighter;
+  &:hover{
+    color: $grey-lighter;
+    background-color: $grey-dark;
+  }
+  span.cart-counter{
+    font-weight: bold;
+  }
+}

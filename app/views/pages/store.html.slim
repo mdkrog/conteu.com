@@ -36,3 +36,11 @@
           .column.is-4
             = render partial: "products/product_thumb", locals: { product: friend_product }
   br
+
+- if @cart.count > 0
+  = link_to new_order_path, class: 'checkout_button' do
+    = "CHECKOUT "
+    span.cart-counter
+      |(
+      span.cart-count = "#{@cart.count}"
+      |)

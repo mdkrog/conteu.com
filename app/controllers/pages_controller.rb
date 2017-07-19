@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :require_login, only: [:admin]
+  before_action :initialize_cart, only: [:store]
 
   def home
     @fixed_nav = true
