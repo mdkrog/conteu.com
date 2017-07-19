@@ -1,20 +1,38 @@
-.columns.store
-  .column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
-    .section.bg2
+.store
+  .columns.bg2.store-section
+    .column.is-offset-3.is-6.is-offset-1-mobile.is-10-mobile.has-text-centered
+      .introduction
+        .title.story-title Store
+        .title-horizontal-bar
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  .columns.store-section.is-multiline
+    .column.is-12
+      .relative.our-container
+        .horizontal-line-stretch
+        .conteu-image-heading.has-text-centered
+          = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
+
+    .column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
       .columns
         - if @featured_product
           .column.is-12
-            = render partial: "products/product_featured", locals: { product: @featured_product }
+            = render partial: "products/product_thumb", locals: { product: @featured_product }
 
       .columns
         - @products.each do |product|
           .column.is-4
             = render partial: "products/product_thumb", locals: { product: product }
 
-    .section.bg3
-      .sub-title FRIENDS OF CONTEU
-      hr
+  .columns.store-section.is-multiline
+    .column.is-12
+      .relative.our-container
+        .horizontal-line-stretch
+        .conteu-store-heading.has-text-centered FRIENDS OF CONTEU
+
+    .column.column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
       .columns
         - @friend_products.each do |friend_product|
-          .column.is-3
-            = render partial: "friend_products/friend_product_thumb", locals: { friend_product: friend_product }
+          .column.is-4
+            = render partial: "products/product_thumb", locals: { product: friend_product }
+  br

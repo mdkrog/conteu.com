@@ -57,6 +57,6 @@ class FriendProductsController < ApplicationController
   end
 
   def friend_product_params
-    params.require(:friend_product).permit(:title, :description, :price, :image, :link, :displayed, :sort_order)
+    params.require(:friend_product).permit(:title, :partner_name, :description, :price, :image, :partner_link, :displayed, :sort_order)
   end
 end

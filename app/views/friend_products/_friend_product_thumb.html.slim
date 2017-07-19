@@ -1,9 +1,12 @@
-.friend-product-thumbnail
+.product-thumbnail
   .image-container
     = image_tag friend_product.image.to_s if friend_product.image
-    .product-price = friend_product.price
-  .title-container
-    = friend_product.title
-  .description-container
-    = friend_product.description
-  = link_to 'BUY', friend_product.link, class: 'button is-small', target: '_blank'
+  .content-container
+    .mytitle.has-text-centered = link_to friend_product.title, friend_product_path(friend_product)
+    .by.has-text-centered
+      | by
+      = friend_product.partner_name.upcase if friend_product.partner_name
+    .mydescription.has-text-centered = raw friend_product.description.gsub(/\n/, '<br/>')
+    .buy-button
+      = link_to 'BUY', friend_product.link, class: 'button is-small', target: '_blank'
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719071525) do
+ActiveRecord::Schema.define(version: 20170719105219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,16 @@ ActiveRecord::Schema.define(version: 20170719071525) do
   end
 
   create_table "friend_products", force: :cascade do |t|
-    t.string   "title",                       null: false
+    t.string   "title",                        null: false
     t.text     "description"
     t.string   "image"
     t.string   "price"
-    t.string   "link"
-    t.boolean  "displayed",   default: false
-    t.integer  "sort_order",  default: 0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "partner_link"
+    t.boolean  "displayed",    default: false
+    t.integer  "sort_order",   default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "partner_name"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

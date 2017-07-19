@@ -69,6 +69,8 @@
               = fa_icon "pencil-square-o"
             - if product.displayed?
               .tag.is-grey.is-pulled-right displaying
+            - if product.featured?
+              .tag.is-primary.is-pulled-right featured
       br
       .sub-title FRIENDS OF CONTEU
       br

@@ -32,6 +32,7 @@
     - Stand alone pages
 
 * Nice clean up
+  --- lEFT MENU CENTER HOVER ON IPHONE
   - css
   - left menu
   - front page object positions
@@ -39,6 +40,8 @@
   - indent for images
   - remove contents_layout from stories
   - remove author_id from stories
+  - fix nav
+  - adjust components
 
 * Later
   * Import past issues

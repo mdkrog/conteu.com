@@ -19,9 +19,13 @@
       p.control
         = f.input :price, as: :string, label: false, input_html: { class: 'input' }
     .field
+      label.label Partner Name
+      p.control
+        = f.input :partner_name, label: false, input_html: { class: 'input' }
+    .field
       label.label Link
       p.control
-        = f.input :link, as: :string, label: false, input_html: { class: 'input' }
+        = f.input :partner_link, as: :string, label: false, input_html: { class: 'input' }
     .field
       p.control
         = f.input :displayed, as: :boolean, input_html: { class: 'checkbox' }

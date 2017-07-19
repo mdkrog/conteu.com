@@ -1,9 +1,29 @@
 .product-thumbnail
   .image-container
-    - if product.featured
       = image_tag product.image.to_s if product.image
-    - else
-      = image_tag product.image_store_front.to_s if product.image_store_front
-    .product-price = "R#{product.price}"
-  .title-container
-    = link_to product.title, product_path(product)
+  .content-container
+    .mytitle.has-text-centered = product.title
+    - if product.partner_name
+      .by.has-text-centered
+        = "by #{product.partner_name.upcase}"
+    .mydescription.has-text-centered = raw product.description.gsub(/\n/, '<br/>')
+    .has-text-centered
+      - if product.class.name == 'FriendProduct'
+        = link_to product.partner_link, target: '_blank' do
+          .buy-button
+            = "BUY "
+            span.price = "#{product.price}"
+      - else
+        - if product.native_store
+          / can add to cart
+          = link_to product.partner_link, target: '_blank' do
+            .buy-button
+              = "ADD TO CART "
+              span.price = "R#{product.price}"
+        - else
+          / otherwise just a link
+          = link_to product.partner_link, target: '_blank' do
+            .buy-button
+              = "AVAILBLE HERE "
+              span.price = "R#{product.price}"
+

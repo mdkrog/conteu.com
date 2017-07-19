@@ -10,8 +10,8 @@ class PagesController < ApplicationController
   end
 
   def store
-    @products = Product.where(displayed: true).order(sort_order: :asc)
-    @featured_product = @products.where(featured: true).first
+    @products = Product.where(displayed: true, featured: false).order(sort_order: :asc)
+    @featured_product =  Product.where(displayed: true, featured: true).first
     @friend_products = FriendProduct.where(displayed: true).order(sort_order: :asc)
   end
 
