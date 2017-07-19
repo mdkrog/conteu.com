@@ -1,23 +1,65 @@
-.columns
-  .column.is-offset-one-quarter.is-half.is-offset-1-mobile.is-10-mobile
-    .sub-title CONFIRM ORDER
-    hr
-    = @order.inspect
-    div
-      = payment_service_for 5, Rails.configuration.offsite_payments['payfast']['login'], amount: @order.total_price, service: :pay_fast do |service|
+.columns.standard-page
+  .column.is-offset-2.is-8.is-offset-1-mobile.is-10-mobile
+    .title.story-title Confirm Order
+    .title-horizontal-bar
+    .columns
+      .column.is-6
+        .order-summary
+          .order-item = @order.name
+          .order-item = @order.email
+          .order-item = @order.phone
+          .order-item = @order.address
+          .order-item = @order.city
+          .order-item = @order.country
+          .order-item = @order.postal_code
 
-        - service.item_name 'Conteu Store'
-        - service.item_description 'Test 1'
-        - service.currency 'ZAR'
-        - service.custom_str1 @order.order_number
-        - service.email_address @order.email
+      .column.is-6
+        table.table.table-hover
+          thead
+            tr
+              th Qty
+              th Product
+              th Price
 
-        - service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'paid')
-        - service.return_url url_for(:only_path => false, :controller => 'payments', :action => 'success')
-        - service.cancel_return_url url_for(:only_path => false, :controller => 'payments', :action => 'fail')
-        - service.error_url url_for(:only_path => false, :controller => 'payments', :action => 'fail')
+          - @order.order_items.each do |item|
+            tr
+              td=item.quantity
+              td
+                = item.product.title
+              td.text-right = number_to_currency(item.total_price, locale: :zar)
+          tr
+            td
+            td = "Shipping (#{@order.country})"
+            td.text-right = number_to_currency(@order.shipping_price, locale: :zar)
+          tfoot
+            tr
+              td
+              td
+                strong Total
+              td
+                strong
+                  = number_to_currency(@order.total_price_incl_shipping, locale: :zar)
+        .is-pulled-right
+          p.control
+            = payment_service_for 5, Rails.configuration.offsite_payments['payfast']['login'], amount: (@order.total_price_incl_shipping), service: :pay_fast do |service|
 
-        - service.merchant_id Rails.configuration.offsite_payments['payfast']['merchant_id'].to_i
-        - service.merchant_key Rails.configuration.offsite_payments['payfast']['merchant_key']
+              - service.item_name 'Conteu Store'
+              - service.item_description 'Test 1'
+              - service.currency 'ZAR'
+              - service.custom_str1 @order.order_number
+              - service.email_address @order.email
 
-        = submit_tag "Pay", class: 'button'
+              - service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'paid')
+              - service.return_url url_for(:only_path => false, :controller => 'payments', :action => 'success')
+              - service.cancel_return_url url_for(:only_path => false, :controller => 'payments', :action => 'fail')
+              - service.error_url url_for(:only_path => false, :controller => 'payments', :action => 'fail')
+
+              - service.merchant_id Rails.configuration.offsite_payments['payfast']['merchant_id'].to_i
+              - service.merchant_key Rails.configuration.offsite_payments['payfast']['merchant_key']
+
+              = submit_tag "Pay", class: 'button is-right confirm-button'
+
+
+
+
+

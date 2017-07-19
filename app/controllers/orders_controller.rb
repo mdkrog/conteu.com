@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   private
 
   def set_order
-    @order = Order.friendly.find_by_friendly_id(params[:id])
+    @order = Order.includes(:order_items).friendly.find_by_friendly_id(params[:id])
   end
 
   def order_params

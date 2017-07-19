@@ -11,6 +11,18 @@ class Order < ApplicationRecord
     order_items.inject(0) { |sum, item| sum + item.total_price }
   end
 
+  def total_price_incl_shipping
+    total_price + shipping_price
+  end
+
+  def shipping_price
+    if country == "ZA"
+      54
+    else
+      250
+    end
+  end
+
   validates_presence_of :name, :email, :address, :phone, :city, :country, :postal_code
 
   private

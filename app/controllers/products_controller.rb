@@ -3,13 +3,13 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy]
   before_action :initialize_cart, only: [:show]
 
-  def show
-    @product = Product.find(params[:id])
-    # only allow signed in users to see non-published products
-    if !@product.displayed? && !signed_in?
-      redirect_to root_path
-    end
-  end
+  # def show
+  #   @product = Product.find(params[:id])
+  #   # only allow signed in users to see non-published products
+  #   if !@product.displayed? && !signed_in?
+  #     redirect_to root_path
+  #   end
+  # end
 
   def new
     @product = Product.new

@@ -164,3 +164,55 @@ p{
     font-weight: bold;
   }
 }
+
+// ORDERS FORM
+.order-form{
+  // font-family: 'Garamond', 'Helvetica';
+  // font-size: 1em;
+
+  // font-family: 'Helvetica Neue', 'Helvetica';
+  // font-size: 0.8em;
+  padding-right: 2em;
+  .simple_form_input{
+    width: 100%;
+  }
+  .input, .text-area{
+    font-family: 'Carlson', 'Georgia';
+    padding-left: 2px;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid $grey-light;
+    background: none!important;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    padding-bottom: 0;
+    padding-top: 0.7em;
+    @include mobile{
+      margin-bottom: 2em;
+    }
+  }
+  .field-label.is-normal{
+    flex-grow: 1;
+    text-align: left;
+    padding-top: 0.7em;
+  }
+}
+
+.confirm-button{
+  padding: 8px 15px;
+  background-color: $grey-lighter;
+  color: $grey-dark;
+  border: 1px solid $grey-light;
+  &:hover{
+    background-color: $grey-light;
+  }
+}
+
+.order-summary{
+  padding: 2em 0 2em 1em;
+  border: 1px solid $grey;
+  .order-item{
+    margin-bottom: 10px;
+  }
+}
