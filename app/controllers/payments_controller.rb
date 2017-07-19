@@ -7,7 +7,6 @@ class PaymentsController < ApplicationController
       if @notification.complete?
         @order = Order.where(order_number: @notification.params['custom_str1']).first
         @order.update(status: :paid)
-        session['cart'] = nil
         render body: nil
       else
         render body: nil
@@ -18,6 +17,7 @@ class PaymentsController < ApplicationController
   end
 
   def success
+    session['cart'] = nil
   end
 
   def fail

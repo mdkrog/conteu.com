@@ -21,7 +21,6 @@ class Order < ApplicationRecord
     else
       250
     end
-    0
   end
 
   validates_presence_of :name, :email, :address, :phone, :city, :country, :postal_code
