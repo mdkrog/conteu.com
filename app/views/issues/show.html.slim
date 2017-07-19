@@ -27,14 +27,14 @@
               p.has-text-justified = story.contents_page_blurb
               br
               p.has-text-centered
-                = link_to 'Read...', story_path(story), class: 'read-more-link'
+                = link_to 'READ STORY', story_path(story), class: 'read-more-link'
       .column.full-height.relative
         .myside.right-side.slide-in-bottom.delay
         - @issue.stories.each do |story|
           - if story.contents_page_image
             = image_tag story.contents_page_image.to_s, class: 'contents-image-original-position image-panel', id: "image-panel-#{story.page_number}"
 
-.columns.fill-page-height.is-gapless.is-hidden-desktop.is-mobile
+.columns.fill-page-height.is-gapless.is-hidden-tablet.is-mobile
   #sidebar.column
     br
     br

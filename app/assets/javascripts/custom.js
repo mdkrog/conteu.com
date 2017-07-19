@@ -32,6 +32,14 @@ $(document).on('turbolinks:load', function() {
     counter.text(''+result);
   }
 
+  var editorial = $('.toggle-panel').first();
+  if(editorial){
+    setTimeout(function() {
+      editorial.trigger('click');
+    }, 1000);
+  }
+
+
   $('.toggle-panel').on('click', function(e) {
     $('.toggle-panel').removeClass('is-active');
     $(this).addClass('is-active');
