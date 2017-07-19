@@ -7,7 +7,7 @@
 * STORE - Styling (3.5hrs)
   √ Store Page
   √ Store Items Page
-  * Featured
+  √ Featured
   √ Checkout and Order confirmation
   √ Shipping logic
   √ Thumbnail images
@@ -18,7 +18,7 @@
 - contents text and words by
 
 * Other Pages (2.5hrs)
-  * Footer
+  √ Footer
   * bolding and highlight of selected
   * date
 

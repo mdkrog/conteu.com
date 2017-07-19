@@ -21,9 +21,9 @@ html
 
     - if @fixed_nav
       .fixed-footer
-        == render 'layouts/footer'
+        == render 'layouts/footer' unless @no_footer
     - else
-      == render 'layouts/footer'
+      == render 'layouts/footer' unless @no_footer
 
 
     - if signed_in?

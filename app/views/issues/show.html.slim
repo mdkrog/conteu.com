@@ -33,3 +33,22 @@
         - @issue.stories.each do |story|
           - if story.contents_page_image
             = image_tag story.contents_page_image.to_s, class: 'contents-image-original-position image-panel', id: "image-panel-#{story.page_number}"
+
+.columns.fill-page-height.is-gapless.is-hidden-desktop.is-mobile
+  #sidebar.column
+    br
+    br
+    br
+    br
+    .contents-block.mobile-contents
+      h1.has-text-centered = @issue.title
+      h6.has-text-centered READ JULY 2017
+      br
+      br
+      h5.has-text-centered Contents
+      p
+        - @issue.stories.each do |story|
+          / = link_to "#", class: 'toggle-panel', data: {panel: "panel-#{story.page_number}"}
+          /   = story.title
+          = link_to story.title, story_path(story)
+          br
