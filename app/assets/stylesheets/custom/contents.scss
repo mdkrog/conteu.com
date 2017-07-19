@@ -269,13 +269,13 @@ $contents-tab-width: 150px;
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 5px 10px;
-  width: 70%;
+  width: 60%;
   background-color: $mygrey;
   color: $grey-dark;
   display: inline-block;
   font-family: 'Helveetica Neue', 'Helvetica';
   font-size: 0.7em;
   &:hover{
-    background-color: $grey;
+    background-color: $grey-lighter;
   }
 }
