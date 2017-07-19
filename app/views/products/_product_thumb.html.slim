@@ -3,7 +3,7 @@
     - if product.featured
       = image_tag product.image.to_s if product.image
     - else
-      = image_tag product.image.to_s if product.image
+      = image_tag product.image_store_front.to_s if product.image_store_front
     .product-price = "R#{product.price}"
   .title-container
     = link_to product.title, product_path(product)

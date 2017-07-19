@@ -13,19 +13,19 @@
       p.control
         = f.input :image, as: :file, label: false
         br
-        = image_tag @product.image.to_s, class: 'image-thumb' if @product.image
+        = image_tag @product.image.to_s, class: 'image-thumb' if @product.image.present?
     .field
       label.label Product Image Alternative (500px or less width)
       p.control
         = f.input :image_alt1, as: :file, label: false
         br
-        = image_tag @product.image.to_s, class: 'image-thumb'  if @product.image_alt1
+        = image_tag @product.image_alt1.to_s, class: 'image-thumb'  if @product.image_alt1.present?
     .field
       label.label Image Store Front Thumbnail (330-350px square)
       p.control
-        = f.input :image_thumb, as: :file, label: false
+        = f.input :image_store_front, as: :file, label: false
         br
-        = image_tag @product.image.to_s, class: 'image-thumb' if @product.image_thumb
+        = image_tag @product.image_store_front.to_s, class: 'image-thumb' if @product.image_store_front.present?
     .field
       label.label Price
       p.control
