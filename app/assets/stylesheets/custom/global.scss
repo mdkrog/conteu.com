@@ -1,6 +1,8 @@
 // GLOBAL SETTINGS
 // ===============
-
+.fill-page{
+  min-height: calc(100vh - #{$nav-height});
+}
 $mygrey: #fbfbfb;
 $mypink: #f5f2f2;
 
@@ -51,6 +53,11 @@ img {
       color: $grey-dark;
     }
   }
+}
+
+h2{
+  font-size: 1.3em;
+  margin-bottom: 1em;
 }
 
 .button{
@@ -319,9 +326,18 @@ label.checkbox{
   top: 102vh;
   left: 0;
   right: 0;
-}
-.myfooter{
   z-index: 7000;
+}
+
+.drop-footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 7000;
+}
+
+.myfooter{
   .social{
     text-align: right;
     font-size: 1.2em;

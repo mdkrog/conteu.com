@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @friend_products = FriendProduct.where(displayed: true).order(sort_order: :asc)
   end
 
-  def subscribe
+  def newsletter
   end
 
   def submissions
