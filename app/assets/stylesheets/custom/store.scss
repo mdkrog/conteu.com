@@ -54,20 +54,26 @@ p{
 .content-container{
   font-family: 'Carlson', 'Georgia';
   font-size: 1em;
-  padding: 1em 1.5em;
+  padding: 1em 1em;
+  .heading-text{
+    max-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
   .mytitle{
     font-weight: bold;
   }
   .mydescription{
-    max-height: 100px;
-    height: 100px;
+    max-height: 130px;
+    height: 130px;
     font-size: 0.9em;
     overflow: hidden;
+    margin-bottom: 20px;
   }
   .by{
     font-family: 'Helvetica Neue', 'Helvetica';
     font-size: 0.6em;
-    margin-bottom: 1em;
   }
 }
 

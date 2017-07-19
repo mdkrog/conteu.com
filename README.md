@@ -5,11 +5,11 @@
 / 301 redirect
 
 * STORE - Styling (3.5hrs)
-  * Store Page
-  * Store Items Page
+  √ Store Page
+  √ Store Items Page
   * Featured
-  * Checkout and Order confirmation
-  * Shipping logic
+  √ Checkout and Order confirmation
+  √ Shipping logic
   √ Thumbnail images
     - and define image sizes
 

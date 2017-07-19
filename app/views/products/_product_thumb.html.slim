@@ -2,10 +2,11 @@
   .image-container
     = image_tag product.image.to_s if product.image
   .content-container
-    .mytitle.has-text-centered = product.title
-    - if product.partner_name
-      .by.has-text-centered
-        = "by #{product.partner_name.upcase}"
+    .heading-text
+      .mytitle.has-text-centered = product.title
+      - if product.partner_name.present?
+        .by.has-text-centered
+          = "by #{product.partner_name.upcase}"
     .mydescription.has-text-centered = raw product.description.gsub(/\n/, '<br/>')
     .has-text-centered
       - if product.class.name == 'FriendProduct'
@@ -29,6 +30,7 @@
         - else
           = link_to product.partner_link, target: '_blank' do
             .buy-button
-              = "AVAILBLE HERE "
-              span.price = "R#{product.price}"
+              = "AVAILBLE HERE"
+              - if product.price > 0
+                span.price = " R#{product.price}"
 
