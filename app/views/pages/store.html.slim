@@ -33,7 +33,7 @@
     .column.column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
       .columns
         - @friend_products.each do |friend_product|
-          .column.is-4
+          .column.is-3
             = render partial: "products/product_thumb", locals: { product: friend_product }
   br
 

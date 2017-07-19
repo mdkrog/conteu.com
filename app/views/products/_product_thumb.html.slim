@@ -1,6 +1,6 @@
 .product-thumbnail
   .image-container
-      = image_tag product.image.to_s if product.image
+    = image_tag product.image.to_s if product.image
   .content-container
     .mytitle.has-text-centered = product.title
     - if product.partner_name
