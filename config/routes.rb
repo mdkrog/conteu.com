@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about', as: 'about'
   get '/contact' => 'pages#contact', as: 'contact'
-  get '/newsletter' => 'pages#newsletter', as: 'subscribe'
+  get '/newsletter' => 'pages#newsletter', as: 'newsletter'
   get '/submissions' => 'pages#submissions', as: 'submissions'
 
   resource :session, controller: 'clearance/sessions', only: [:create]
@@ -33,4 +33,6 @@ Rails.application.routes.draw do
     get 'success' => 'payments#success',  as: :payments_success
     get 'fail'    => 'payments#fail',     as: :payments_fail
   end
+
+  get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
 end
