@@ -14,7 +14,7 @@
     .mydescription.has-text-centered = raw product.description.gsub(/\n/, '<br/>')
     .has-text-centered
       - if product.class.name == 'FriendProduct'
-        = link_to product.partner_link, target: '_blank' do
+        = link_to product.partner_link, target: '_blank', onclick: "return trackOutboundLink('#{product.partner_link}', true)" do
           .buy-button
             = "BUY "
             span.price = "#{product.price}"
@@ -32,7 +32,7 @@
                   span.price = "R#{product.price}"
 
         - else
-          = link_to product.partner_link, target: '_blank' do
+          = link_to product.partner_link, target: '_blank', onclick: "return trackOutboundLink('#{product.partner_link}', true)" do
             .buy-button
               = "AVAILBLE HERE"
               - if product.price > 0

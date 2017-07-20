@@ -2,9 +2,9 @@
   .column.is-12
     .contributor
       p
-        em = link_to "#{component.name} | ", component.website, class: 'contributor-name', target: '_blank'
+        em = link_to "#{component.name} | ", component.website, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website}', true)"
         = raw component.bio.gsub(/\n/, '<br/>') if component.bio
         .insta
-          = link_to "https://www.instagram.com/#{component.instagram_handle}", target: '_blank' do
+          = link_to "https://www.instagram.com/#{component.instagram_handle}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle}', true)" do
             = fa_icon 'instagram'
             span.insta-handle.sans-serif = " @#{component.instagram_handle}"

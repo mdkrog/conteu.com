@@ -7,5 +7,18 @@
 
     ga('create', 'UA-41032983-7', 'auto');
     ga('send', 'pageview');
+
+    var trackOutboundLink = function(url, isExternal) {
+      var params = {};
+
+      if (!isExternal) {
+          params.hitCallback = function () {
+              document.location = url;
+          }
+      }
+      ga('send', 'event', 'outbound', 'click', url, params);
+
+      return isExternal;
+    }
   </script>
 <% end %>
