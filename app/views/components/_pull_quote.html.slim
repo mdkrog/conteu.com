@@ -1,5 +1,6 @@
 .columns
   .column.is-9.is-offset-2
     blockquote.pull-quote
-      p = raw component.body.gsub(/\n/, '<br/>')
+      p
+        em = raw component.body.gsub(/\n/, '<br/>')
 
