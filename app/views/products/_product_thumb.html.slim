@@ -1,6 +1,10 @@
-.product-thumbnail
+.product-thumbnail class=('featured-thumbnail' if (product.class.name != 'FriendProduct' && product.featured?))
   .image-container
-    = image_tag product.image.to_s if product.image
+    - if (product.class.name != 'FriendProduct' && product.featured?)
+      = image_tag product.image.to_s, class: 'is-hidden-mobile' if product.image
+      = image_tag product.image_alt1.to_s, class: 'is-mobile is-hidden-tablet' if product.image_alt1
+    - else
+      = image_tag product.image.to_s if product.image
   .content-container
     .heading-text
       .mytitle.has-text-centered = product.title
