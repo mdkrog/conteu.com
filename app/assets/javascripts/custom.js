@@ -98,6 +98,7 @@ $(document).on('turbolinks:load', function() {
       menuRight = document.getElementById( 'cbp-spmenu-s2' ),
       contentsAngleDownIcon = document.getElementById( 'contents-angle-down-icon' ),
       contentsAngleUpIcon = document.getElementById( 'contents-angle-up-icon' ),
+      mobileNavi = document.getElementById( 'mobile-navi' ),
       body = document.body;
 
 
@@ -114,5 +115,6 @@ $(document).on('turbolinks:load', function() {
     classie.toggle( this, 'is-active' );
     classie.toggle( body, 'cbp-spmenu-push-toright' );
     classie.toggle( menuLeft, 'cbp-spmenu-open' );
+    classie.toggle( mobileNavi, 'pushed-right' );
   });
 });

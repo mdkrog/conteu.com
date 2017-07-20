@@ -379,3 +379,17 @@ label.checkbox{
   }
   display: inline-block;
 }
+
+#mobile-navi{
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &.pushed-right{
+    left: 240px;
+  }
+  z-index: 8000;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
