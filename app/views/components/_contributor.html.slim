@@ -2,9 +2,20 @@
   .column.is-12
     .contributor
       p
-        em = link_to "#{component.name} | ", component.website, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website}', true)"
+        - if component.website.present?
+          em = link_to "#{component.name} | ", component.website, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website}', true)"
+        - else
+          - if component.instagram_handle.present?
+            em = link_to "#{component.name} | ", "https://www.instagram.com/#{component.instagram_handle}", target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle}', true)"
+          - else
+            em = "#{component.name} | "
         = raw component.bio.gsub(/\n/, '<br/>') if component.bio
-        .insta
-          = link_to "https://www.instagram.com/#{component.instagram_handle}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle}', true)" do
-            = fa_icon 'instagram'
-            span.insta-handle.sans-serif = " @#{component.instagram_handle}"
+        .has-text-centered
+          - if component.instagram_handle.present?
+            .insta
+              = link_to "https://www.instagram.com/#{component.instagram_handle}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle}', true)" do
+                = fa_icon 'instagram'
+                span.insta-handle.sans-serif = " @#{component.instagram_handle}"
+          - if component.website.present?
+            .website-link
+              = link_to component.website.gsub(/https:\/\//, '').gsub(/http:\/\//, ''), component.website, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website}', true)"
