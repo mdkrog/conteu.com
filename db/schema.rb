@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719105219) do
+ActiveRecord::Schema.define(version: 20170723093641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,35 @@ ActiveRecord::Schema.define(version: 20170719105219) do
     t.string   "remember_token",     limit: 128, null: false
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  end
+
+  create_table "view_point_artists", force: :cascade do |t|
+    t.integer  "view_point_object_id"
+    t.string   "artwork"
+    t.text     "description"
+    t.string   "artist_name"
+    t.string   "artist_website"
+    t.string   "artist_instagram"
+    t.date     "showcase_date"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["view_point_object_id"], name: "index_view_point_artists_on_view_point_object_id", using: :btree
+  end
+
+  create_table "view_point_objects", force: :cascade do |t|
+    t.string   "name",                       null: false
+    t.boolean  "displayed",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "view_point_trivia", force: :cascade do |t|
+    t.integer  "view_point_object_id"
+    t.text     "description"
+    t.date     "showcase_date"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["view_point_object_id"], name: "index_view_point_trivia_on_view_point_object_id", using: :btree
   end
 
 end

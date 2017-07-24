@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  view_point_object_id: 1
+  description: MyText
+  showcase_date: 2017-07-23
+
+two:
+  view_point_object_id: 1
+  description: MyText
+  showcase_date: 2017-07-23

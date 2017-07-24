@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :issues
   resources :stories
+  resources :view_point_objects, except: [:show]
+  resources :view_point_artists
+  resources :view_point_trivia, except: [:show]
   resources :orders, except: [:destroy]
   resources :products do
     collection { post :sort }

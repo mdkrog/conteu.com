@@ -14,6 +14,11 @@
             span.icon.is-small
               i.fa.fa-shopping-bag
             span Store
+        li.viewpoint-tab
+          = link_to '#viewpoint', class: 'toggle-admin-tab', data: {tab: 'admin-tab-3'} do
+            span.icon.is-small
+              i.fa.fa-binoculars
+            span ViewPoint
 
     .admin-tab.admin-tab-1
       table.table.is-bordered
@@ -89,3 +94,75 @@
       .admin-options
         = link_to 'New Conteu Product', new_product_path, class: 'button is-small'
         = link_to 'New Friend Product', new_friend_product_path, class: 'button is-small'
+
+    .admin-tab.admin-tab-3.is-hidden
+      table.table.is-bordered
+        tbody
+          - @view_point_objects.each do |vpo|
+            tr
+              th = vpo.name
+              th
+              th = link_to edit_view_point_object_path(vpo) do
+                  = fa_icon "pencil-square-o"
+              th
+                - if vpo.displayed?
+                  = fa_icon "eye"
+                - else
+                  = fa_icon "eye-slash"
+              th = link_to vpo, data: {:confirm => 'Delete ViewPoint Object - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+            tr
+              td colspan=5
+                .tag.is-grey Artists
+            - vpo.view_point_artists.order(showcase_date: :asc).each do |vpa|
+              tr
+                td = vpa.showcase_date
+                td = vpa.artist_name
+                td = link_to edit_view_point_artist_path(vpa) do
+                  = fa_icon "pencil-square-o"
+                td
+                td = link_to vpa, data: {:confirm => 'Delete ViewPoint Artist - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+            tr
+              td colspan=5
+                .tag.is-grey Trivia
+            - vpo.view_point_trivia.order(showcase_date: :asc).each do |vpt|
+              tr
+                td = vpt.showcase_date
+                td = vpt.description
+                td = link_to edit_view_point_trivium_path(vpt) do
+                  = fa_icon "pencil-square-o"
+                td
+                td = link_to vpt, data: {:confirm => 'Delete ViewPoint Trivium - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+      table.table.is-bordered
+        tbody
+          tr
+            th colspan="5" Unassigned Artists
+            - @orphaned_view_point_artists.each do |vpa|
+              tr
+                td = vpa.showcase_date
+                td = vpa.name
+                td = link_to edit_view_point_artists_path(vpa) do
+                  = fa_icon "pencil-square-o"
+                td
+                td = link_to vpa, data: {:confirm => 'Delete ViewPoint Artist - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+      table.table.is-bordered
+        tbody
+          tr
+            th colspan="5" Unassigned Trivia
+            - @orphaned_view_point_trivia.each do |vpt|
+              tr
+                td = vpt.showcase_date
+                td = vpt.description
+                td = link_to edit_view_point_trivia_path(vpt) do
+                  = fa_icon "pencil-square-o"
+                td
+                td = link_to vpt, data: {:confirm => 'Delete ViewPoint Trivia - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                  = fa_icon "trash-o"
+
+      .admin-options
+        = link_to 'New ViewPoint Object ', new_view_point_object_path, class: 'button is-small'
+        = link_to 'New ViewPoint Artist', new_view_point_artist_path, class: 'button is-small'
+        = link_to 'New ViewPoint Trivium', new_view_point_trivium_path, class: 'button is-small'

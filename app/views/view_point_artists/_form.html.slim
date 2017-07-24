@@ -1,0 +1,44 @@
+.standard-form
+  = simple_form_for(@view_point_artist) do |f|
+    .field
+      label.label ViewPoint Object Category
+      p.control
+        = f.input :view_point_object_id, collection: ViewPointObject.all, label: false, input_html: { class: 'input' }
+    .field
+      label.label Artist Name
+      p.control
+        = f.input :artist_name, label: false, input_html: { class: 'input' }
+    .field
+      label.label Artwork Description
+      p.control
+        = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 20 }
+    .field
+      label.label Artwork
+      p.control
+        = f.input :artwork, as: :file, label: false
+        br
+        = image_tag @view_point_artist.artwork.to_s, class: 'image-thumb' if @view_point_artist.artwork.present?
+    .field
+      label.label Showcase Date
+      p.control
+        = f.input :showcase_date, as: :string, label: false, input_html: { class: 'input', id: 'datepicker' }
+    .field
+      label.label Artist Website
+      p.control
+        = f.input :artist_website, label: false, input_html: { class: 'input' },  placeholder: 'http://'
+    .field
+      label.label Artist Instagram
+      p.control
+        = f.input :artist_instagram, label: false, input_html: { class: 'input' }, placeholder: 'conteu_magazine'
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

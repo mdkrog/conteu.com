@@ -70,6 +70,14 @@ $(document).on('turbolinks:load', function() {
     $('.store-tab').addClass('is-active');
   }
 
+  if(hash=='viewpoint'){
+    $('.admin-tab').addClass('is-hidden');
+    $('.admin-tab-3').removeClass('is-hidden');
+    $('.magazine-tab').removeClass('is-active');
+    $('.store-tab').removeClass('is-active');
+    $('.viewpoint-tab').addClass('is-active');
+  }
+
   $('#product-list').sortable({
     axis: "y",
     update: function(event, ui) {

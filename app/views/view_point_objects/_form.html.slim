@@ -1,0 +1,21 @@
+.standard-form
+  = simple_form_for(@view_point_object) do |f|
+    .field
+      label.label Name
+      p.control
+        = f.input :name, label: false, input_html: { class: 'input' }
+    .field
+      p.control
+        = f.input :displayed, as: :boolean, input_html: { class: 'checkbox' }
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+    br
+    br
+    br
+    br
+    br
+    br
+

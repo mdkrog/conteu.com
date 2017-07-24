@@ -4,7 +4,6 @@ class IssuesController < ApplicationController
 
   def show
     @fixed_nav = true
-    @issue = Issue.includes(:stories).friendly.find(params[:id])
     @issue = Issue.includes(:stories).friendly.find_by_friendly_id(params[:id])
 
     # only allow signed in users to see non-published issues
