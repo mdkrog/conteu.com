@@ -10,13 +10,13 @@ class PagesController < ApplicationController
   def viewpoint
     @view_point_artist = ViewPointArtist.where("showcase_date <= ?", Date.today).first
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
-    @next_artist = @view_point_artist.previous
-    @previous_artist= @view_point_artist.next
 
     if @view_point_artist.nil?
-      render 'viewpoint'
-    else
       render 'view_point_artists/show'
+    else
+      @next_artist = @view_point_artist.previous
+      @previous_artist= @view_point_artist.next
+      render 'viewpoint'
     end
     # only allow signed in users to see non-published view_point_artists
     # if !@view_point_artist.published? && !signed_in?
