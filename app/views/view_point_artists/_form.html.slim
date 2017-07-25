@@ -19,6 +19,9 @@
         br
         = image_tag @view_point_artist.artwork.to_s, class: 'image-thumb' if @view_point_artist.artwork.present?
     .field
+      p.control
+        = f.input :landscape, as: :boolean, input_html: { class: 'checkbox' }
+    .field
       label.label Showcase Date
       p.control
         = f.input :showcase_date, as: :string, label: false, input_html: { class: 'input', id: 'datepicker' }

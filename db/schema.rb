@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725143646) do
+ActiveRecord::Schema.define(version: 20170725194021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,16 +128,17 @@ ActiveRecord::Schema.define(version: 20170725143646) do
   end
 
   create_table "view_point_artists", force: :cascade do |t|
-    t.integer  "view_point_object_id", null: false
+    t.integer  "view_point_object_id",                 null: false
     t.string   "artwork"
     t.text     "description"
     t.string   "artist_name"
     t.string   "artist_website"
     t.string   "artist_instagram"
     t.date     "showcase_date"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.text     "trivia"
+    t.boolean  "landscape",            default: false
     t.index ["view_point_object_id"], name: "index_view_point_artists_on_view_point_object_id", using: :btree
   end
 

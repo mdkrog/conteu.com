@@ -8,79 +8,20 @@
       .introduction
         .title.story-title ViewPoint
         .title-horizontal-bar
-        p To see an ordinary object in a creative way.
+        p Seeing an ordinary object in a creative way.
   .columns
     .column.is-offset-3.is-6.is-offset-1-mobile.is-10-mobile.has-text-centered
       p.trivium
         em = @view_point_artist.trivia
 
-  .columns.is-gapless.reverse-row-order
-    .column.is-2.is-hidden-mobile.is-tablet
-      .viewpoint-navigation
-        - if @previous_artist
-          p
-            = link_to view_point_artist_path(@previous_artist) do
-              i.fa.fa-angle-left.left-icon
-              = "#{@previous_artist.showcase_date.to_time.strftime('%e %B')}"
-        .horizontal-separator
-        - if @next_artist
-          p
-            = link_to view_point_artist_path(@next_artist) do
-              = "#{@next_artist.showcase_date.to_time.strftime('%e %B')}"
-              i.fa.fa-angle-right.right-icon
-    .column.is-6
-      .viewpoint-image
-        = image_tag @view_point_artist.artwork.to_s if @view_point_artist.artwork.present?
-    .column.is-4
-      .sidebar.has-text-right
-        - if Date.today == @view_point_artist.showcase_date
-          h1 Today's Feature
-
-        h6 = @view_point_artist.view_point_object.name
-        h6 = @view_point_artist.showcase_date.to_time.strftime("%e %B %Y")
-        h6 = "ViewPoint by #{@view_point_artist.artist_name}"
-        - if @view_point_artist.artist_website.present?
-          h6.website-link
-            = link_to @view_point_artist.artist_website.gsub(/https:\/\//, '').gsub(/http:\/\//, ''), @view_point_artist.artist_website, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{@view_point_artist.artist_website}', true)"
-        - if @view_point_artist.artist_instagram.present?
-          h6.website-link
-            = link_to "https://www.instagram.com/#{@view_point_artist.artist_instagram}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{@view_point_artist.artist_instagram}', true)" do
-              = fa_icon 'instagram'
-              span.insta-handle.sans-serif = " #{@view_point_artist.artist_instagram}"
-
-        br
-        = raw @view_point_artist.description.gsub(/\n/, '<br/>')
-        br
-        br
-        br
-        br
-        br
-        h1 ViewPoint Archive
-        .view-point-object-list
-          - @all_objects.each do |view_point_object|
-            - if view_point_object.displayed?
-              .view-point-object-list-item class=(view_point_object.id == @view_point_artist.view_point_object_id ? 'is-active' : '')
-                = link_to view_point_object.name, view_point_object_path(view_point_object)
-                .view-point-line
-
-  .columns.is-gapless.is-mobile.is-hidden-tablet
-    .column.is-12
-      .viewpoint-navigation
-        - if @previous_artist
-          span
-            = link_to view_point_artist_path(@previous_artist) do
-              i.fa.fa-angle-left.left-icon
-              = "#{@previous_artist.showcase_date.to_time.strftime('%e %B')}"
-        span = " | " if @previous_artist.present? && @next_artist.present?
-        - if @next_artist
-          span
-            = link_to view_point_artist_path(@next_artist) do
-              = "#{@next_artist.showcase_date.to_time.strftime('%e %B')}"
-              i.fa.fa-angle-right.right-icon
+  - if @view_point_artist.landscape?
+    == render partial: "landscape_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
+  - else
+    == render partial: "portrait_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
 
   .columns
     .column.is-offset-3.is-6.is-offset-1-mobile.is-10-mobile.has-text-centered
-      p Email us at viewpoint@conteu.com to find out how to join the ViewPoint Creative challenge.
+      p Email us at hello@conteu.com to find out how to join the ViewPoint Creative Challenge.
 
 
 

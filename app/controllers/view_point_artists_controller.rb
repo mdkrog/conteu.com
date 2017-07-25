@@ -54,6 +54,7 @@ class ViewPointArtistsController < ApplicationController
 
   def view_point_artist_params
     params.require(:view_point_artist).permit(:artwork,
+                                              :landscape,
                                               :view_point_object_id,
                                               :description,
                                               :artist_name,
