@@ -21,6 +21,26 @@
     margin-right: auto;
   }
 
+  .viewpoint-navigation{
+    padding: 20px;
+    text-align: center;
+    .horizontal-separator{
+      width: 20px;
+      height: 1px;
+      background: $grey;
+      margin: 8px auto;
+    }
+    .fa{
+      vertical-align: baseline;
+    }
+    .left-icon{
+      margin-right: 5px;
+    }
+    .right-icon{
+      margin-left: 5px;
+    }
+  }
+
   .sidebar{
     position: relative;
     margin-bottom: 20px;

@@ -44,7 +44,7 @@
     br
     .contents-block.mobile-contents
       h1.has-text-centered = @issue.title
-      h6.has-text-centered READ JULY 2017
+      h6.has-text-centered = "READ #{@issue.release_date.to_time.strftime("%B '%Y")}".upcase
       br
       br
       h5.has-text-centered Contents

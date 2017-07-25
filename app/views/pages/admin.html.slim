@@ -100,7 +100,7 @@
         tbody
           - @view_point_objects.each do |vpo|
             tr
-              th = vpo.name
+              th = link_to vpo.name, view_point_object_path(vpo)
               th
               th = link_to edit_view_point_object_path(vpo) do
                   = fa_icon "pencil-square-o"
@@ -117,7 +117,7 @@
             - vpo.view_point_artists.order(showcase_date: :asc).each do |vpa|
               tr
                 td = vpa.showcase_date
-                td = vpa.artist_name
+                td = link_to vpa.artist_name, view_point_artist_path(vpa)
                 td = link_to edit_view_point_artist_path(vpa) do
                   = fa_icon "pencil-square-o"
                 td
@@ -129,7 +129,7 @@
             - vpo.view_point_trivia.order(showcase_date: :asc).each do |vpt|
               tr
                 td = vpt.showcase_date
-                td = vpt.description
+                td = truncate(vpt.description, :length => 25)
                 td = link_to edit_view_point_trivium_path(vpt) do
                   = fa_icon "pencil-square-o"
                 td
@@ -155,7 +155,7 @@
             - @orphaned_view_point_trivia.each do |vpt|
               tr
                 td = vpt.showcase_date
-                td = vpt.description
+                td = truncate(vpt.description, :length => 25)
                 td = link_to edit_view_point_trivia_path(vpt) do
                   = fa_icon "pencil-square-o"
                 td

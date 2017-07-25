@@ -20,10 +20,10 @@
         - if Date.today == @view_point_artist.showcase_date
           h1 Today's Feature
         - else
-          h1 = "Featured: #{@view_point_artist.showcase_date}"
+          h1 = "Featured: #{@view_point_artist.showcase_date.to_time.strftime("%e %B '%y")}"
 
         h6 = @view_point_artist.view_point_object.name
-        h6 = @view_point_artist.showcase_date
+        h6 = @view_point_artist.showcase_date.to_time.strftime("%e %B %Y")
         h6 = "ViewPoint by #{@view_point_artist.artist_name}"
 
         br
@@ -40,8 +40,20 @@
 
 
     .column.is-6
+      = image_tag @view_point_artist.artwork.to_s if @view_point_artist.artwork.present?
     .column.is-2
-
+      .viewpoint-navigation
+        - if @previous_artist
+          p
+            = link_to view_point_artist_path(@previous_artist) do
+              i.fa.fa-angle-left.left-icon
+              = "#{@previous_artist.showcase_date.to_time.strftime('%e %B')}"
+        .horizontal-separator
+        - if @next_artist
+          p
+            = link_to view_point_artist_path(@next_artist) do
+              = "#{@next_artist.showcase_date.to_time.strftime('%e %B')}"
+              i.fa.fa-angle-right.right-icon
 
 
 
