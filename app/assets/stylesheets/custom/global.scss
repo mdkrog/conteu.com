@@ -33,6 +33,11 @@ img {
 .border{
   border: 1px solid red;
 }
+
+.reverse-row-order{
+  flex-direction:row-reverse;
+}
+
 .fill-page-height{
   @include from($tablet){
     height: calc(100vh - #{$nav-height});

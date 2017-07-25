@@ -41,6 +41,9 @@
     }
   }
 
+  .viewpoint-image{
+    margin-bottom: 2em;
+  }
   .sidebar{
     position: relative;
     margin-bottom: 20px;
@@ -49,7 +52,8 @@
     h1{
       font-family: 'Garamond', 'Times';
       font-weight: 300;
-      font-size: 2em;
+      font-size: 1.8em;
+      margin-bottom: 0.6em;
     }
     h5{
       font-family: 'Carlson', 'Georgia';
@@ -100,6 +104,16 @@
           opacity: 1;
         }
       }
+    }
+
+
+    .website-link{
+      font-family: 'Helvetica Neue', 'Helvetica';
+      font-size: 0.7em;
+      a{ color: $grey-dark; }
+    }
+    i.fa{
+      vertical-align: baseline;
     }
   }
 }
