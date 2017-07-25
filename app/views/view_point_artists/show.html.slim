@@ -15,9 +15,9 @@
         em = @view_point_artist.trivia
 
   - if @view_point_artist.landscape?
-    == render partial: "landscape_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
+    == render partial: "view_point_artists/landscape_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
   - else
-    == render partial: "portrait_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
+    == render partial: "view_point_artists/portrait_layout", locals: { view_point_artist: @view_point_artist, previous_artist: @previous_artist, next_artist: @next_artist, all_objects: @all_objects }
 
   .columns
     .column.is-offset-3.is-6.is-offset-1-mobile.is-10-mobile.has-text-centered
