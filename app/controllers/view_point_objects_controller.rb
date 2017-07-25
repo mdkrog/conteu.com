@@ -1,6 +1,17 @@
 class ViewPointObjectsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: [:show]
   before_action :set_view_point_object, only: [:edit, :update, :destroy]
+
+  def show
+    @view_point_object = ViewPointObject.includes(:view_point_artists).find(params[:id])
+    @all_objects = ViewPointObject.all.order(sort_order: :desc)
+    @all_artists = @view_point_object.view_point_artists.reject { |artist| artist.showcase_date > Date.today }
+
+    # only allow signed in users to see non-published view_point_artists
+    if !@view_point_object.displayed? && !signed_in?
+      redirect_to viewpoint_path
+    end
+  end
 
   def new
     @view_point_object = ViewPointObject.new

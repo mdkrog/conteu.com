@@ -1,0 +1,6 @@
+.tile.is-child.box
+  = link_to view_point_artist_path(view_point_artist) do
+    .image
+      = image_tag view_point_artist.artwork.to_s if view_point_artist.artwork.present?
+    .viewpoint-info
+      = view_point_artist.artist_name

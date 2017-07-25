@@ -3,12 +3,14 @@ class ViewPointArtist < ApplicationRecord
 
   mount_uploader :artwork, ImageUploader
 
+  default_scope { order(showcase_date: :desc) }
+
   def published?
     Date.today >= showcase_date && self.view_point_object.displayed?
   end
 
   def next
-    next_artist = self.class.where("showcase_date > ?", showcase_date).first
+    next_artist = self.class.where("showcase_date > ?", showcase_date).last
     if next_artist.nil? || next_artist.showcase_date > Date.today || !next_artist.view_point_object.displayed?
       nil
     else

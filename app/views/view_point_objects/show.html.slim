@@ -1,0 +1,35 @@
+- meta title: "ViewPoint",
+  description: "There’s nothing like limitations to stretch your creativity. That's why we've starting a creative challenge that offers daily inspiration. Every week we’re asking illustrators, photographers and creatives to reimagine a seemingly ordinary object that we share on our website daily, along with some fascinating facts. At the end of the month we will put up the full collection of artworks on the website.",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa)
+
+.viewpoint
+  .columns
+    .column.is-offset-4.is-4.is-offset-1-mobile.is-10-mobile.has-text-centered
+      .introduction
+        .title.story-title ViewPoint
+        .title-horizontal-bar
+        p To see an ordinary object in a creative way.
+
+  .columns
+    .column.is-3
+      .sidebar.has-text-right
+        h1 = "The #{@view_point_object.name}"
+
+        .view-point-object-list
+          - @all_objects.each do |view_point_object|
+            - if view_point_object.displayed?
+              .view-point-object-list-item class=(view_point_object.id == @view_point_object.id ? 'is-active' : '')
+                = link_to view_point_object.name, view_point_object_path(view_point_object)
+                .view-point-line
+
+
+    .column.is-8
+      .tile.is-ancestor
+        .tile.is-6.is-vertical.is-parent
+          - @all_artists.each_with_index do |view_point_artist, index|
+            - if index%2 == 0
+              == render partial: "tile", locals: { view_point_artist: view_point_artist }
+        .tile.is-6.is-vertical.is-parent
+          - @all_artists.each_with_index do |view_point_artist, index|
+            - if index%2 != 0
+              == render partial: "tile", locals: { view_point_artist: view_point_artist }

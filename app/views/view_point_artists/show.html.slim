@@ -20,7 +20,7 @@
         - if Date.today == @view_point_artist.showcase_date
           h1 Today's Feature
         - else
-          h1 = "Featured: #{@view_point_artist.showcase_date.to_time.strftime("%e %B '%y")}"
+          h1 = "#{@view_point_artist.showcase_date.to_time.strftime("%e %B '%y")}"
 
         h6 = @view_point_artist.view_point_object.name
         h6 = @view_point_artist.showcase_date.to_time.strftime("%e %B %Y")
