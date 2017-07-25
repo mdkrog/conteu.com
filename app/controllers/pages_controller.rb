@@ -12,11 +12,11 @@ class PagesController < ApplicationController
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
 
     if @view_point_artist.nil?
-      render 'view_point_artists/show'
+      render 'viewpoint'
     else
       @next_artist = @view_point_artist.previous
       @previous_artist= @view_point_artist.next
-      render 'viewpoint'
+      render 'view_point_artists/show'
     end
     # only allow signed in users to see non-published view_point_artists
     # if !@view_point_artist.published? && !signed_in?
