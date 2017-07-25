@@ -1,0 +1,85 @@
+.viewpoint{
+  background-color: $mygrey;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  font-family: 'Carlson', 'Georgia';
+  a{
+    color: $grey;
+    &:hover{
+      color: $grey-dark;
+    }
+  }
+  .introduction{
+    padding: 3em 0 1em;
+  }
+  .trivium{
+    padding-bottom: 3em;
+  }
+
+  .title-horizontal-bar{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sidebar{
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0 60px;
+
+    h1{
+      font-family: 'Garamond', 'Times';
+      font-weight: 300;
+      font-size: 2em;
+    }
+    h5{
+      font-family: 'Carlson', 'Georgia';
+      font-weight: bold;
+      font-size: 1em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $grey-light;
+      margin-bottom: 15px;
+    }
+    h6{
+      font-family: 'Helvetica Neue', 'Helvetica';
+      font-weight: 500;
+      font-size: 0.7em;
+    }
+    p{
+      font-family: 'Carlson', 'Georgia';
+      font-size: 1em;
+    }
+
+    .view-point-object-list-item{
+      position: relative;
+      font-family: 'Helvetica Neue', 'Helvetica';
+      font-weight: 500;
+      font-size: 0.7em;
+      padding: 5px;
+      margin: 2px 0;
+      a{
+        color: $grey-light;
+        &:hover{
+          color: $grey-dark;
+        }
+      }
+      .view-point-line{
+        position: absolute;
+        width: 55px;
+        height: 1px;
+        background: $grey;
+        // margin: auto 0;
+        top: 50%;
+        right: -60px;
+        opacity: 0;
+      }
+      &.is-active{
+        a{
+          color: $grey-dark;
+        }
+        .view-point-line{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

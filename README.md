@@ -2,6 +2,14 @@
 
 ## Todo
 
+<!--  -->
+Add date formater
+Add order for view point objects
+ViewPoint Object index page
+ViewPoint Next artist link
+Artist social media links
+
+<!--  -->
 √ 301 redirect
 √ conteumagazine.co.za
 * Setup email accounts
