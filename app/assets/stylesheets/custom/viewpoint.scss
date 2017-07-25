@@ -51,6 +51,12 @@
     img.landscape{
       width: 100%;
     }
+    img{
+      max-width: 100%;
+      @include mobile{
+        width: 100%;
+      }
+    }
   }
   .sidebar{
     &.landscape{
