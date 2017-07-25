@@ -41,6 +41,6 @@ class ViewPointObjectsController < ApplicationController
   end
 
   def view_point_object_params
-    params.require(:view_point_object).permit(:name, :displayed)
+    params.require(:view_point_object).permit(:name, :displayed, :sort_order)
   end
 end

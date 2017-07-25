@@ -5,6 +5,10 @@
       p.control
         = f.input :name, label: false, input_html: { class: 'input' }
     .field
+      label.label Sort Order
+      p.control
+        = f.input :sort_order, as: :integer, label: false, input_html: { class: 'input' }
+    .field
       p.control
         = f.input :displayed, as: :boolean, input_html: { class: 'checkbox' }
 

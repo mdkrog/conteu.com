@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723093641) do
+ActiveRecord::Schema.define(version: 20170725143646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20170723093641) do
   end
 
   create_table "view_point_artists", force: :cascade do |t|
-    t.integer  "view_point_object_id"
+    t.integer  "view_point_object_id", null: false
     t.string   "artwork"
     t.text     "description"
     t.string   "artist_name"
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 20170723093641) do
     t.date     "showcase_date"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.text     "trivia"
     t.index ["view_point_object_id"], name: "index_view_point_artists_on_view_point_object_id", using: :btree
   end
 
@@ -145,15 +146,7 @@ ActiveRecord::Schema.define(version: 20170723093641) do
     t.boolean  "displayed",  default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-  end
-
-  create_table "view_point_trivia", force: :cascade do |t|
-    t.integer  "view_point_object_id"
-    t.text     "description"
-    t.date     "showcase_date"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.index ["view_point_object_id"], name: "index_view_point_trivia_on_view_point_object_id", using: :btree
+    t.integer  "sort_order", default: 0
   end
 
 end

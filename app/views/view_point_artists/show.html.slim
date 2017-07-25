@@ -12,7 +12,7 @@
   .columns
     .column.is-offset-3.is-6.is-offset-1-mobile.is-10-mobile.has-text-centered
       p.trivium
-        em = @view_point_trivium.description
+        em = @view_point_artist.trivia
 
   .columns.is-gapless
     .column.is-4
@@ -34,9 +34,10 @@
         h1 ViewPoint Archive
         .view-point-object-list
           - @all_objects.each do |view_point_object|
-            .view-point-object-list-item class=(view_point_object.id == @view_point_artist.view_point_object_id ? 'is-active' : '')
-              = link_to view_point_object.name, view_point_object_path(view_point_object)
-              .view-point-line
+            - if view_point_object.displayed?
+              .view-point-object-list-item class=(view_point_object.id == @view_point_artist.view_point_object_id ? 'is-active' : '')
+                = link_to view_point_object.name, view_point_object_path(view_point_object)
+                .view-point-line
 
 
     .column.is-6
