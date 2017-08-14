@@ -1,17 +1,14 @@
-// prevent image selection
-$(function() {
-  $("img").mousedown(function(){
-    return false;
-  });
-  $("body").on("contextmenu", "img", function(e) {
-    return false;
-  });
-
-});
-
-
-
 $(document).on('turbolinks:load', function() {
+  // prevent image selection
+  $(function() {
+    $("img").mousedown(function(){
+      return false;
+    });
+    $("body").on("contextmenu", "img", function(e) {
+      return false;
+    });
+
+  });
 
   $('.add-to-cart').on('click', function(e) {
     $(this).parent().addClass('is-hidden');
@@ -124,5 +121,11 @@ $(document).on('turbolinks:load', function() {
     classie.toggle( body, 'cbp-spmenu-push-toright' );
     classie.toggle( menuLeft, 'cbp-spmenu-open' );
     classie.toggle( mobileNavi, 'pushed-right' );
+  });
+
+  // admin toggle tabs
+  $('.close-newsletter-pop-up').on('click', function(e) {
+    $('.newsletter-pop-up').addClass('is-hidden');
+    return false;
   });
 });

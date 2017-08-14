@@ -4,6 +4,7 @@ class ViewPointArtistsController < ApplicationController
 
   def show
     @main_nav = true
+    @newsletter_pop_up = true
     @view_point_artist = ViewPointArtist.find(params[:id])
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
     @next_artist = @view_point_artist.previous

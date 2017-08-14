@@ -398,3 +398,55 @@ label.checkbox{
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+// newsletter
+.newsletter-pop-up{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  z-index: 2000;
+  @include mobile{
+    width: 100%;
+    padding-top: 40px;
+  }
+  padding: 10px 30px;
+  border: 1px solid $grey;
+  background-color: rgba(255,255,255,0.9);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  .order-form{
+    font-family: 'Carlson', 'Georgia';
+    margin: 0 auto;
+    padding-right: 0;
+  }
+  .order-form .field-label.is-normal{
+    flex-grow: 2;
+  }
+  .field-body p.control{
+    width: 100%;
+  }
+  .button-container{
+    text-align: right;
+  }
+  a{
+    color: $grey-light!important;
+    &:hover{
+      color: $grey!important;
+    }
+  }
+  ul{
+    margin-bottom: 20px;
+  }
+  .close-newsletter-pop-up{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: $grey-light!important;
+    &:hover{
+      color: $grey!important;
+    }
+  }
+}

@@ -24,12 +24,21 @@
 
 
     .column.is-8
-      .tile.is-ancestor
-        .tile.is-6.is-vertical.is-parent
-          - @all_artists.each_with_index do |view_point_artist, index|
-            - if index%2 == 0
-              == render partial: "tile", locals: { view_point_artist: view_point_artist }
-        .tile.is-6.is-vertical.is-parent
-          - @all_artists.each_with_index do |view_point_artist, index|
-            - if index%2 != 0
-              == render partial: "tile", locals: { view_point_artist: view_point_artist }
+      .columns.is-multiline
+        - @all_artists.each do |view_point_artist|
+          .column.is-6
+            = link_to view_point_artist_path(view_point_artist) do
+              .image
+                = image_tag view_point_artist.artwork.to_s if view_point_artist.artwork.present?
+              .viewpoint-info
+                = view_point_artist.artist_name
+
+      / .tile.is-ancestor
+      /   .tile.is-6.is-vertical.is-parent
+      /     - @all_artists.each_with_index do |view_point_artist, index|
+      /       - if index%2 == 0
+      /         == render partial: "tile", locals: { view_point_artist: view_point_artist }
+      /   .tile.is-6.is-vertical.is-parent
+      /     - @all_artists.each_with_index do |view_point_artist, index|
+      /       - if index%2 != 0
+      /         == render partial: "tile", locals: { view_point_artist: view_point_artist }

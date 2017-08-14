@@ -27,6 +27,9 @@ html
       == render 'layouts/footer' unless @no_footer
 
 
+    - if @newsletter_pop_up
+      == render 'layouts/newsletter_pop_up'
+
     - if signed_in?
       == render 'layouts/admin_nav'
     == render 'layouts/google_analytics'

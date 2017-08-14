@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def viewpoint
     @main_nav = true
+    @newsletter_pop_up = true
     @view_point_artist = ViewPointArtist.where("showcase_date <= ?", Date.today).first
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
 
