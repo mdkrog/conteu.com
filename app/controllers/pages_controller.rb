@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def viewpoint
+    @main_nav = true
     @view_point_artist = ViewPointArtist.where("showcase_date <= ?", Date.today).first
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
 

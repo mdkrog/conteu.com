@@ -3,6 +3,7 @@ class ViewPointObjectsController < ApplicationController
   before_action :set_view_point_object, only: [:edit, :update, :destroy]
 
   def show
+    @main_nav = true
     @view_point_object = ViewPointObject.includes(:view_point_artists).find(params[:id])
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
     @all_artists = @view_point_object.view_point_artists.reject { |artist| artist.showcase_date > Date.today }
