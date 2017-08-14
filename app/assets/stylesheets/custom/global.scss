@@ -216,8 +216,9 @@ label.checkbox{
   width: 240px;
   height: 100%;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   font-family: 'Garamond', 'Times';
+  background: #fff;
 }
 
 .main-site-nav-inner{
@@ -240,6 +241,7 @@ label.checkbox{
   top: 0;
   z-index: 1;
   border-left: 1px solid $grey;
+  background: #fff;
 }
 .contents-nav{
   display: flex;  height: 100%;
