@@ -11,7 +11,15 @@
   p.control
     = f.input :website, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'http://www.conteu.com'
 .field
-  label.label instagram_handle
+  label.label Instagram Handle
   p.control
     = f.input :instagram_handle, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'conteu_magazine'
+.field
+  label.label Additional Website
+  p.control
+    = f.input :website_additional, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'http://www.conteu.com'
+.field
+  label.label Additional Instagram Handle
+  p.control
+    = f.input :instagram_handle_additional, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'conteu_magazine'
 
