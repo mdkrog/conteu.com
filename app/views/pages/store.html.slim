@@ -18,12 +18,12 @@
           = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
 
     .column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
-      .columns
+      .columns.is-multiline
         - if @featured_product
           .column.is-12
             = render partial: "products/product_thumb", locals: { product: @featured_product }
 
-      .columns
+      .columns.is-multiline
         - @products.each do |product|
           .column.is-4
             = render partial: "products/product_thumb", locals: { product: product }
@@ -35,7 +35,7 @@
         .conteu-store-heading.has-text-centered FRIENDS OF CONTEU
 
     .column.column.is-offset-1.is-10.is-offset-1-mobile.is-10-mobile
-      .columns
+      .columns.is-multiline
         - @friend_products.each do |friend_product|
           .column.is-3
             = render partial: "products/product_thumb", locals: { product: friend_product }
