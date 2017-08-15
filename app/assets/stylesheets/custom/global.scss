@@ -401,27 +401,55 @@ label.checkbox{
   transition: all 0.3s ease;
 }
 
+.modal{
+  z-index: 9000;
+}
+
+.modal-background{
+  background-color: rgba(255,255,255,0.8)!important;
+}
+.modal-close{
+  background-color: $grey;
+}
+.modal-content{
+  border: 1px solid $grey!important;
+}
 // newsletter
 .newsletter-pop-up{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-  z-index: 2000;
-  @include mobile{
-    width: 100%;
-    padding-top: 40px;
-  }
+  // position: fixed;
+  // width: 90%;
+  // z-index: 2000;
+  // @include mobile{
+  //   width: 100%;
+  //   padding-top: 40px;
+  // }
   padding: 10px 30px;
-  border: 1px solid $grey;
+
   background-color: rgba(255,255,255,0.9);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  .order-form{
-    font-family: 'Carlson', 'Georgia';
-    margin: 0 auto;
-    padding-right: 0;
+
+  .title{
+    margin-bottom: 0px;
+    padding-top: 25px;
+    font-size: 2em;
+    font-family: 'Garamond', 'Times';
   }
+
+
+  #mc_embed_signup{
+    padding-right:0;
+  }
+  #mc_embed_signup_scroll{
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  border-radius: 3px;
+
+  // .order-form{
+  //   font-family: 'Carlson', 'Georgia';
+  //   margin: 0 auto;
+  //   padding-right: 0;
+  // }
   .order-form .field-label.is-normal{
     flex-grow: 2;
   }
@@ -429,17 +457,27 @@ label.checkbox{
     width: 100%;
   }
   .button-container{
-    text-align: right;
-  }
-  a{
-    color: $grey-light!important;
-    &:hover{
-      color: $grey!important;
+    text-align: center;
+    .button{
+      padding: 0 30px;
+      height: 40px;
+      background: #626262;
+      color: #fff;
+      border: none;
+      &:hover{
+        background: $grey!important;
+      }
     }
   }
-  ul{
-    margin-bottom: 20px;
-  }
+  // a{
+  //   color: $grey-light!important;
+  //   &:hover{
+  //     color: $grey!important;
+  //   }
+  // }
+  // ul{
+  //   margin-bottom: 20px;
+  // }
   .close-newsletter-pop-up{
     position: absolute;
     top: 0px;

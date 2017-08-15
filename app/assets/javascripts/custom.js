@@ -123,9 +123,16 @@ $(document).on('turbolinks:load', function() {
     classie.toggle( mobileNavi, 'pushed-right' );
   });
 
-  // admin toggle tabs
-  $('.close-newsletter-pop-up').on('click', function(e) {
-    $('.newsletter-pop-up').addClass('is-hidden');
+
+  $('.modal-close').on('click', function(e) {
+    $('.modal').removeClass('is-active');
+    document.cookie="newsletter_shown=true";
+    return false;
+  });
+
+  $('.modal-background').on('click', function(e) {
+    $('.modal').removeClass('is-active');
+    document.cookie="newsletter_shown=true";
     return false;
   });
 });
