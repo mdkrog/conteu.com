@@ -406,13 +406,14 @@ label.checkbox{
 }
 
 .modal-background{
-  background-color: rgba(255,255,255,0.8)!important;
+  background: none!important;
 }
 .modal-close{
   background-color: $grey;
 }
 .modal-content{
-  border: 1px solid $grey!important;
+  // border: 1px solid $grey!important;
+  width: 600px;
 }
 // newsletter
 .newsletter-pop-up{

@@ -124,7 +124,7 @@ $(document).on('turbolinks:load', function() {
   });
 
 
-  $('.modal-close').on('click', function(e) {
+  $('.close-newsletter-pop-up').on('click', function(e) {
     $('.modal').removeClass('is-active');
     document.cookie="newsletter_shown=true";
     return false;
