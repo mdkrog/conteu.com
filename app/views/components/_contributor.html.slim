@@ -28,9 +28,9 @@
             .has-text-centered
               - if component.instagram_handle_additional.present?
                 .insta
-                  = link_to "https://www.instagram.com/#{component.instagram_handle}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle}', true)" do
+                  = link_to "https://www.instagram.com/#{component.instagram_handle_additional}", target: '_blank', onclick: "return trackOutboundLink('https://www.instagram.com/#{component.instagram_handle_additional}', true)" do
                     = fa_icon 'instagram'
                     span.insta-handle.sans-serif = " @#{component.instagram_handle_additional}"
               - if component.website_additional.present?
                 .website-link
-                  = link_to component.website_additional.gsub(/https:\/\//, '').gsub(/http:\/\//, ''), component.website_additional, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website}', true)"
+                  = link_to component.website_additional.gsub(/https:\/\//, '').gsub(/http:\/\//, ''), component.website_additional, target: '_blank', class: 'contributor-name', onclick: "return trackOutboundLink('#{component.website_additional}', true)"
