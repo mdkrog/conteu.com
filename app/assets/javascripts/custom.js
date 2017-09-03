@@ -65,6 +65,7 @@ $(document).on('turbolinks:load', function() {
     $('.admin-tab-2').removeClass('is-hidden');
     $('.magazine-tab').removeClass('is-active');
     $('.store-tab').addClass('is-active');
+    $('.orders-tab').removeClass('is-active');
   }
 
   if(hash=='viewpoint'){
@@ -73,6 +74,16 @@ $(document).on('turbolinks:load', function() {
     $('.magazine-tab').removeClass('is-active');
     $('.store-tab').removeClass('is-active');
     $('.viewpoint-tab').addClass('is-active');
+    $('.orders-tab').removeClass('is-active');
+  }
+
+  if(hash=='orders'){
+    $('.admin-tab').addClass('is-hidden');
+    $('.admin-tab-4').removeClass('is-hidden');
+    $('.magazine-tab').removeClass('is-active');
+    $('.store-tab').removeClass('is-active');
+    $('.viewpoint-tab').removeClass('is-active');
+    $('.orders-tab').addClass('is-active');
   }
 
   $('#product-list').sortable({

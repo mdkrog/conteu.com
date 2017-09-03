@@ -36,7 +36,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    @product.deleted = true
+    @product.save
     respond_to do |format|
       format.html { redirect_to admin_path, notice: 'Product was successfully deleted.' }
       format.json { head :no_content }
@@ -69,6 +70,7 @@ class ProductsController < ApplicationController
                                     :partner_link,
                                     :featured,
                                     :displayed,
+                                    :deleted,
                                     :sort_order)
   end
 end

@@ -19,6 +19,11 @@
             span.icon.is-small
               i.fa.fa-binoculars
             span ViewPoint
+        li.orders-tab
+          = link_to '#orders', class: 'toggle-admin-tab', data: {tab: 'admin-tab-4'} do
+            span.icon.is-small
+              i.fa.fa-credit-card
+            span Orders
 
     .admin-tab.admin-tab-1
       table.table.is-bordered
@@ -68,7 +73,7 @@
         - @products.each do |product|
           li id=("product_#{product.id}") class=('product-list-item')
             = link_to product.title, edit_product_path(product)
-            = link_to product, data: {:confirm => 'Delete FRIEND PRODUCT - Are you sure?'}, :method => :delete, class: 'trash-icon is-pulled-right' do
+            = link_to product, data: {:confirm => 'Delete PRODUCT - Are you sure?'}, :method => :delete, class: 'trash-icon is-pulled-right' do
               = fa_icon "trash-o"
             = link_to edit_product_path(product), class: 'is-pulled-right edit-link' do
               = fa_icon "pencil-square-o"
@@ -153,3 +158,21 @@
       .admin-options
         = link_to 'New ViewPoint Object ', new_view_point_object_path, class: 'button is-small'
         = link_to 'New ViewPoint Artist', new_view_point_artist_path, class: 'button is-small'
+
+    .admin-tab.admin-tab-4.is-hidden
+      table.table.is-bordered
+        tbody
+          th Date
+          th Name
+          th City
+          th Price
+          th Link
+          th Status
+          - @orders.each do |order|
+            tr
+              td = order.created_at.to_date
+              td = order.name
+              td = order.city
+              td = order.total_price_incl_shipping
+              td = link_to 'View', order_path(order)
+              td = order.status
