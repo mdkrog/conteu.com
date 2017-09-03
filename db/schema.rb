@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725194021) do
+ActiveRecord::Schema.define(version: 20170903115647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,18 +69,28 @@ ActiveRecord::Schema.define(version: 20170725194021) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "name",         default: "", null: false
-    t.string   "email",        default: "", null: false
-    t.string   "phone",        default: "", null: false
-    t.string   "address",      default: "", null: false
-    t.string   "city",         default: "", null: false
-    t.string   "postal_code",  default: "", null: false
-    t.string   "country",      default: "", null: false
+    t.string   "name",               default: "", null: false
+    t.string   "email",              default: "", null: false
+    t.string   "phone",              default: "", null: false
+    t.string   "address",            default: "", null: false
+    t.string   "city",               default: "", null: false
+    t.string   "postal_code",        default: "", null: false
+    t.string   "country",            default: "", null: false
     t.string   "order_number"
-    t.integer  "status",       default: 0
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "status",             default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "shipping_option_id"
     t.index ["email"], name: "index_orders_on_email", using: :btree
+  end
+
+  create_table "product_shipping_options", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "shipping_option_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["product_id"], name: "index_product_shipping_options_on_product_id", using: :btree
+    t.index ["shipping_option_id"], name: "index_product_shipping_options_on_shipping_option_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -99,6 +109,16 @@ ActiveRecord::Schema.define(version: 20170725194021) do
     t.datetime "updated_at",                        null: false
     t.string   "image_store_front"
     t.string   "image_alt1"
+  end
+
+  create_table "shipping_options", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.integer  "price",               default: 0, null: false
+    t.string   "estimated_delivery"
+    t.integer  "country_limitations", default: 0
+    t.string   "additional_info"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "stories", force: :cascade do |t|
