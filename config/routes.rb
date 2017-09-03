@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:destroy] do
     post "add", path: "add/:id", on: :member
-    post "reduce", path: "reduce/:id", on: :member
+    post "change_quantity", path: "change_quantity/:id", on: :member
     delete "remove", path: "destroy/:id", on: :member
   end
 

@@ -53,9 +53,9 @@
         - @cart.items.each do |item|
           tr
             td
-              = link_to add_cart_path(item.product.id), method: :post, remote: true, class: 'change-cart-qty'
+              = link_to change_quantity_cart_path(item.product.id, quantity: 1), method: :post, remote: true, class: 'change-cart-qty'
                 i.fa.fa-chevron-up
-              = link_to reduce_cart_path(item.product.id), method: :post, remote: true, class: 'change-cart-qty'
+              = link_to change_quantity_cart_path(id: item.product.id, quantity: -1), method: :post, remote: true, class: 'change-cart-qty'
                 i.fa.fa-chevron-down
             td=item.quantity
             td
