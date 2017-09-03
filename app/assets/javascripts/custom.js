@@ -29,6 +29,10 @@ $(document).on('turbolinks:load', function() {
     counter.text(''+result);
   }
 
+  $('.change-cart-qty').on('click', function(e) {
+    window.location.reload(true);
+  });
+
   var editorial = $('.toggle-panel').first();
   if(editorial){
     setTimeout(function() {

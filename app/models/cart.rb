@@ -26,6 +26,15 @@ class Cart
     end
   end
 
+  def reduce_item_qty product_id
+    item = @items.find { |item| item.product_id == product_id }
+    if item
+      item.decrement
+    else
+      false
+    end
+  end
+
   def empty?
     @items.empty?
   end

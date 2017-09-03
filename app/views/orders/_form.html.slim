@@ -2,55 +2,61 @@
   .columns
     .column.is-6
       .order-form
-          .field.is-horizontal
-            label.field-label.is-normal Name
-            .field-body
-              p.control
-                = f.input :name, label: false, input_html: { class: 'input' }
-          .field.is-horizontal
-            label.field-label.is-normal Email
-            .field-body
-              p.control
-                = f.input :email, label: false, input_html: { class: 'input' }
-          .field.is-horizontal
-            label.field-label.is-normal Phone
-            .field-body
-              p.control
-                = f.input :phone, label: false, input_html: { class: 'input' }
-          .field.is-horizontal
-            label.field-label.is-normal Address
-            .field-body
-              p.control
-                = f.input :address, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal Name
+          .field-body
+            p.control
+              = f.input :name, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal Email
+          .field-body
+            p.control
+              = f.input :email, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal Phone
+          .field-body
+            p.control
+              = f.input :phone, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal Address
+          .field-body
+            p.control
+              = f.input :address, label: false, input_html: { class: 'input' }
 
-          .field.is-horizontal
-            label.field-label.is-normal City
-            .field-body
-              p.control
-                = f.input :city, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal City
+          .field-body
+            p.control
+              = f.input :city, label: false, input_html: { class: 'input' }
 
-          .field.is-horizontal
-            label.field-label.is-normal Country
-            .field-body
-              p.control
-                = f.input :country, as: :country, label: false, input_html: { class: 'input' }, priority: [ "South Africa", "United Kingdom" ]
+        .field.is-horizontal
+          label.field-label.is-normal Country
+          .field-body
+            p.control
+              = f.input :country, as: :country, label: false, input_html: { class: 'input' }, priority: [ "South Africa", "United Kingdom" ]
 
-          .field.is-horizontal
-            label.field-label.is-normal Postal Code
-            .field-body
-              p.control
-                = f.input :postal_code, label: false, input_html: { class: 'input' }
+        .field.is-horizontal
+          label.field-label.is-normal Postal Code
+          .field-body
+            p.control
+              = f.input :postal_code, label: false, input_html: { class: 'input' }
 
     .column.is-5.is-offset-1
       table.table.table-hover
         thead
           tr
+            th
             th Qty
             th Product
             th Price
 
         - @cart.items.each do |item|
           tr
+            td
+              = link_to add_cart_path(item.product.id), method: :post, remote: true, class: 'change-cart-qty'
+                i.fa.fa-chevron-up
+              = link_to reduce_cart_path(item.product.id), method: :post, remote: true, class: 'change-cart-qty'
+                i.fa.fa-chevron-down
             td=item.quantity
             td
               / = image_tag item.product.image
@@ -58,7 +64,7 @@
             td.text-right = number_to_currency(item.total_price, locale: :zar)
         tfoot
           tr
-            td.has-text-right(colspan=3)
+            td.has-text-right(colspan=4)
               strong
                 = "Total: "
                 = number_to_currency(@cart.total_price, locale: :zar)

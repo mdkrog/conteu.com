@@ -7,6 +7,18 @@ class CartsController < ApplicationController
     head :ok
   end
 
+  def reduce
+    @cart.reduce_item_qty(params[:id])
+    session["cart"] = @cart.serialize
+
+    cart = session['cart']
+    item = cart['items'].find { |item| item['product_id'] == params[:id] }
+    if item['quantity'] <= 0
+      cart['items'].delete item
+    end
+    head :ok
+  end
+
   def remove
     cart = session['cart']
     item = cart['items'].find { |item| item['product_id'] == params[:id] }
