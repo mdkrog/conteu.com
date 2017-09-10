@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903184717) do
+ActiveRecord::Schema.define(version: 20170910075932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,15 +84,6 @@ ActiveRecord::Schema.define(version: 20170903184717) do
     t.index ["email"], name: "index_orders_on_email", using: :btree
   end
 
-  create_table "product_shipping_options", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "shipping_option_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["product_id"], name: "index_product_shipping_options_on_product_id", using: :btree
-    t.index ["shipping_option_id"], name: "index_product_shipping_options_on_shipping_option_id", using: :btree
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "title",                             null: false
     t.text     "description"
@@ -110,16 +101,6 @@ ActiveRecord::Schema.define(version: 20170903184717) do
     t.string   "image_store_front"
     t.string   "image_alt1"
     t.boolean  "deleted",           default: false
-  end
-
-  create_table "shipping_options", force: :cascade do |t|
-    t.string   "name",                            null: false
-    t.integer  "price",               default: 0, null: false
-    t.string   "estimated_delivery"
-    t.integer  "country_limitations", default: 0
-    t.string   "additional_info"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
   end
 
   create_table "stories", force: :cascade do |t|

@@ -4,7 +4,6 @@ class Order < ApplicationRecord
 
   before_create :generate_random_id
   has_many :order_items
-  belongs_to :shipping_option
 
   enum status: { pending: 0, paid: 1, failed: 2, dispatched: 3, delivered: 4 }
 
