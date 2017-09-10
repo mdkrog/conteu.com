@@ -30,6 +30,27 @@
       label.label Price
       p.control
         = f.input :price, as: :integer, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label Local Shipping Price
+      p.control
+        = f.input :local_shipping_price, as: :integer, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label Estimated Delivery Time (Local)
+      p.control
+        = f.input :local_estimated_delivery_time, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label International Shipping Price
+      p.control
+        = f.input :international_shipping_price, as: :integer, label: false, input_html: { class: 'input' }
+
+    .field
+      label.label Estimated Delivery Time (International)
+      p.control
+        = f.input :international_estimated_delivery_time, label: false, input_html: { class: 'input' }
+
     .field
       label.label Quantity
       p.control

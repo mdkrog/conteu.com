@@ -10,6 +10,16 @@ $(document).on('turbolinks:load', function() {
 
   });
 
+  $("#order_country").on( "change", function() {
+    if($(this).val() == "ZA"){
+      $('.international-shipping-option').addClass('is-hidden');
+      $('.local-shipping-option').removeClass('is-hidden');
+    }else{
+      $('.local-shipping-option').addClass('is-hidden');
+      $('.international-shipping-option').removeClass('is-hidden');
+    }
+  });
+
   $('.add-to-cart').on('click', function(e) {
     $(this).parent().addClass('is-hidden');
     $(this).parent().siblings().removeClass('is-hidden');

@@ -68,14 +68,24 @@
               strong
                 = "Total: "
                 = number_to_currency(@cart.total_price, locale: :zar)
+
+      .shipping-prices
+        h6 Shipping Options
+        .shipping-radio
+          = f.radio_button :shipping_option, 'collection_durban', checked: true
+          .shipping-label = 'Collect from Durban'
+        .shipping-radio.local-shipping-option
+          = f.radio_button :shipping_option, 'local'
+          .shipping-label = "R#{@local_shipping_product.local_shipping_price} (South Africa)"
+          / em = "#{@local_shipping_product.local_estimated_delivery_time}"
+        .shipping-radio.international-shipping-option.is-hidden
+          = f.radio_button :shipping_option, 'international'
+          .shipping-label = "R#{@international_shipping_product.international_shipping_price} (International)"
+        / em = "#{@local_shipping_product.international_estimated_delivery_time}"
+
       .is-pulled-right
         p.control
           = f.button :submit, 'Continue', class: 'button is-right confirm-button'
 
-      .is-clearfix
-      .shipping-prices
-        br
-        br Please note that a shipping fee will be added to your order at checkout
-        li South Africa: R54
-        li International: R250
+
 

@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    set_shipping_prices
     @order = Order.new
   end
 
@@ -18,6 +19,7 @@ class OrdersController < ApplicationController
       end
       redirect_to order_path(@order)
     else
+      set_shipping_prices
       render :new
     end
   end
@@ -35,6 +37,13 @@ class OrdersController < ApplicationController
                                     :address,
                                     :city,
                                     :country,
-                                    :postal_code)
+                                    :postal_code,
+                                    :shipping_option)
+  end
+
+  def set_shipping_prices
+    products = @cart.items.map { |item| item.product }
+    @local_shipping_product = products.max_by(&:local_shipping_price)
+    @international_shipping_product = products.max_by(&:international_shipping_price)
   end
 end

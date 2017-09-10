@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910075932) do
+ActiveRecord::Schema.define(version: 20170910134822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,38 +69,43 @@ ActiveRecord::Schema.define(version: 20170910075932) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "name",               default: "", null: false
-    t.string   "email",              default: "", null: false
-    t.string   "phone",              default: "", null: false
-    t.string   "address",            default: "", null: false
-    t.string   "city",               default: "", null: false
-    t.string   "postal_code",        default: "", null: false
-    t.string   "country",            default: "", null: false
+    t.string   "name",                 default: "", null: false
+    t.string   "email",                default: "", null: false
+    t.string   "phone",                default: "", null: false
+    t.string   "address",              default: "", null: false
+    t.string   "city",                 default: "", null: false
+    t.string   "postal_code",          default: "", null: false
+    t.string   "country",              default: "", null: false
     t.string   "order_number"
-    t.integer  "status",             default: 0
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.integer  "shipping_option_id"
+    t.integer  "status",               default: 0
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "shipping_option",      default: 0
+    t.integer  "fixed_shipping_price", default: -1
     t.index ["email"], name: "index_orders_on_email", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",                             null: false
+    t.string   "title",                                                      null: false
     t.text     "description"
-    t.integer  "price",             default: 0
+    t.integer  "price",                                 default: 0
     t.string   "image"
-    t.boolean  "native_store",      default: true
-    t.integer  "quantity",          default: 1
+    t.boolean  "native_store",                          default: true
+    t.integer  "quantity",                              default: 1
     t.string   "partner_name"
     t.string   "partner_link"
-    t.boolean  "featured",          default: false
-    t.boolean  "displayed",         default: false
-    t.integer  "sort_order",        default: 1
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.boolean  "featured",                              default: false
+    t.boolean  "displayed",                             default: false
+    t.integer  "sort_order",                            default: 1
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
     t.string   "image_store_front"
     t.string   "image_alt1"
-    t.boolean  "deleted",           default: false
+    t.boolean  "deleted",                               default: false
+    t.integer  "local_shipping_price",                  default: 54
+    t.string   "local_estimated_delivery_time",         default: "2 Days"
+    t.integer  "international_shipping_price",          default: 250
+    t.string   "international_estimated_delivery_time", default: "3 Months"
   end
 
   create_table "stories", force: :cascade do |t|
