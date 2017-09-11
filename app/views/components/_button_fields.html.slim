@@ -1,0 +1,8 @@
+.field
+  label.label Button Text
+  p.control
+    = f.input :text, as: :string, label: false, input_html: { class: 'input' }
+.field
+  label.label Link
+  p.control
+    = f.input :link, as: :string, label: false, input_html: { class: 'input' }, placeholder: 'http://'

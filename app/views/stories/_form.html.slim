@@ -54,6 +54,7 @@
         = link_to_add_association 'Add Pull Quote', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = PullQuote.new }
         = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }
         = link_to_add_association 'Add Multi Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = MultiImage.new }
+        = link_to_add_association 'Add Button', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Button.new }
 
     br
     .is-pulled-right
