@@ -1,5 +1,5 @@
 .columns
   .column.is-12
     .has-text-centered
-      = link_to "#{component.link}"
+      = link_to "#{component.link}", target: '_blank', onclick: "return trackOutboundLink('#{component.link}', true)"
         .button = component.text
