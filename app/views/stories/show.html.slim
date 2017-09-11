@@ -14,7 +14,7 @@ nav#cbp-spmenu-s2.cbp-spmenu.cbp-spmenu-vertical2.cbp-spmenu-right
       .contents-block
         h1.has-text-centered
           = link_to @story.issue.title, issue_path(@story.issue)
-        h6.has-text-centered READ JULY 2017
+        h6.has-text-centered = "READ #{@story.issue.release_date.to_time.strftime("%B %Y")}".upcase
         br
         br
         h5.has-text-centered Contents
