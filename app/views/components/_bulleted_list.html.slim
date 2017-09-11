@@ -1,0 +1,5 @@
+.columns
+  .column class=(component.indent == "1" ? 'is-11 is-offset-1' : 'is-12')
+    ul.story-bulleted-list
+      = raw "<li>"
+      = raw component.list.gsub(/\n/, '</li><li>')

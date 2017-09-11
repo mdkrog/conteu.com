@@ -55,6 +55,7 @@
         = link_to_add_association 'Add Single Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = SingleImage.new }
         = link_to_add_association 'Add Multi Image', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = MultiImage.new }
         = link_to_add_association 'Add Button', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = Button.new }
+        = link_to_add_association 'Add Bulleted List', f, :components, class: 'button is-small', :wrap_object => Proc.new { |component| component = BulletedList.new }
 
     br
     .is-pulled-right

@@ -1,0 +1,8 @@
+.field
+  label.label List
+  p.control
+    = f.input :list, as: :text, label: false, input_html: { class: 'textarea', rows: 8 }
+.field
+  p.control
+    = f.input :indent, as: :boolean, input_html: { class: 'checkbox' }
+
