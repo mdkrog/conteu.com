@@ -65,6 +65,13 @@
     .field
       p.control
         = f.input :native_store, as: :boolean, label: 'Sold on Conteu Store', input_html: { class: 'checkbox' }
+    .field
+      p.control
+        = f.input :preorder, as: :boolean, input_html: { class: 'checkbox' }
+    .field
+      label.label Pre-order Dispatch Date
+      p.control
+        = f.input :preorder_dispatch_date, as: :string, label: false, input_html: { class: 'input', id: 'datepicker' }
     br
     .sub-title PARTNER DETAILS
     br

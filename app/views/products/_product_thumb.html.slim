@@ -22,14 +22,17 @@
         - if product.native_store
           div class=('is-hidden' if !@cart.product_in_cart(product.id))
             = link_to remove_cart_path(product.id), method: :delete, remote: true, class: 'remove-from-cart'
-                .buy-button
-                  span.button-text = "REMOVE FROM CART "
-                  span.price = "R#{product.price}"
+              .buy-button
+                span.button-text = "REMOVE FROM CART "
+                span.price = "R#{product.price}"
           div class=('is-hidden' if @cart.product_in_cart(product.id))
             = link_to add_cart_path(product.id), method: :post, remote: true, class: 'add-to-cart'
-                .buy-button
+              .buy-button
+                - if product.preorder?
+                  span.button-text = "PREORDER | ADD TO CART "
+                - else
                   span.button-text = "ADD TO CART "
-                  span.price = "R#{product.price}"
+                span.price = "R#{product.price}"
 
         - else
           = link_to product.partner_link, target: '_blank', onclick: "return trackOutboundLink('#{product.partner_link}', true)" do

@@ -74,6 +74,8 @@ class ProductsController < ApplicationController
                                     :partner_link,
                                     :featured,
                                     :displayed,
+                                    :preorder,
+                                    :preorder_dispatch_date,
                                     :deleted,
                                     :sort_order)
   end

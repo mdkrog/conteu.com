@@ -4,9 +4,18 @@
     = f.input :image1, as: :file, label: false
     br
     = image_tag f.object.image1.to_s, class: 'image-thumb' if f.object.image1.present?
+.field
+  label.label Caption 1
+  p.control
+    = f.input :caption1, as: :string, label: false, input_html: { class: 'input' }
   br
+.field
   label.label Image 2
   p.control
     = f.input :image2, as: :file, label: false
     br
     = image_tag f.object.image2.to_s, class: 'image-thumb' if f.object.image2.present?
+.field
+  label.label Caption 2
+  p.control
+    = f.input :caption2, as: :string, label: false, input_html: { class: 'input' }

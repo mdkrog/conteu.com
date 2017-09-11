@@ -28,8 +28,6 @@
   }
 }
 
-
-
 .full-width-image{
   img{ width: 100%; }
 }
@@ -106,3 +104,9 @@
   padding: 0 1em;
 }
 
+.image-caption{
+  display: inline-block;
+  font-size: 0.9em;
+  margin-top: 0.8em;
+  margin-bottom: 1.5em;
+}

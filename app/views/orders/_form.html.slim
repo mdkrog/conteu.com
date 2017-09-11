@@ -69,6 +69,13 @@
                 = "Total: "
                 = number_to_currency(@cart.total_price, locale: :zar)
 
+      - if @preorder
+        .preorder-notice
+          p
+            | Please note that one or more items in your cart are preorders. Your entire order will only be dispatched once we have those items in stock.
+            br
+            strong = "Expected dispatch date: #{@preorder_dispatch_date.to_time.strftime("%d %B %Y")}"
+
       .shipping-prices
         h6 Shipping Options
         .shipping-radio

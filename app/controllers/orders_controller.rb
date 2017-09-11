@@ -45,5 +45,14 @@ class OrdersController < ApplicationController
     products = @cart.items.map { |item| item.product }
     @local_shipping_product = products.max_by(&:local_shipping_price)
     @international_shipping_product = products.max_by(&:international_shipping_price)
+
+    @preorder_dispatch_date = nil
+    @preorder = false
+    products.each do |product|
+      if product.preorder
+        @preorder = true
+        @preorder_dispatch_date = [@preorder_dispatch_date, product.preorder_dispatch_date].compact.max
+      end
+    end
   end
 end

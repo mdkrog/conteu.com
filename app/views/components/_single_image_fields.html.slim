@@ -8,5 +8,10 @@
   p.control
     = f.input :full_width, as: :boolean, input_html: { class: 'checkbox' }
 .field
+  label.label Caption
+  p.control
+    = f.input :caption, as: :string, label: false, input_html: { class: 'input' }
+.field
   p.control
     = f.input :indent, as: :boolean, input_html: { class: 'checkbox' }
+

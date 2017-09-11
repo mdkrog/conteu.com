@@ -81,6 +81,8 @@
               .tag.is-grey.is-pulled-right displaying
             - if product.featured?
               .tag.is-primary.is-pulled-right featured
+            - if product.preorder?
+              .tag.is-warning.is-pulled-right pre-order
       br
       .sub-title FRIENDS OF CONTEU
       br
