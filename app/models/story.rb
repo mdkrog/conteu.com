@@ -14,4 +14,12 @@ class Story < ApplicationRecord
   CONTENTS_LAYOUTS = [ContentsLayoutIcon.new(1, "layout-1.gif")]
 
   default_scope { order(page_number: :asc) }
+
+  def next_story
+    Story.where(page_number: page_number+1, issue: issue).first
+  end
+
+  def previous_story
+    Story.where(page_number: page_number-1, issue: issue).first
+  end
 end

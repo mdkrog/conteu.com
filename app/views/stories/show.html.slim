@@ -7,6 +7,13 @@
     .components
       - @story.components.each do |component|
         = render partial: "components/#{component.class.name.underscore}", locals: { component: component }
+    br
+    - if @prev_story
+      = link_to story_path(@prev_story)
+        .button.pagination-button.is-pulled-left Previous Story
+    - if @next_story
+      = link_to story_path(@next_story)
+        .button.pagination-button.is-pulled-right Next Story
 
 nav#cbp-spmenu-s2.cbp-spmenu.cbp-spmenu-vertical2.cbp-spmenu-right
   .contents-nav

@@ -8,6 +8,8 @@ class StoriesController < ApplicationController
     if @story.issue && (!@story.issue.published? && !signed_in?)
       redirect_to root_path
     end
+    @next_story = @story.next_story
+    @prev_story = @story.previous_story
   end
 
   def new
