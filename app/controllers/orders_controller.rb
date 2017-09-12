@@ -7,6 +7,9 @@ class OrdersController < ApplicationController
   end
 
   def new
+    if @cart.empty?
+      return redirect_to store_path
+    end
     set_shipping_prices
     @order = Order.new
   end
