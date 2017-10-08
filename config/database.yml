@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   timeout: 5000
-  username: matthewkr
+  username: mattkr
   password:
   pool: 5
   # encoding: unicode
@@ -9,7 +9,7 @@ default: &default
 development:
   <<: *default
   host: localhost
-  database: conteu_development3
+  database: conteu_development
 
 test:
   <<: *default

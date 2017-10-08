@@ -2,6 +2,10 @@ class IssuesController < ApplicationController
   before_action :require_login, except: [:show]
   before_action :set_issue, only: [:edit, :update, :destroy]
 
+  def index
+    @issues = Issue.where(published: true)
+  end
+
   def show
     @fixed_nav = true
     @issue = Issue.includes(:stories).friendly.find_by_friendly_id(params[:id])
