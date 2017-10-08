@@ -1,3 +1,32 @@
+.title-hero {
+  background-color: #fbfbfb;
+  padding-top: 3.5em;
+  padding-bottom: 2em;
+  margin-bottom: 1em;
+  font-family: 'Carlson', 'Georgia';
+
+  .title-horizontal-bar{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.all-issues-block{
+  margin-bottom: 2em;
+  .all-issues-title{
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+    font-family: 'Helvetica Neue', 'Helvetica';
+  }
+
+  h6.release-date{
+    font-family: 'Helvetica Neue', 'Helvetica';
+    font-weight: 300;
+    font-size: 0.7em;
+    margin-bottom: 1em;
+  }
+}
+
 .sideslide{
   position: absolute;
   top: 0;

@@ -3,7 +3,7 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: [:edit, :update, :destroy]
 
   def index
-    @issues = Issue.where(published: true)
+    @issues = Issue.where(published: true).order(release_date: :desc)
   end
 
   def show
@@ -55,6 +55,6 @@ class IssuesController < ApplicationController
   end
 
   def issue_params
-    params.require(:issue).permit(:title, :release_date, :issue_number, :published)
+    params.require(:issue).permit(:title, :release_date, :issue_number, :published, :cover_thumbnail, :blurb)
   end
 end

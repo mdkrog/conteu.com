@@ -3,6 +3,9 @@ class Issue < ApplicationRecord
   friendly_id :issue_number
 
   has_many :stories
+
+  mount_uploader :cover_thumbnail, ImageUploader
+
   validates_presence_of :title, :issue_number, :release_date
   validates_uniqueness_of :title, :issue_number
 

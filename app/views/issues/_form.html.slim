@@ -15,10 +15,21 @@
     .field
       p.control
         = f.input :published, as: :boolean, input_html: { class: 'checkbox' }
+    .field
+      label.label Issue Blurb
+      p.control
+        = f.input :blurb, as: :text, label: false, input_html: { class: 'textarea', rows: 10 }
+
+    .field
+      label.label Cover Image Thumbnail (300px x 200px)
+      p.control
+        = f.input :cover_thumbnail, as: :file, label: false
+        = image_tag @issue.cover_thumbnail.to_s if @issue.cover_thumbnail
 
     .is-pulled-right
       p.control
         = f.button :submit, 'Save', class: 'button is-primary is-right'
+
 
     br
     br
