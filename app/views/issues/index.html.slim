@@ -16,4 +16,5 @@
               .full-width-image = image_tag issue.cover_thumbnail.to_s if issue.cover_thumbnail
               h2.all-issues-title = issue.title
               h6.release-date= "#{issue.release_date.to_time.strftime("%B %Y")}".upcase
+              .all-issues-horizontal-bar
               p = raw issue.blurb.gsub(/\n/, '<br/>') if issue.blurb

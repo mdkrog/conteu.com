@@ -3,7 +3,7 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def show
-    @newsletter_pop_up = true
+    # @newsletter_pop_up = true
     # only allow signed in users to see non-published issues
     if @story.issue && (!@story.issue.published? && !signed_in?)
       redirect_to root_path

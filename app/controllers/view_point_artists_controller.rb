@@ -3,8 +3,7 @@ class ViewPointArtistsController < ApplicationController
   before_action :set_view_point_artist, only: [:edit, :update, :destroy]
 
   def show
-    @main_nav = true
-    @newsletter_pop_up = true
+    # @newsletter_pop_up = true
     @view_point_artist = ViewPointArtist.find(params[:id])
     @all_objects = ViewPointObject.all.order(sort_order: :desc)
     @next_artist = @view_point_artist.previous

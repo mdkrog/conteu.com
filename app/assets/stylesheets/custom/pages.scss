@@ -3,7 +3,7 @@
   padding-top: 3.5em;
   padding-bottom: 2em;
   margin-bottom: 1em;
-  font-family: 'Carlson', 'Georgia';
+  font-family: 'Garamond', 'Times';
 
   .title-horizontal-bar{
     margin-left: auto;
@@ -15,8 +15,15 @@
   margin-bottom: 2em;
   .all-issues-title{
     margin-top: 0.8em;
-    margin-bottom: 0.2em;
-    font-family: 'Helvetica Neue', 'Helvetica';
+    margin-bottom: 0.3em;
+    font-family: 'Garamond', 'Times';
+  }
+  .all-issues-horizontal-bar{
+    width: 35px;
+    height: 1px;
+    background-color: $grey;
+    margin-top: 0.9em;
+    margin-bottom: 1em;
   }
 
   h6.release-date{
@@ -24,6 +31,7 @@
     font-weight: 300;
     font-size: 0.7em;
     margin-bottom: 1em;
+    color: #000;
   }
 }
 

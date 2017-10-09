@@ -27,7 +27,7 @@ html
       == render 'layouts/footer' unless @no_footer
 
 
-    - if @newsletter_pop_up && !cookies[:newsletter_shown]
+    / - if @newsletter_pop_up && !cookies[:newsletter_shown]
       == render 'layouts/newsletter_pop_up'
 
     - if signed_in?

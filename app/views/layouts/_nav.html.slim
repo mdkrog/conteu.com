@@ -1,34 +1,24 @@
 header.nav
-  - if @main_nav
-    .nav-left
-    .nav-center.is-hidden-mobile.nav-menu
-      = link_to 'Magazine', issue_path(Issue.latest), class: 'nav-item'
-      = link_to 'ViewPoint', viewpoint_path, class: 'nav-item'
-      = link_to 'Store', store_path, class: 'nav-item'
-    .nav-right
-      = link_to root_path, class: 'nav-item' do
-        = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
-  - else
-    .nav-right
-      = link_to root_path, class: 'nav-item' do
-        = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
+  .nav-left
+  .nav-center.is-hidden-mobile.nav-menu
+    = link_to 'Current Issue', issue_path(Issue.latest), class: 'nav-item'
+    = link_to 'All Issues', issues_path, class: 'nav-item'
+    = link_to 'ViewPoint', viewpoint_path, class: 'nav-item'
+    = link_to 'Store', store_path, class: 'nav-item'
+  .nav-right
+    = link_to root_path, class: 'nav-item' do
+      = image_tag("conteu-logo-2.png", alt: "Conteu Logo", width: '137px')
 
 nav#cbp-spmenu-s1.cbp-spmenu.cbp-spmenu-vertical1.cbp-spmenu-left.is-mobile
   .main-site-nav-inner
     #site-nav
-      = link_to 'Magazine', issue_path(Issue.latest), class: 'nav-item'
+      = link_to 'Current Issue', issue_path(Issue.latest), class: 'nav-item'
+      = link_to 'All Issues', issues_path, class: 'nav-item'
       = link_to 'ViewPoint', viewpoint_path, class: 'nav-item'
       = link_to 'Store', store_path, class: 'nav-item'
 
-- if @main_nav
-  #mobile-navi.is-hidden-tablet.is-mobile
-    span#showLeftPush.hamburger
-      span
-      span
-      span
-- else
-  #mobile-navi
-    span#showLeftPush.hamburger
-      span
-      span
-      span
+#mobile-navi.is-hidden-tablet.is-mobile
+  span#showLeftPush.hamburger
+    span
+    span
+    span
