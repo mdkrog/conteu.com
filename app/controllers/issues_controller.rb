@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :require_login, except: [:show]
+  before_action :require_login, except: [:show, :index]
   before_action :set_issue, only: [:edit, :update, :destroy]
 
   def index
