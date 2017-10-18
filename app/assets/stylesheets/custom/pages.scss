@@ -10,6 +10,62 @@
     margin-right: auto;
   }
 }
+// .bg-full {
+//   background: image-url("conteu-vast.jpg") no-repeat center center fixed; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   // background: red;
+// }
+
+// .bg-l {
+//   background: image-url("vast-l.jpg") no-repeat center center fixed; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   // background: red;
+// }
+
+// .bg-r {
+//   background: image-url("vast-r.jpg") no-repeat center center fixed; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   // background: red;
+// }
+
+.home-image-wide-1{
+  @include mobile {
+    max-width: 100%;
+  }
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  img{
+    width: 100%;
+  }
+}
+
+.home-image-wide-2{
+  @include mobile {
+    max-width: 100%;
+  }
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  img{
+    width: 100%;
+  }
+}
 
 .all-issues-block{
   margin-bottom: 2em;
