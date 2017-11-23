@@ -80,7 +80,7 @@
         h6 Shipping Options
         .shipping-radio
           = f.radio_button :shipping_option, 'collection_durban', checked: true
-          .shipping-label = 'Collect from Durban'
+          .shipping-label = 'Collect from Cape Town'
         .shipping-radio.local-shipping-option
           = f.radio_button :shipping_option, 'local'
           .shipping-label = "R#{@local_shipping_product.local_shipping_price} (South Africa)"
