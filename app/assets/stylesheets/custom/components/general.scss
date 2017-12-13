@@ -1,3 +1,7 @@
+.components{
+  margin-bottom: 2em;
+}
+
 // FORM FIELDS
 
 .component-top-bar{
@@ -68,11 +72,11 @@
   font-family: 'Helvetica Neue', 'Helvetica';
 }
 .contributor{
-  margin-top: 2em;
+  margin-top: 1em;
   padding-top: 2em;
-  padding-bottom: 2em;
+  // padding-bottom: 2em;
   border-top: 1px solid $grey-lighter;
-  border-bottom: 1px solid $grey-lighter;
+  // border-bottom: 1px solid $grey-lighter;
 
   .insta{
     // margin-top: 1em;
