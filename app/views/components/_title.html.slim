@@ -1,6 +1,6 @@
 .columns
   .column.is-12
-    .title.story-title = raw component.title.gsub(/\n/, '<br/>')
+    h1.title.story-title = raw component.title.gsub(/\n/, '<br/>')
     .title-horizontal-bar
     - if component.credits.present?
       .credit-text = raw component.credits.gsub(/\n/, '<br/>')
