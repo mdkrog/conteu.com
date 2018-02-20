@@ -1,5 +1,5 @@
 class PullQuote < Component
-  store :settings, accessors: [:body], coder: JSON
+  store :settings, accessors: [:body, :author], coder: JSON
 
   def type
     'PullQuote'

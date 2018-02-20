@@ -1,5 +1,5 @@
 .columns
   .column class=(component.indent == "1" ? 'is-11 is-offset-1' : 'is-12')
     .component-image class=('full-width-image' if component.full_width == "1")
-      = image_tag component.image.to_s
+      = image_tag component.image.to_s, alt: "#{component.alt_tag.present? ? component.alt_tag : component.caption}"
       em.image-caption = component.caption

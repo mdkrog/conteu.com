@@ -1,5 +1,5 @@
 class MultiImage < Component
-  store :settings, accessors: [:image1, :image2, :caption1, :caption2], coder: JSON
+  store :settings, accessors: [:image1, :image2, :caption1, :caption2, :alt_tag1, :alt_tag2], coder: JSON
 
   mount_uploader :image1, ImageUploader
   mount_uploader :image2, ImageUploader

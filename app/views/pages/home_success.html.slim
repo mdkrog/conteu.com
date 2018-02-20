@@ -4,17 +4,18 @@
 .full-height.is-marginless.is-gapless.no-overflow.relative
   .sideslide.left-side-home.slide-in-top.delay
     .home-image-wide-1.slide-to-center.long-delay
-      = link_to issue_path(@latest_issue) do
-        = image_tag @latest_issue.cover_left.to_s
+      = link_to issue_path(11) do
+        = image_tag 'success-1.jpg'
   .sideslide.right-side-home.slide-in-bottom.delay
     .home-image-wide-2.slide-to-center.longer-delay
-      = link_to issue_path(@latest_issue) do
-        = image_tag @latest_issue.cover_right.to_s
+      = link_to issue_path(11) do
+        = image_tag 'success-2.jpg'
 
+  / = image_tag 'conteu-vast.jpg'
   .main-text-area.fade-in.longest-delay.has-text-centered
     .title-huge
-      = link_to @latest_issue.title, issue_path(@latest_issue)
+      = link_to 'Perspectives on Success', issue_path(11)
     .reading-line
       p
-        = link_to "READ #{@latest_issue.release_date.to_time.strftime("%B %Y")}".upcase, issue_path(@latest_issue)
+        = link_to 'READ FEBRUARY 2018', issue_path(11)
 

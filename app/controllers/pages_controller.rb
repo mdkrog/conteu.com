@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def home
     @fixed_nav = true
+    @latest_issue = Issue.where(published: true).order(release_date: :desc).first
   end
 
   def viewpoint
@@ -43,7 +44,7 @@ class PagesController < ApplicationController
   end
 
   def admin
-    @issues = Issue.all.includes(:stories).order(issue_number: :asc)
+    @issues = Issue.all.includes(:stories).order(release_date: :desc)
     @orphaned_stories = Story.where('issue_id NOT IN (?)', Issue.pluck("id"))
     @products = Product.where(deleted: false).order(sort_order: :asc)
     @friend_products = FriendProduct.all.order(sort_order: :asc)

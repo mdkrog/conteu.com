@@ -25,6 +25,20 @@
       p.control
         = f.input :cover_thumbnail, as: :file, label: false
         = image_tag @issue.cover_thumbnail.to_s if @issue.cover_thumbnail
+    br
+    br
+    p The following images are used on the homepage (slide up). They must be exactly the same size (500px by 667px works quite well).
+    .field
+      label.label Cover Image Left
+      p.control
+        = f.input :cover_left, as: :file, label: false
+        = image_tag @issue.cover_left.to_s if @issue.cover_left
+
+    .field
+      label.label Cover Image Right
+      p.control
+        = f.input :cover_right, as: :file, label: false
+        = image_tag @issue.cover_right.to_s if @issue.cover_right
 
     .is-pulled-right
       p.control

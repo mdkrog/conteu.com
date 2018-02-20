@@ -1,5 +1,5 @@
 class SingleImage < Component
-  store :settings, accessors: [:image, :full_width, :indent, :caption], coder: JSON
+  store :settings, accessors: [:image, :full_width, :indent, :caption, :alt_tag], coder: JSON
 
   mount_uploader :image, ImageUploader
 

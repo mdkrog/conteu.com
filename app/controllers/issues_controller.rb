@@ -55,6 +55,6 @@ class IssuesController < ApplicationController
   end
 
   def issue_params
-    params.require(:issue).permit(:title, :release_date, :issue_number, :published, :cover_thumbnail, :blurb)
+    params.require(:issue).permit(:title, :release_date, :issue_number, :published, :cover_thumbnail, :cover_left, :cover_right, :blurb)
   end
 end
