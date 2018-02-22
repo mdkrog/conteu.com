@@ -3,5 +3,4 @@
     blockquote.pull-quote
       p
         em = raw component.body.gsub(/\n/, '<br/>')
-        em.pull-quote-author = " – #{component.author}" if component.author
-
+        em.pull-quote-author = " – #{component.author}" if component.author.present?
