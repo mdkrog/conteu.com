@@ -1,73 +1,12 @@
-# Conteu
+# Conteu Magazine
+Online magazine about igniting creativity.
 
-## Todo
-
-<!--  -->
-Add date formater
-Add order for view point objects
-ViewPoint Object index page
-ViewPoint Next artist link
-Artist social media links
-
-<!--  -->
-√ 301 redirect
-√ conteumagazine.co.za
-* Setup email accounts
-* conteu.com
+![alt text](screenshots/home.png "Homepage - Showing the latest issue")
 
 
-
-* STORE - Styling (3.5hrs)
-  √ Store Page
-  √ Store Items Page
-  √ Featured
-  √ Checkout and Order confirmation
-  √ Shipping logic
-  √ Thumbnail images
-    - and define image sizes
-
-* Contents (3hrs)
-!!! * swiping
-- contents text and words by
-
-* Other Pages (2.5hrs)
-  √ Footer
-  * bolding and highlight of selected
-  * date
-
-* Viewpoint coming soon (0.5hrs)
-
-* GLOBAL (2hrs)
-  √ Register domain
-  √ 404 and 500 Pages
-  √ Google Analytics
-  / Meta data
-    - Stand alone pages
-
-* Nice clean up
-  --- lEFT MENU CENTER HOVER ON IPHONE
-  - css
-  - left menu
-  - front page object positions
-  - editorial loads on front page
-  - indent for images
-  - remove contents_layout from stories
-  - remove author_id from stories
-  - fix nav
-  - adjust components
-
-* Later
-  * Import past issues
-  * all issues
-
-COMPLETE
-========
-
-* Homepage (1.5hr)
-  √ Top menu
-  √ Main side menu
-
-* Story Pages
-  √ style components
-  √ background - color?
-  √ page nav padding
+### Features:
+* Content Management system
+* Uses movable widgets to build up articles
+* Custom Store (with custom built cart, inventory and payment gateway integration)
+* S3 Integration with ImageMagick
+* Clean UI and Admin screen for managing stories, items on the store and orders
