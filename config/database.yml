@@ -11,13 +11,16 @@ development:
   host: localhost
   database: conteu_development
 
-test:
+test: &test
   <<: *default
   host: localhost
-  database: conteu_test3
+  database: conteu_test
 
 staging:
   # encoding: utf8
 
 production:
   # encoding: utf8
+
+cucumber:
+  <<: *test
