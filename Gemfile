@@ -34,7 +34,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end
@@ -45,4 +45,5 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
+  gem 'shoulda-matchers'
 end
