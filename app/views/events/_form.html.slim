@@ -1,0 +1,34 @@
+.standard-form
+  = simple_form_for(@event) do |f|
+    .field
+      label.label Name
+      p.control
+        = f.input :name, label: false, input_html: { class: 'input' }
+    .field
+      label.label Date
+      p.control
+        = f.input :date, as: :string, label: false, input_html: { class: 'input', id: 'datepicker' }
+    .field
+      label.label Description
+      p.control
+        = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 10 }
+    .field
+      p.control
+        = f.input :published, as: :boolean, input_html: { class: 'checkbox' }
+
+    / .field
+    /   label.label Cover Image Thumbnail (300px x 200px)
+    /   p.control
+    /     = f.input :cover_thumbnail, as: :file, label: false
+    /     = image_tag @issue.cover_thumbnail.to_s if @issue.cover_thumbnail
+    / br
+
+    .is-pulled-right
+      p.control
+        = f.button :submit, 'Save', class: 'button is-primary is-right'
+
+
+    br
+    br
+    br
+

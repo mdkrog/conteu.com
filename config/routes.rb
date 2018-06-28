@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :issues
   resources :stories
+  resources :events
   resources :view_point_objects
   resources :view_point_artists
   resources :orders, except: [:destroy]

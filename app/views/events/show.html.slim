@@ -1,0 +1,15 @@
+- meta title: "#{@event.name}",
+  description: "#{@event.description}",
+  keywords: %w(Conteu Magazine Ignite Creativity South Africa contemporary design local artisans online publication storyteller inspiration)
+
+.columns.standard-page
+  .column.is-offset-2.is-8.is-offset-1-mobile.is-10-mobile
+    .event-name
+      .columns
+        .column.is-12
+          h1.title.story-title = @event.name
+          .title-horizontal-bar
+    / .components
+    /   - @story.components.each do |component|
+    /     = render partial: "components/#{component.class.name.underscore}", locals: { component: component }
+    
