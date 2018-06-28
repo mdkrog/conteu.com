@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 20180622153900) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name",        null: false
+    t.string   "name",                       null: false
     t.date     "date"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "published",   default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "friend_products", force: :cascade do |t|

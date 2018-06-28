@@ -31,6 +31,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :test do
@@ -45,5 +46,4 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard-rspec', require: false
-  gem 'shoulda-matchers'
 end

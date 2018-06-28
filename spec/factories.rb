@@ -7,6 +7,11 @@ FactoryBot.define do
     release_date Date.today
   end
 
+  factory :event do
+    name "Event" 
+    date Date.today
+  end
+
   factory :user do
     email "matt@conteu.com"
     password "mypassword"
