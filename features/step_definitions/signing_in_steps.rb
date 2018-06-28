@@ -1,7 +1,7 @@
 Given(/^I am on the sign in page$/) do
   # an issue needs to exist for nav to load
   create(:issue)
-  user = create(:user)
+  create(:user)
   visit sign_in_path
 end
  
