@@ -31,11 +31,11 @@ class PagesController < ApplicationController
     @friend_products = FriendProduct.where(displayed: true).order(sort_order: :asc)
   end
 
-  def newsletter
-  end
+  # def newsletter
+  # end
 
-  def submissions
-  end
+  # def submissions
+  # end
 
   def contact
   end
