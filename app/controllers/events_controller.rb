@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   before_action :require_login, except: [:show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @events = Event.where(published: true).order(date: :desc)
+  end
+
   def show
   end
 
