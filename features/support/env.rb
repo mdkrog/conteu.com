@@ -7,6 +7,8 @@
 require 'cucumber/rails'
 require 'factory_bot'
 require 'clearance/rspec'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 World(FactoryBot::Syntax::Methods)
 

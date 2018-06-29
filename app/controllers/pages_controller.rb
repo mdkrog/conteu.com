@@ -49,6 +49,7 @@ class PagesController < ApplicationController
     @products = Product.where(deleted: false).order(sort_order: :asc)
     @friend_products = FriendProduct.all.order(sort_order: :asc)
     @orders = Order.where(status: :paid).order(created_at: :desc)
+    @events = Event.all.order(date: :desc)
     @view_point_objects = ViewPointObject.all.includes(:view_point_artists).order(sort_order: :asc)
     @view_point_artists = ViewPointArtist.all.includes(:view_point_object).order(showcase_date: :desc)
     @orphaned_view_point_artists = ViewPointArtist.where('view_point_object_id NOT IN (?)', ViewPointObject.pluck("id"))

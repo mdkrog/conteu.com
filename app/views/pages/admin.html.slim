@@ -24,6 +24,12 @@
             span.icon.is-small
               i.fa.fa-credit-card
             span Orders
+        li.events-tab
+          = link_to '#events', class: 'toggle-admin-tab', data: {tab: 'admin-tab-5'} do
+            span.icon.is-small
+              i.fa.fa-calendar
+            span Events
+
 
     .admin-tab.admin-tab-1
       table.table.is-bordered
@@ -178,3 +184,27 @@
               td = order.total_price_incl_shipping
               td = link_to 'View', order_path(order)
               td = order.status
+
+    .admin-tab.admin-tab-5.is-hidden
+      table.table.is-bordered
+        tbody
+          th Date
+          th Name
+          th 
+          th
+          th
+          - @events.each do |event|
+            tr
+              td = event.date.to_date
+              td = link_to event.name, event_path(event)
+              td = link_to edit_event_path(event) do
+                = fa_icon "pencil-square-o"
+              td
+                - if event.published?
+                  = fa_icon "eye"
+                - else
+                  = fa_icon "eye-slash"
+              td = link_to event, data: {:confirm => 'Delete Event - Are you sure?'}, :method => :delete, class: 'trash-icon' do
+                = fa_icon "trash-o"
+      .admin-options
+        = link_to 'New Event', new_event_path, class: 'button is-small'
