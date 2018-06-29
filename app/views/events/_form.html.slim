@@ -16,12 +16,20 @@
       p.control
         = f.input :published, as: :boolean, input_html: { class: 'checkbox' }
 
-    / .field
-    /   label.label Cover Image Thumbnail (300px x 200px)
-    /   p.control
-    /     = f.input :cover_thumbnail, as: :file, label: false
-    /     = image_tag @issue.cover_thumbnail.to_s if @issue.cover_thumbnail
-    / br
+    .field
+      label.label Cover Image Thumbnail (300px x 200px)
+      p.control
+        = f.input :cover_image, as: :file, label: false
+        = image_tag @event.cover_image.to_s if @event.cover_image
+    br
+
+    h4 Photos
+    #components
+      = f.simple_fields_for :event_photos do |photo|
+        = render 'event_photo_fields', f: photo
+      br
+      .links
+        = link_to_add_association 'Add Photo', f, :event_photos, class: 'button small'
 
     .is-pulled-right
       p.control

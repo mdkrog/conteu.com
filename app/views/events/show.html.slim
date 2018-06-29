@@ -9,7 +9,13 @@
         .column.is-12
           h1.title.story-title = @event.name
           .title-horizontal-bar
-    / .components
-    /   - @story.components.each do |component|
-    /     = render partial: "components/#{component.class.name.underscore}", locals: { component: component }
+          p.event-description = raw @event.description.gsub(/\n/, '<br/>')
+    .components.event-photos
+      - @event.event_photos.each do |photo|
+        .columns
+          .column.is-12
+            .component-image.full-width-image
+              = image_tag photo.image.to_s
+              em.image-caption = photo.description
+        
     

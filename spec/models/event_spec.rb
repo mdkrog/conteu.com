@@ -6,6 +6,7 @@ RSpec.describe Event, type: :model do
     it { is_expected.to respond_to(:description) }
     it { is_expected.to respond_to(:date) }
     it { is_expected.to respond_to(:published) }
+    it { is_expected.to respond_to(:cover_image) }
     
     it "has default published set to true" do
       event = build(:event)

@@ -1,0 +1,43 @@
+.nested-fields.event-photo-fields.box
+  nav.level.component-top-bar
+    .level-left
+      .level-item
+        .heading Photo
+    .level-right
+      p.level-item.has-text-right
+        .collapse-icon.title-bar-icon
+          = fa_icon 'compress'
+        = link_to_remove_association f, class: 'component-delete-icon' do
+          = fa_icon 'trash'
+      end
+  .component-body
+    = f.input :order, as: :hidden
+    .field
+      label.label Image
+      p.control
+        = f.input :image, as: :file, label: false
+        br
+        = image_tag f.object.image.to_s, class: 'image-thumb' if f.object.image.present?
+    .field
+      label.label Description
+      p.control
+        = f.input :description, as: :string, label: false, input_html: { class: 'input' }
+
+
+/ .nested-fields.event-photo-fields.box
+/   .columns
+/     .column.is-4
+/       = f.input :order, as: :hidden
+/       .field
+/         label.label Photo (800-1000px wide)
+/         p.control
+/           = f.input :image, as: :file, label: false
+/       .field
+/         label.label Description
+/         p.control
+/           = f.input :description, as: :text, label: false, input_html: { class: 'textarea', rows: 10 }
+/     .column.is-4
+/       - if f.object.image.present?
+/         = image_tag f.object.image.to_s
+/     .column.is-2
+/       = link_to_remove_association "Remove Photo", f, class: 'button tiny alert'

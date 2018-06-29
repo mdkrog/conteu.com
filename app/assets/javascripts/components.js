@@ -5,8 +5,10 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
-  $('#sortable').on('cocoon:after-insert', function(e, insertedItem) {
-    perfom_component_order_calculation();
+  $('#components').on('cocoon:after-insert', function(e, insertedItem) {
+    setTimeout(function() {
+      perfom_component_order_calculation();
+      }, 500);
   });
 
   $('#components').on('click', '.collapse-icon', function(e){
@@ -18,6 +20,9 @@ $(document).on('turbolinks:load', function() {
 function perfom_component_order_calculation(){
   var count = 0;
   $('.story_components_order input').each(function(){
+    $(this).val(count++);
+  });
+  $('.event_event_photos_order input').each(function(){
     $(this).val(count++);
   });
 }
