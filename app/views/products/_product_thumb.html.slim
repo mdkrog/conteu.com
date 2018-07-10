@@ -18,7 +18,7 @@
           .buy-button
             = "BUY "
             span.price = "#{product.price}"
-      - else
+      / - else
         - if product.native_store
           div class=('is-hidden' if !@cart.product_in_cart(product.id))
             = link_to remove_cart_path(product.id), method: :delete, remote: true, class: 'remove-from-cart'
@@ -34,7 +34,7 @@
                   span.button-text = "ADD TO CART "
                 span.price = "R#{product.price}"
 
-        - else
+        / - else
           = link_to product.partner_link, target: '_blank', onclick: "return trackOutboundLink('#{product.partner_link}', true)" do
             .buy-button
               = "AVAILBLE HERE"
