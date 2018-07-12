@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :require_login, except: [:show]
+  before_action :require_login, except: [:show, :index]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
